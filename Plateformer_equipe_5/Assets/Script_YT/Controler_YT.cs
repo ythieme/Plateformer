@@ -14,9 +14,17 @@ public class Controler_YT : MonoBehaviour
 
     public float groundDectectionRadius;
 
+    [SerializeField]
+    Animator animator;
+
+    private bool bRight;
+
     public LayerMask whatIsGround;
 
     private Transform groundDetectionObject;
+
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,26 +38,42 @@ public class Controler_YT : MonoBehaviour
     {
         xAxis = Input.GetAxis("Horizontal");
         doJump();
+        Direction();
 
     }
-
-
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y ,0f);
+        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y, 0f);
+
+
     }
 
-    void doJump ()
+    private void Direction()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            bRight = true;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            bRight = false;
+        }
+
+        spriteRenderer.flipX = bRight;
+    }
+
+    void doJump()
     {
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded())
         {
             rb.velocity += Vector2.up * jumpForce;
         }
-    }
 
-    bool isGrounded()
-    {
-        return Physics2D.OverlapCircle(groundDetectionObject.position, groundDectectionRadius, whatIsGround);
+        bool isGrounded()
+        {
+            return Physics2D.OverlapCircle(groundDetectionObject.position, groundDectectionRadius, whatIsGround);
+        }
     }
 }
