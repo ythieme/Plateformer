@@ -4,52 +4,162 @@ using UnityEngine;
 
 public class Controler_YT : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    Animator animator;
+    private bool bright;
 
     private float xAxis;
+    public float gravity;
+    private float verticalSpeed;
+    private float horizontalSpeed;
+    private Vector3 playerMove;
+    private bool onGround;
 
-    public float moveSpeed;
+    //GoundCheck Composents
+    public LayerMask platformLayerMask;
+    public BoxCollider2D boxCollider2d;
 
-    public float jumpForce;
+    //Move parameters
+    [SerializeField]
+    float walkSpeed;
+    float runSpeed;
+    public float walkingVelocity;
+    public float runningVelocity;
+    bool isWalking;
+    bool isRunning;
 
-    public float groundDectectionRadius;
+    //Run parameters
+    public float acceleration = 1.0f;
+    public float deceleration = -1f;
+    public float maxSpeed = 2.0f;
 
-    public LayerMask whatIsGround;
+    private float curSpeed = 0.0f;
 
-    private Transform groundDetectionObject;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        groundDetectionObject = transform.GetChild(0);
+        xAxis = Input.GetAxis("Horizontal");
+        StandStill();
+        Direction();
     }
 
-    // Update is called once per frame
     void Update()
     {
         xAxis = Input.GetAxis("Horizontal");
-        doJump();
+        StandStill();
+        Walk();
+        Run();
 
-    }
-
-
-
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y ,0f);
-    }
-
-    void doJump ()
-    {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded())
+        if (horizontalSpeed == walkSpeed)
         {
-            rb.velocity += Vector2.up * jumpForce;
+            isWalking = true;
+        }
+        else if (horizontalSpeed != walkSpeed)
+        {
+            isWalking = false;
+        }
+
+        //Horizontal Speed Calculation
+        horizontalSpeed = walkingVelocity + runningVelocity;
+
+        playerMove = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
+        transform.Translate(playerMove);
+    }
+
+    private float Walk()
+    {
+        Vector2 playerInput;
+        playerInput.x = Input.GetAxis("Horizontal");
+        walkingVelocity = playerInput.x * walkSpeed;
+        return walkingVelocity;
+    }
+
+    private float Run()
+    {
+        if (isWalking == true && Input.GetButtonDown("Fire3"))
+        {
+            float curSpeed = 1;
+            runningVelocity = curSpeed;
+            if (curSpeed < maxSpeed)
+            {
+                StartCoroutine("Acceleration");
+            }
+        }
+        else if (Input.GetButtonUp("Fire3"))
+        {
+            float curSpeed = 0;
+            runningVelocity = curSpeed;
+            StartCoroutine("Deceleration");
+        }
+        return runningVelocity;
+    }
+
+    IEnumerator Acceleration()
+    {
+        yield return new WaitForSeconds(0.01f);
+        curSpeed += acceleration;
+
+        if (curSpeed > maxSpeed)
+        {
+            curSpeed = maxSpeed;
+        }
+        else
+        {
+            StartCoroutine("Acceleration");
         }
     }
 
-    bool isGrounded()
+    IEnumerator Deceleration()
     {
-        return Physics2D.OverlapCircle(groundDetectionObject.position, groundDectectionRadius, whatIsGround);
+        yield return new WaitForFixedUpdate();
+        curSpeed += deceleration;
+
+        if (curSpeed == 0 || curSpeed < 0)
+        {
+            curSpeed = 0;
+        }
+        else
+        {
+            StartCoroutine("Deceleration");
+        }
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0, platformLayerMask);
+        Color rayColor;
+        rayColor = Color.green;
+        Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y), rayColor);
+        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y), rayColor);
+        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y), Vector2.right * (boxCollider2d.bounds.extents.x), rayColor);
+
+
+        return raycastHit.collider != null;
+    }
+
+    private void StandStill()
+    {
+        if (isGrounded())
+        {
+            verticalSpeed = 0;
+        }
+        else if (!isGrounded())
+        {
+            verticalSpeed = -gravity;
+        }
+    }
+
+    private void Direction()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            bright = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            bright = false;
+        }
     }
 }

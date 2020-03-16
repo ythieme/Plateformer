@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controler_YT : MonoBehaviour
+public class Controler_FC : MonoBehaviour
 {    
     [SerializeField]
     private SpriteRenderer spriteRenderer;
@@ -22,8 +22,8 @@ public class Controler_YT : MonoBehaviour
     [SerializeField]
     float walkSpeed;
     float runSpeed;
-    float walkingVelocity;
-    float runningVelocity;
+    public float walkingVelocity;
+    public float runningVelocity;
     bool isWalking;
     bool isRunning;
 
@@ -37,7 +37,7 @@ public class Controler_YT : MonoBehaviour
 
     void Awake()
     {
-        
+      
     }
 
     void Update()
@@ -128,6 +128,7 @@ public class Controler_YT : MonoBehaviour
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y), rayColor);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y), Vector2.right * (boxCollider2d.bounds.extents.x), rayColor);
         
+
         return raycastHit.collider != null;
     }
 
