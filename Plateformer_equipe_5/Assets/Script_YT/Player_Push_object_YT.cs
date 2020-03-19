@@ -15,7 +15,7 @@ public class Player_Push : MonoBehaviour
     Rigidbody2D rigidbody2d;
     
     [SerializeField]
-    LayerMask platformLayerMask;
+    LayerMask boxMask;
     BoxCollider2D boxCollider2d;
     Animator animator;
     public float distance = 1f;
@@ -37,7 +37,7 @@ public class Player_Push : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        walk();
+        Walk();
         push();
 
         if (isWalking == true && Input.GetKeyDown(KeyCode.A) && iscloseobject == true)
@@ -59,7 +59,7 @@ public class Player_Push : MonoBehaviour
         return 0f;
     }
 
-    private float walk()
+    private float Walk()
     {
         isWalking = true;
 
