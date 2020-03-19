@@ -7,36 +7,45 @@ public class Controler_FC : MonoBehaviour
     [SerializeField]
     private SpriteRenderer spriteRenderer;
 
-    private float xAxis; 
-    public float gravity;
+    private float xAxis;     
     private float verticalSpeed;
     private float horizontalSpeed;
     private Vector3 playerMove;
     private bool onGround;
 
     //GoundCheck Composents
+    [SerializeField]
+    [Header ("GroundCheck Composents")]
+    
     public LayerMask platformLayerMask;
     public BoxCollider2D boxCollider2d;
+    public float gravity;
 
-    //Move parameters
-    [SerializeField]
-    float walkSpeed;
-    float runSpeed;
-    public float walkingVelocity;
-    public float runningVelocity;
+    //Move parameters    
+    float walkingVelocity;
+    float runningVelocity;
     bool isWalking;
     bool isRunning;
 
     //Run parameters
-    public float acceleration = 1.0f;
+    [SerializeField]
+    [Header("Move Parameters")]
+    float walkSpeed;
+    public float acceleration = 1f;
     public float deceleration = - 1f;
-    public float maxSpeed = 2.0f;
-
-    private float curSpeed = 0.0f;
+    public float maxSpeed = 2f;
+    private float curSpeed = 0f;
+    float accelerationTime;
+    public float accelerationTimeEnd = 1f;
 
 
     void Awake()
     {
+
+    }
+
+    private void FixedUpdate()
+    {     
       
     }
 
@@ -47,13 +56,23 @@ public class Controler_FC : MonoBehaviour
         Walk();
         Run();
 
-        if ( horizontalSpeed == walkSpeed)
+        if (horizontalSpeed == walkSpeed || horizontalSpeed == - walkSpeed)
         {
             isWalking = true;
         }
-        else if (horizontalSpeed != walkSpeed)
+        else
         {
             isWalking = false;
+        }
+
+        if (horizontalSpeed != 0 && Input.GetButton("Fire3"))
+        {
+            isRunning = true;
+        }
+        else
+        {
+            isRunning = false;
+            accelerationTime = 0f;
         }
 
         //Horizontal Speed Calculation
@@ -65,24 +84,26 @@ public class Controler_FC : MonoBehaviour
 
     private float Walk()
     {
-        Vector2 playerInput;
-        playerInput.x = Input.GetAxis("Horizontal");
-        walkingVelocity = playerInput.x * walkSpeed;
+        walkingVelocity = xAxis * walkSpeed;
         return walkingVelocity;
     }
 
     private float Run()
     {
-        if (isWalking == true && Input.GetButtonDown("Fire3"))
-        {
-            float curSpeed = 1;
-            runningVelocity = curSpeed;
+        runningVelocity = xAxis * curSpeed;
+        if (isRunning == true)
+        {            
             if (curSpeed < maxSpeed)
             {
+                isRunning = true;
                 StartCoroutine("Acceleration");
-            }                       
+            }       
+            else if (curSpeed >= maxSpeed)
+            {
+                curSpeed = maxSpeed;
+            }
         }
-        else if (Input.GetButtonUp("Fire3"))
+        else if (isRunning == false)
         {
             StartCoroutine("Deceleration");
         }
@@ -92,26 +113,19 @@ public class Controler_FC : MonoBehaviour
     IEnumerator Acceleration()
     {
         yield return new WaitForSeconds(0.01f);
-        curSpeed += acceleration;
 
-        if (curSpeed > maxSpeed)
+        if (isRunning)
         {
-            curSpeed = maxSpeed;
-        }
-        else
-        {
-            StartCoroutine("Acceleration");
-        }
-    }
-
-    IEnumerator Deceleration()
-    {
-        yield return new WaitForFixedUpdate();
-        curSpeed += deceleration;
-
-        if (curSpeed == 0 || curSpeed < 0)
-        {
-            curSpeed = 0;
+            if (accelerationTime >= accelerationTimeEnd)
+            {
+                curSpeed = maxSpeed;
+            }
+            else if (accelerationTime < accelerationTimeEnd)
+            {
+                curSpeed += acceleration;
+                accelerationTime += Time.deltaTime;
+                StartCoroutine("Acceleration");
+            }
         }
         else
         {
@@ -119,7 +133,22 @@ public class Controler_FC : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
+    IEnumerator Deceleration()
+    {
+        yield return new WaitForSeconds(0.01f);
+        if (curSpeed == 0 || curSpeed < 0)
+        {
+            curSpeed = 0;
+            isRunning = false;
+        }
+        else
+        {
+            curSpeed += deceleration;
+            StartCoroutine("Deceleration");
+        }
+    }
+
+    private bool IsGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, 0, platformLayerMask);
         Color rayColor;
@@ -127,18 +156,17 @@ public class Controler_FC : MonoBehaviour
         Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y), rayColor);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y), rayColor);
         Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y), Vector2.right * (boxCollider2d.bounds.extents.x), rayColor);
-        
-
+       
         return raycastHit.collider != null;
     }
 
     private void StandStill()
     {
-        if (isGrounded())
+        if (IsGrounded())
         {
             verticalSpeed = 0;
         }
-        else if (!isGrounded())
+        else if (!IsGrounded())
         {
             verticalSpeed = -gravity;
         }
