@@ -15,7 +15,7 @@ public class GripScript_FC : MonoBehaviour
     public Controler_YT movement;
 
     int goingLeft;
-    bool isClimbing = false;
+    public bool isClimbing;
 
     //Grip Parameters
     [SerializeField]
@@ -24,29 +24,30 @@ public class GripScript_FC : MonoBehaviour
 
     void Start()
     {
+        isClimbing = false;
         decalageY = 0.04f;
         decalageX = 0.01f;
         goingLeft = -1;
         lateralDetectorLength = 0;
-        gripJump = 0.10f;
-        gripForward = 0.2f;
+        gripJump = 3f;
+        gripForward = 1f;
     }
 
-    void Update()
+    public void WallGripProcess()
     {
         lateralDetectorLength = character.size.y - decalageY;
 
         GoingLeft();
-        lateralDetectorOrigin = new Vector2(character.bounds.center.x + (decalageX * goingLeft) +(character.bounds.extents.x)* goingLeft,
+        lateralDetectorOrigin = new Vector2(character.bounds.center.x + (decalageX * goingLeft) + (character.bounds.extents.x) * goingLeft,
             character.bounds.center.y - character.bounds.extents.y + decalageY);
-        
+
         Debug.DrawRay(lateralDetectorOrigin,
             Vector2.up * (lateralDetectorLength * 2), Color.red);
 
         WallGrip();
     }
 
-    int GoingLeft()
+    public int GoingLeft()
     {
         if (Input.GetAxis("Horizontal") < 0 && goingLeft == 1)
         {
@@ -69,16 +70,27 @@ public class GripScript_FC : MonoBehaviour
         return raycastHit;
     }
 
-    void WallGrip()
+    public void WallGrip()
     {
         if (LateralDetector() && isClimbing == false)
         {
             isClimbing = true;
+
             StartCoroutine("GetOnThePlatform");
+        }
+        else if (!LateralDetector() && isClimbing == true)
+        {
+            isClimbing = false;
         }
         else
         {
-            isClimbing = false;
+            
+        }
+
+        if (isClimbing && movement.jumpGravityAllowed && !(movement.IsGrounded()))
+        {
+            movement.jumpGravityAllowed = false;
+            movement.StopCoroutine("JumpFall");
         }
     }
 
@@ -97,7 +109,7 @@ public class GripScript_FC : MonoBehaviour
         }       
         else 
         {
-
+            movement.isJumping = false;
         }
     }        
 }

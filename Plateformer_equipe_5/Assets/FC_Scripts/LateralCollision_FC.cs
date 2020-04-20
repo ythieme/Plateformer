@@ -7,7 +7,6 @@ public class LateralCollision_FC : MonoBehaviour
     public BoxCollider2D character;
     
     public LayerMask platformLayerMask;
-    RaycastHit2D lateralDetector;
     Vector2 lateralDetectorOrigin;
     public float lateralDetectorLength;
     public float decalage;
@@ -20,18 +19,19 @@ public class LateralCollision_FC : MonoBehaviour
 
     void Start()
     {
-        decalage = 0.05f;
+        decalage = 0.06f;
         goingLeft = -1;
         lateralDetectorLength = 0;
     }
         
     void Update()
-    {                
+    {          
+        GoingLeft();
         lateralDetectorLength = character.size.y - decalage;
         
-        GoingLeft();        
-        lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x)* goingLeft, character.bounds.center.y - character.bounds.extents.y + decalage);
-                      
+        lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x)* goingLeft,
+            character.bounds.center.y - character.bounds.extents.y + decalage);
+        
         WallContact();
         Debug.DrawRay(lateralDetectorOrigin,
             Vector2.up * (lateralDetectorLength * 2), Color.blue);
