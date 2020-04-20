@@ -7,12 +7,14 @@ public class Box_Push : MonoBehaviour
     public Player_Push pushingTrigered;
     private int movement;
     private BoxCollider2D boxCollider2d;
+    private Rigidbody2D rigidBody2d;
     public LayerMask boxType;
-    public float gravity;
-    public float raylenght;
-    public LayerMask groundLayerMask;
-    public float overlapCircleRadius;
-    private int isGrounded;
+    private bool pushingTriggered;
+    //public float gravity;
+    //public float raylenght;
+    //public LayerMask groundLayerMask;
+    //public float overlapCircleRadius;
+    //private int isGrounded;
     //RaycastHit2D groundDectector;
 
    
@@ -20,18 +22,19 @@ public class Box_Push : MonoBehaviour
     void Start()
     {
         boxCollider2d = GetComponent<BoxCollider2D>();
-        raylenght = 5f;
+        //raylenght = 5f;
     }
     void Update()
     {
         //GrounDetector();
+        BoxMovement();
     }
 
     int BoxMovement()
     {
-        if (pushingTrigered == true)
+        if (pushingTriggered == true)
         {
-
+            transform.Translate(new Vector3(rigidBody2d.transform)
 
 
         }
