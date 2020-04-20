@@ -154,8 +154,6 @@ public class Controler_YT : MonoBehaviour
 
         //Horizontal Speed Calculation
         horizontalSpeed = (walkingVelocity + runningVelocity + slidingVelocity + movingPlatformXVelocity) * velocityMultiplicator * wallCollision.wallContact;
-        Debug.Log(movingPlatformYVelocity);
-        Debug.Log(movingPlatformXVelocity);
 
         playerMove = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
         transform.Translate(playerMove, Space.World);
