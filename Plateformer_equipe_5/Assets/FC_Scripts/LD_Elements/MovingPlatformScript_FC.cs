@@ -10,6 +10,8 @@ public class MovingPlatformScript_FC : MonoBehaviour
     public LayerMask playerLayerMask;
     public BoxCollider2D boxcollider;
 
+    bool playerDetected;
+
     float decalageY = 0.05f;
 
     float originX;
@@ -24,6 +26,7 @@ public class MovingPlatformScript_FC : MonoBehaviour
 
     void Start()
     {
+        playerDetected = false;
         StartCoroutine(ActualSpeed());
     }
 
@@ -38,13 +41,18 @@ public class MovingPlatformScript_FC : MonoBehaviour
 
     void StickThePlayer()
     {
-        if (PlayerDetector())
+        if (PlayerDetector() && !playerDetected)
+        {
+            playerDetected = true;
+        }
+        else if (PlayerDetector() && playerDetected)
         {
             controler.movingPlatformXVelocity = actualSpeedX;
             controler.movingPlatformYVelocity = actualSpeedY;
         }
-        else
+        else if (!PlayerDetector() && playerDetected)
         {
+            playerDetected = false;
             controler.movingPlatformXVelocity = 0f;
             controler.movingPlatformYVelocity = 0f;
         }
@@ -61,8 +69,8 @@ public class MovingPlatformScript_FC : MonoBehaviour
         secondXPosition = transform.position.x;
         secondYPosition = transform.position.y;
 
-        actualSpeedX = (secondXPosition - firstXPosition) * 175;
-        actualSpeedY = (secondYPosition - firstYPosition) * 175;
+        actualSpeedX = (secondXPosition - firstXPosition) * 150;
+        actualSpeedY = (secondYPosition - firstYPosition) * 200;
         StartCoroutine(ActualSpeed());
     }
 
