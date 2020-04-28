@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ennemy
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,13 @@ TagManager:
   - 
   - Platforms
   - Grabable
+<<<<<<< HEAD
   - Box
   - 
+=======
+  - Player
+  - Ennemy
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
   - 
   - 
   - 

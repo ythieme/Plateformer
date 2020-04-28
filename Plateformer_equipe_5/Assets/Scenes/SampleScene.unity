@@ -514,6 +514,7 @@ MonoBehaviour:
   lateralDetectorLength: 0
   decalage: 0
   movement: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &331562612
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +692,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
 --- !u!1 &444027643
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +709,10 @@ GameObject:
   - component: {fileID: 444027649}
   - component: {fileID: 444027650}
   - component: {fileID: 444027644}
+<<<<<<< HEAD
   - component: {fileID: 444027651}
+=======
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -899,6 +905,7 @@ MonoBehaviour:
   movement: {fileID: 444027645}
   gripJump: 0
   gripForward: 0
+<<<<<<< HEAD
 --- !u!114 &444027651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +922,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   rayLength: 0
+=======
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1043,7 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
 --- !u!1 &530374658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1197,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+=======
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
 --- !u!1 &992612902
 GameObject:
   m_ObjectHideFlags: 3
@@ -1680,6 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &1581330141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1737,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
 --- !u!1 &1729939386
 GameObject:
   m_ObjectHideFlags: 0

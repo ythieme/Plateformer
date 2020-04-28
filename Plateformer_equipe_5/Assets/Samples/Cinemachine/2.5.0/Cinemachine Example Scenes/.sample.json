@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 {
   "displayName": "Cinemachine Example Scenes",
   "interactiveImport": "false",
   "description": "Samples showing various configurations of Cinemachine"
 }
+=======
+{
+  "displayName": "Cinemachine Example Scenes",
+  "interactiveImport": "false",
+  "description": "Samples showing various configurations of Cinemachine"
+}
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f

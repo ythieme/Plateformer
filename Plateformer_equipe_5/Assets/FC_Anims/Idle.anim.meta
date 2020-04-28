@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Plateformer_equipe_5/Assets/FC_Anims/Idle.anim.meta
 guid: 50f6ec13b273aab4dbdfed00418a1bf4
 NativeFormatImporter:
+=======
+guid: e54a63bed616e17498e3a3442e844f28
+PrefabImporter:
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f:Plateformer_equipe_5/Assets/FC_Prefabs/Enemies/FlyingEnnemyProto.prefab.meta
+=======
+guid: 50f6ec13b273aab4dbdfed00418a1bf4
+NativeFormatImporter:
+>>>>>>> 9e8650ebd3dada3f7eed0547a098252620a6cf4f
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
