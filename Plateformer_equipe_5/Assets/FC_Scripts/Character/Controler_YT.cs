@@ -12,6 +12,8 @@ public class Controler_YT : MonoBehaviour
     private Vector3 playerMove;
     RaycastHit2D groundChecker;
 
+    //External Scripts
+    public BoxPush_FC push;
     public LateralCollision_FC wallCollision;
     public HeadCollision_FC headCollision;
     public GripScript_FC grip;
@@ -55,6 +57,7 @@ public class Controler_YT : MonoBehaviour
     [System.NonSerialized] public float movingPlatformYVelocity;
     [System.NonSerialized] public bool isRunning;
     [System.NonSerialized] public bool moveFreeze;
+    [System.NonSerialized] public bool isPushing;
 
     //Run parameters    
     [Header("Move Parameters")]
@@ -153,7 +156,14 @@ public class Controler_YT : MonoBehaviour
         CharacterSizeCheck();
 
         //Horizontal Speed Calculation
-        horizontalSpeed = (walkingVelocity + runningVelocity + slidingVelocity + movingPlatformXVelocity) * velocityMultiplicator * wallCollision.wallContact;
+        if (!isPushing)
+        {
+            horizontalSpeed = (walkingVelocity + runningVelocity + slidingVelocity + movingPlatformXVelocity) * velocityMultiplicator * wallCollision.wallContact;
+        }
+        else
+        {
+            horizontalSpeed = push.pushVelocity;
+        }      
 
         playerMove = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
         transform.Translate(playerMove, Space.World);

@@ -29,7 +29,4 @@ public class FearScript_FC : MonoBehaviour
     {
         fear -= damageValue;
     }
-
-
-
 }
