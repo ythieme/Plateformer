@@ -14,12 +14,11 @@ public class LateralCollision_FC : MonoBehaviour
     public Controler_YT movement;
 
     int goingLeft;
-    [System.NonSerialized]
-    public int wallContact;
+    [System.NonSerialized] public int wallContact;
 
     void Start()
     {
-        decalage = 0.06f;
+        decalage = 0.08f;
         goingLeft = -1;
         lateralDetectorLength = 0;
     }
@@ -27,14 +26,15 @@ public class LateralCollision_FC : MonoBehaviour
     void Update()
     {          
         GoingLeft();
-        lateralDetectorLength = character.size.y - decalage;
+        lateralDetectorLength = character.size.y - decalage/2;
         
         lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x)* goingLeft,
             character.bounds.center.y - character.bounds.extents.y + decalage);
         
-        WallContact();
-        Debug.DrawRay(lateralDetectorOrigin,
-            Vector2.up * (lateralDetectorLength * 2), Color.blue);
+        WallContact();        
+
+        Debug.DrawLine(new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y),
+            new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y + lateralDetectorLength), Color.blue);
     }
 
     int GoingLeft()
@@ -55,7 +55,7 @@ public class LateralCollision_FC : MonoBehaviour
     public RaycastHit2D LateralDetector()
     {
         RaycastHit2D raycastHit = Physics2D.Raycast(lateralDetectorOrigin,
-            Vector2.up, lateralDetectorLength, platformLayerMask);        
+            Vector2.up , lateralDetectorLength , platformLayerMask);
 
         return raycastHit;
     }

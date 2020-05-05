@@ -148,7 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   width: 0.01
-  lengthBonus: 0.2
+  lengthBonus: 0.08
 --- !u!1 &4093883350815337827
 GameObject:
   m_ObjectHideFlags: 0

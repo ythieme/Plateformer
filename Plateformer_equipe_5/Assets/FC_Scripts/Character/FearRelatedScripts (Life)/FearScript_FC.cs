@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FearScript_FC : MonoBehaviour
 {
+    public int maxfear;
     public int fear;
     [System.NonSerialized] public bool isDead;
     
