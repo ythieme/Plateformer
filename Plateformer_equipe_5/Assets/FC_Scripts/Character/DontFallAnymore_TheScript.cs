@@ -17,7 +17,10 @@ public class DontFallAnymore_TheScript : MonoBehaviour
     [System.NonSerialized] private float crouchDecalageY = 0f;
     public LayerMask collisionMask;
 
- 
+    private void Start()
+    {
+        controler = GetComponent<Controler_YT>();
+    }
 
     private void Update()
     {
@@ -32,7 +35,7 @@ public class DontFallAnymore_TheScript : MonoBehaviour
     
     void SizeCheck()
     {
-        if (Input.GetKey(KeyCode.X)) crouchDecalageY = 0.08f;
+        if (controler.isCrouching) crouchDecalageY = 0.08f;
         else crouchDecalageY = 0f;
     }
 

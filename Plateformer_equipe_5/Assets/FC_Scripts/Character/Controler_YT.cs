@@ -195,7 +195,8 @@ public class Controler_YT : MonoBehaviour
             }
             else
             {
-
+                waitBeforeStand = false;
+                Crouch2StandCooldown();
             }
         }
         else
@@ -221,8 +222,8 @@ public class Controler_YT : MonoBehaviour
     }
     public RaycastHit2D CanStandOrNot()
     {
-        RaycastHit2D raycasthit = Physics2D.Raycast(new Vector2(boxCollider2d.bounds.center.x, boxCollider2d.bounds.center.y + boxCollider2d.bounds.extents.y),
-            Vector2.up, 0.16f, platformLayerMask );
+        RaycastHit2D raycasthit = Physics2D.Raycast(new Vector2(boxCollider2d.bounds.center.x, boxCollider2d.bounds.center.y + boxCollider2d.bounds.extents.y + 0.02f),
+            Vector2.up, 0.16f, platformLayerMask);
 
         return raycasthit;
     }
@@ -388,27 +389,20 @@ public class Controler_YT : MonoBehaviour
     //Ground and stand
     private RaycastHit2D GroundDetector()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(new Vector2(boxCollider2d.bounds.center.x, boxCollider2d.bounds.center.y - (boxCollider2d.bounds.extents.y * 5/6)),
+        RaycastHit2D raycastHit = Physics2D.BoxCast(new Vector2(boxCollider2d.bounds.center.x, boxCollider2d.bounds.center.y - (boxCollider2d.bounds.extents.y * 0.78f)),
             new Vector2(boxCollider2d.bounds.extents.x - decalage, (boxCollider2d.bounds.extents.y* 1/12)),
             0f, Vector2.down, 0.05f, platformLayerMask);
 
+        //RaycastHit2D raycastHit = Physics2D.BoxCast(new Vector2(boxCollider2d.bounds.center.x, boxCollider2d.bounds.center.y - (boxCollider2d.bounds.extents.y * 0.78f)),
+        //new Vector2(boxCollider2d.bounds.extents.x - decalage, (boxCollider2d.bounds.extents.y * 1 / 12)),
+        //0f, Vector2.down, 0.05f, platformLayerMask);
+
         Color rayColor;
         rayColor = Color.green;
-        /*Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x - decalage, 0),
-            Vector2.down * (boxCollider2d.bounds.extents.y), rayColor); //gauche
-
-        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x - decalage, 0),
-            Vector2.down * (boxCollider2d.bounds.extents.y), rayColor); //droite
-
-        Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x - decalage, (boxCollider2d.bounds.extents.y * 1/3)),
-            Vector2.right * (boxCollider2d.bounds.extents.x), rayColor); //bas
-
-        Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x - decalage, - (boxCollider2d.bounds.extents.y * 2/3)),
-            Vector2.left * (boxCollider2d.bounds.extents.x), rayColor); //haut
-            */
-
+        
         return raycastHit;
-    }
+    }    
+
     public bool IsGrounded()
     {        
         return groundChecker.collider != null;

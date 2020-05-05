@@ -9,7 +9,8 @@ public class HeadCollision_FC : MonoBehaviour
     public LayerMask platformLayerMask;
     Vector2 lateralDetectorOrigin;
     public float lateralDetectorLength;
-    public float decalage;
+    public float decalage; 
+    public float decalageX;
 
     public Controler_YT movement;
     public bool headHasTouched;
@@ -17,15 +18,16 @@ public class HeadCollision_FC : MonoBehaviour
     void Start()
     {
         decalage = 0.02f;
+        decalageX = 0.07f;
         lateralDetectorLength = 0;
         headHasTouched = false;
     }
         
     void Update()
     {          
-        lateralDetectorLength = character.size.x - decalage;
+        lateralDetectorLength = character.size.x - decalageX;
         
-        lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x),
+        lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x) - decalageX,
             character.bounds.center.y + character.bounds.extents.y + decalage);
 
         CeilingContact();
