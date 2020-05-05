@@ -8,11 +8,17 @@ public class InputHandler_FC : MonoBehaviour
     public KeyCode crouch = KeyCode.X;
     public KeyCode jump = KeyCode.Space;
     public KeyCode run = KeyCode.LeftShift;
+    public KeyCode doPush = KeyCode.E;
 
     public Controler_YT controller;
+    public BoxPush_FC push;
 
     void Update()
     {
+        push.pushKey = Input.GetKey(doPush);
+        push.pushKeyDown = Input.GetKeyDown(doPush);
+        push.pushKeyUp = Input.GetKeyUp(doPush);
+
         controller.runKey = Input.GetKey(run);
         controller.runKeyDown = Input.GetKeyDown(run);
         controller.runKeyUp = Input.GetKeyUp(run);
