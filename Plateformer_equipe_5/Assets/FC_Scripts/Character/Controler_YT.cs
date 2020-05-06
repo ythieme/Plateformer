@@ -17,6 +17,7 @@ public class Controler_YT : MonoBehaviour
     public LateralCollision_FC wallCollision;
     public HeadCollision_FC headCollision;
     public GripScript_FC grip;
+    public DontFallAnymore_TheScript dontFall;
 
     [System.NonSerialized] public bool jumpKey, jumpKeyDown, jumpKeyUp, runKey, runKeyDown, runKeyUp,
         crouchKey, crouchKeyDown, crouchKeyUp;
@@ -33,14 +34,7 @@ public class Controler_YT : MonoBehaviour
     public Sprite crouchSprite;    
     bool waitBeforeStand;
     [SerializeField] float crouchSpeed;
-    [System.NonSerialized] public bool isCrouching;
-
-    //Slide parameters
-    [System.NonSerialized] public bool isSliding;
-    [SerializeField] float slidingDecelaration;
-    float slidingVelocity;
-    bool slideCooldown;
-    float slideCooldownDuration;
+    [System.NonSerialized] public bool isCrouching;    
 
     //GoundCheck Composents
     [Header ("GroundCheck Composents")]
@@ -58,9 +52,8 @@ public class Controler_YT : MonoBehaviour
     [System.NonSerialized] public bool isRunning;
     [System.NonSerialized] public bool moveFreeze;
     [System.NonSerialized] public bool isPushing;
-
-    //Run parameters    
-    [Header("Move Parameters")]
+            
+    [Header("Move Parameters")] //Run parameters
     [SerializeField]
     public float acceleration;
     public float deceleration;
@@ -69,13 +62,21 @@ public class Controler_YT : MonoBehaviour
     float accelerationTime;
     [SerializeField] public float accelerationTimeEnd;
     [SerializeField] float walkSpeed;
-
-    //Variables Jump        
-    [Header("Jump")]
+                
+    [Header("Jump")] //Variables Jump
     [SerializeField] float jumpFixMaxHeight;
     [SerializeField] float jumpStrength;
     [SerializeField] float glideTime;
     [System.NonSerialized] public bool highestPointReached, isJumping, jumpGravityAllowed;
+        
+    [Header("Slide Parameters")] //Slide parameters    
+    [SerializeField] float slidingDecelaration;
+    [SerializeField] float slidingVelocity;
+    [SerializeField] bool slideCooldown;
+    [SerializeField] float slideCooldownDuration;
+    [System.NonSerialized] public bool isSliding;
+
+    public Animator anim;
 
     bool jumpInputMaintain;
 
@@ -84,6 +85,9 @@ public class Controler_YT : MonoBehaviour
 
     void Start()
     {
+        dontFall = GetComponent<DontFallAnymore_TheScript>();
+        anim = GetComponent<Animator>();
+
         movingPlatformXVelocity = 0f;
         gravity = 20f;
         acceleration = 0.5f;
@@ -91,7 +95,6 @@ public class Controler_YT : MonoBehaviour
         glideTime = 0.1f;
         jumpStrength = 10;
         slidingDecelaration = -0.002f;
-        slideCooldownDuration = 0.15f;
         crouchSpeed = 1.5f;
         jumpFixMaxHeight = 0.8f;
         curSpeed = 0;
@@ -102,8 +105,8 @@ public class Controler_YT : MonoBehaviour
 
     void Awake()
     {
-        crouchSize = new Vector2(0.16f, 0.08f);
-        idleSize = new Vector2(0.16f, 0.16f);
+        crouchSize = new Vector2(0.18f, 0.08f);
+        idleSize = new Vector2(0.18f, 0.29f);
         slidingVelocity = 0;
     }
 
@@ -114,6 +117,7 @@ public class Controler_YT : MonoBehaviour
 
         IsGrounded();        
         Walk();
+        anim.SetFloat("Speed",Mathf.Abs(walkingVelocity));
 
         //Run Test
         if (Input.GetAxis("Horizontal") != 0 && runKey && !isCrouching) isRunning = true;
@@ -127,7 +131,7 @@ public class Controler_YT : MonoBehaviour
         SpriteFlip();
 
         //Enter Jump state
-        if (jumpKeyDown && isJumping == false && IsGrounded() && !isCrouching)
+        if (jumpKey && isJumping == false && IsGrounded() && !isCrouching)
         {
             EnterJump();
             jumpMaxHeight = transform.localPosition.y + jumpFixMaxHeight;
@@ -293,11 +297,12 @@ public class Controler_YT : MonoBehaviour
     {
         if (!isCrouching && !isSliding)
         {
+            dontFall.enabled = true;
             boxCollider2d.size = idleSize;
             spriteRenderer.sprite = idleSprite;
         }
         else if (isCrouching && !crouchKey && !CanStandOrNot())
-        {
+        {            
             boxCollider2d.size = idleSize;
             spriteRenderer.sprite = idleSprite;
             transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + 0.08f);
@@ -305,6 +310,7 @@ public class Controler_YT : MonoBehaviour
         }
         else if (isSliding || isCrouching)
         {
+            dontFall.enabled = false;
             boxCollider2d.size = crouchSize;
             spriteRenderer.sprite = crouchSprite;
         }
@@ -471,16 +477,13 @@ public class Controler_YT : MonoBehaviour
     {
         Vector2 playerInput;
         playerInput.y = Input.GetAxis("Jump");
-        playerInput.x = Input.GetAxis("Horizontal");
-        playerInput = Vector2.ClampMagnitude(playerInput, 1f);
 
         yield return new WaitForSeconds(0.01f);
         if (isJumping == true && jumpInputMaintain == true && 
             headCollision.headHasTouched == false)
         {
-            Vector3 arise =
-                new Vector3(0, playerInput.y * jumpStrength, 0);
-            transform.localPosition += arise * Time.deltaTime;
+            Vector3 arise = new Vector3(0, playerInput.y * jumpStrength, 0);
+            transform.Translate(arise * Time.deltaTime);
 
             StartCoroutine("JumpMovement");
         }
