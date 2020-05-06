@@ -18,6 +18,8 @@ public class LateralCollision_FC : MonoBehaviour
 
     void Start()
     {
+        character = GetComponent<BoxCollider2D>();
+        movement = GetComponent<Controler_YT>();
         decalage = 0.08f;
         goingLeft = -1;
         lateralDetectorLength = 0;
@@ -54,9 +56,9 @@ public class LateralCollision_FC : MonoBehaviour
     }
     public RaycastHit2D LateralDetector()
     {
-        RaycastHit2D raycastHit = Physics2D.Raycast(lateralDetectorOrigin,
-            Vector2.up , lateralDetectorLength , platformLayerMask);
-
+        RaycastHit2D raycastHit = Physics2D.Linecast(new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y),
+            new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y + lateralDetectorLength), platformLayerMask);
+        
         return raycastHit;
     }
 

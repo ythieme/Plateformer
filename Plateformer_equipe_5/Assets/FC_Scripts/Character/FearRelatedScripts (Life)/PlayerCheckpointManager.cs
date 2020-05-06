@@ -30,7 +30,6 @@ public class PlayerCheckpointManager : MonoBehaviour
     {
         controler.enabled = false;
         character.transform.Translate(new Vector3(lastCheckpoint.x - character.transform.position.x, lastCheckpoint.y - character.transform.position.y));
-        fear.fear = fear.maxfear;
         controler.enabled = true;
     }
 }
