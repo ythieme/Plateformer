@@ -3074,25 +3074,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-<<<<<<< HEAD
---- !u!4 &458005564 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-    type: 3}
-  m_PrefabInstance: {fileID: 690018756317610383}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &458005565 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 690018756439023026, guid: fcf06967792dea0488c243df922f4b2e,
-    type: 3}
-  m_PrefabInstance: {fileID: 690018756317610383}
-=======
 --- !u!114 &458005565 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3044463699620425165, guid: b7be01ea9923b6b4fafada0c7f93184c,
     type: 3}
   m_PrefabInstance: {fileID: 3044463699969372656}
->>>>>>> origin/BabibaluxPROG
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -7842,75 +7828,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051338892}
   m_CullTransparentMesh: 0
---- !u!1001 &690018756317610383
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 444027647}
-    m_Modifications:
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023027, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 690018756439023028, guid: fcf06967792dea0488c243df922f4b2e,
-        type: 3}
-      propertyPath: m_Name
-      value: Checkpoint Manager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fcf06967792dea0488c243df922f4b2e, type: 3}
 --- !u!1001 &3025684712374790284
 PrefabInstance:
   m_ObjectHideFlags: 0
