@@ -7245,35 +7245,12 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
---- !u!1 &1095945681 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6627430096462673144, guid: 817e6614560682a46be6db1f3f2de9f5,
-    type: 3}
-  m_PrefabInstance: {fileID: 6415072575825845544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1095945685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2506393292519138741, guid: 817e6614560682a46be6db1f3f2de9f5,
     type: 3}
   m_PrefabInstance: {fileID: 6415072575825845544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1095945687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095945681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 181cd2cf602250c4e8c05538dfb1c071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fear: {fileID: 0}
-  player: {fileID: 0}
-  damage: 1
-  cooldownDuration: 1
-  power: 6
 --- !u!1 &1124880443
 GameObject:
   m_ObjectHideFlags: 0
@@ -13032,11 +13009,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1212123020}
     m_Modifications:
-    - target: {fileID: 1939394065250645020, guid: e54a63bed616e17498e3a3442e844f28,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3025684713137345549, guid: e54a63bed616e17498e3a3442e844f28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13094,19 +13066,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025684713137345550, guid: e54a63bed616e17498e3a3442e844f28,
         type: 3}
-      propertyPath: fear
-      value: 
-      objectReference: {fileID: 423234184}
-    - target: {fileID: 3025684713137345550, guid: e54a63bed616e17498e3a3442e844f28,
-        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 444027647}
-    - target: {fileID: 3025684713137345550, guid: e54a63bed616e17498e3a3442e844f28,
-        type: 3}
-      propertyPath: speed
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3025684713137345779, guid: e54a63bed616e17498e3a3442e844f28,
         type: 3}
       propertyPath: m_Name
@@ -13115,7 +13077,7 @@ PrefabInstance:
     - target: {fileID: 3025684713137345779, guid: e54a63bed616e17498e3a3442e844f28,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e54a63bed616e17498e3a3442e844f28, type: 3}
@@ -13677,11 +13639,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sbire
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627430096462673144, guid: 817e6614560682a46be6db1f3f2de9f5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817e6614560682a46be6db1f3f2de9f5, type: 3}
