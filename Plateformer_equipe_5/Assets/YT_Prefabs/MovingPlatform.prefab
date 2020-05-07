@@ -96,10 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713824cf02a53d34c8fd43418cab9c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controler: {fileID: 0}
+  controler: {fileID: 2905955970592515958, guid: bd70f937bba27594d8d0064923a6a777,
+    type: 3}
   playerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   boxcollider: {fileID: 4882298713525423283}
 --- !u!61 &4882298713525423283
 BoxCollider2D:
