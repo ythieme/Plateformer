@@ -46,7 +46,7 @@ public class Controler_YT : MonoBehaviour
     //Move parameters
     float walkingVelocity;
     float runningVelocity;
-    float velocityMultiplicator = 1;
+    [System.NonSerialized] public float velocityMultiplicator = 1;
     [System.NonSerialized] public float movingPlatformXVelocity;
     [System.NonSerialized] public float movingPlatformYVelocity;
     [System.NonSerialized] public bool isRunning;

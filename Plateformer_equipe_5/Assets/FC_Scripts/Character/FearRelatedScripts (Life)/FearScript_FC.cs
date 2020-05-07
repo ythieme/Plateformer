@@ -4,10 +4,30 @@ using UnityEngine;
 
 public class FearScript_FC : MonoBehaviour
 {
+    public Controler_YT controler;
+    public GameObject character;
+    public Transform position;
+
     public int maxfear;
     public int fear;
-    [System.NonSerialized] public bool isDead;
+    public float noDamageTime;
+    float coroutineCount;    
 
+    public AnimationCurve knockCurve;
+
+    [System.NonSerialized] public bool isDead;
+    public bool knockbacked;
+    public bool noDamage;
+
+    private void Start()
+    {
+        character = GameObject.FindGameObjectWithTag("Player");
+        controler = character.GetComponent<Controler_YT>();
+    }
+    private void Update()
+    {
+        position = character.transform;
+    }
     void FixedUpdate()
     {
         DeathCheck();
@@ -35,6 +55,42 @@ public class FearScript_FC : MonoBehaviour
     
     public void DealDamage(int damageValue)
     {
-        fear -= damageValue;
+        if (!noDamage)
+        {
+            fear -= damageValue;
+            StartCoroutine(InvincibilityFrames(noDamageTime));
+        }        
     }
+
+    IEnumerator InvincibilityFrames(float noDamageTime)
+    {
+        noDamage = true;
+        yield return new WaitForSeconds(noDamageTime);
+        noDamage = false;
+    }
+
+    public void Knockback(float power, int goingLeft)
+    {
+        controler.velocityMultiplicator = 0;
+        knockbacked = true;
+        StartCoroutine(KnockBackCooldown(power, goingLeft));
+    }
+
+    IEnumerator KnockBackCooldown(float power, int goingLeft)
+    {
+        yield return new WaitForSeconds(0.01f);
+        coroutineCount += 10 * Time.deltaTime;
+        if (knockbacked && coroutineCount<= 1)
+        {            
+            position.Translate(new Vector2(((knockCurve.Evaluate(coroutineCount) * power )* goingLeft),
+                 knockCurve.Evaluate(coroutineCount)* power) * Time.deltaTime);
+            StartCoroutine(KnockBackCooldown(power, goingLeft));
+        }
+        else
+        {
+            knockbacked = false;
+            controler.velocityMultiplicator = 1;
+            coroutineCount = 0;
+        }
+    }    
 }
