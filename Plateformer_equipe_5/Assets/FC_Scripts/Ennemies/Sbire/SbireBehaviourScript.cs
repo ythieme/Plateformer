@@ -41,7 +41,7 @@ public class SbireBehaviourScript : MonoBehaviour
         }
         else if (transform.position == startPosition && !stop && goingWayPoint) //Go WayPoint
         {
-            StartCoroutine(MoveTowardPlayer(wayPoint, speed));
+            StartCoroutine(MoveTowardPlace(wayPoint, speed));
             if (wayPoint.x - startPosition.x > 0) sp.flipX = true;
         }
         else if (transform.position == wayPoint && !stop && goingWayPoint) //Reach WayPoint
@@ -52,18 +52,18 @@ public class SbireBehaviourScript : MonoBehaviour
         }
         else if (transform.position == wayPoint && !stop && goingStartPosition) //Go StartPosition
         {
-            StartCoroutine(MoveTowardPlayer(startPosition,speed));
+            StartCoroutine(MoveTowardPlace(startPosition,speed));
             if (startPosition.x - wayPoint.x < 0) sp.flipX = false;
         }
     }
 
-    IEnumerator MoveTowardPlayer(Vector2 direction,float speed)
+    IEnumerator MoveTowardPlace(Vector2 direction,float speed)
     {
         yield return new WaitForSeconds(0.01f);
         if (!stop)
         {
             transform.position = Vector2.MoveTowards(transform.position, direction, speed);
-            StartCoroutine(MoveTowardPlayer(direction, speed));
+            StartCoroutine(MoveTowardPlace(direction, speed));
         }
     }
 
