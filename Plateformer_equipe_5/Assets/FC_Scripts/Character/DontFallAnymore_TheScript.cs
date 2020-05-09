@@ -14,7 +14,7 @@ public class DontFallAnymore_TheScript : MonoBehaviour
     [SerializeField] float underRayPositionY = 0.155f;
     [SerializeField] float underRayPositionX = 0.09f;
 
-    [System.NonSerialized] private float crouchDecalageY = 0f;
+    float crouchDecalageY = 0f;
     public LayerMask collisionMask;
 
     private void Start()
@@ -35,7 +35,7 @@ public class DontFallAnymore_TheScript : MonoBehaviour
     
     void SizeCheck()
     {
-        if (controler.isCrouching) crouchDecalageY = 0.08f;
+        if (controler.isCrouching || controler.isSliding) crouchDecalageY = 0.22f;
         else crouchDecalageY = 0f;
     }
 

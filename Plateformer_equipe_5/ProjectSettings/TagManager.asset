@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ennemy
   - Ground
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

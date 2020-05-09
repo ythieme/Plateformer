@@ -62,6 +62,7 @@ public class GripScript_FC : MonoBehaviour
 
         return goingLeft;
     }
+
     public RaycastHit2D LateralDetector()
     {
         RaycastHit2D raycastHit = Physics2D.Raycast(lateralDetectorOrigin,
