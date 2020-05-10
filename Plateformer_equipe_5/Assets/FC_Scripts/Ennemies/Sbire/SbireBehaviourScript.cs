@@ -11,9 +11,10 @@ public class SbireBehaviourScript : MonoBehaviour
 
     public Vector3 wayPoint;
     public Vector3 startPosition;
-    
-    [Range(0.0001f,0.005f)] public float speed;
+
+    [Range(0.5f, 5f)] public float speed;
     [Range(0.1f, 2f)] public float stopDuration;
+    float step;
 
     bool stop;
     bool goingWayPoint;
@@ -28,6 +29,7 @@ public class SbireBehaviourScript : MonoBehaviour
     }
     private void Update()
     {
+        step = speed * Time.deltaTime;
         SbireMovement();
     }    
 
@@ -41,7 +43,7 @@ public class SbireBehaviourScript : MonoBehaviour
         }
         else if (transform.position == startPosition && !stop && goingWayPoint) //Go WayPoint
         {
-            StartCoroutine(MoveTowardPlace(wayPoint, speed));
+            StartCoroutine(MoveTowardPlace(wayPoint, step));
             if (wayPoint.x - startPosition.x > 0) sp.flipX = true;
         }
         else if (transform.position == wayPoint && !stop && goingWayPoint) //Reach WayPoint
@@ -52,7 +54,7 @@ public class SbireBehaviourScript : MonoBehaviour
         }
         else if (transform.position == wayPoint && !stop && goingStartPosition) //Go StartPosition
         {
-            StartCoroutine(MoveTowardPlace(startPosition,speed));
+            StartCoroutine(MoveTowardPlace(startPosition,step));
             if (startPosition.x - wayPoint.x < 0) sp.flipX = false;
         }
     }
