@@ -7,7 +7,6 @@ public class PlayerCheckpointManager : MonoBehaviour
     GameObject character;
     public FearScript_FC fear;
     public Controler_YT controler;
-
     public Vector3 lastCheckpoint;
     
     void Start()
