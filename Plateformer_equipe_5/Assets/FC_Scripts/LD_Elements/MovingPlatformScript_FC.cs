@@ -10,6 +10,7 @@ public class MovingPlatformScript_FC : MonoBehaviour
     public Transform startPositionTransform;
     public LayerMask playerLayerMask;
     public BoxCollider2D boxcollider;
+    public SpriteRenderer sp;
 
     public Vector3 wayPoint;
     public Vector3 startPosition;
@@ -22,6 +23,7 @@ public class MovingPlatformScript_FC : MonoBehaviour
     bool goingWayPoint;
     bool goingStartPosition;
     bool playerDetected;
+    public bool hugging;
 
     float decalageY = 0.05f;
 
@@ -37,6 +39,7 @@ public class MovingPlatformScript_FC : MonoBehaviour
 
     void Start()
     {
+        sp = GetComponentInChildren<SpriteRenderer>();
         controler = GameObject.FindGameObjectWithTag("Player").GetComponent<Controler_YT>();
         playerDetected = false;
         goingStartPosition = true;
@@ -49,8 +52,9 @@ public class MovingPlatformScript_FC : MonoBehaviour
     {
         originX = (boxcollider.bounds.center.x - boxcollider.bounds.extents.x);
         originY = (boxcollider.bounds.center.y + boxcollider.bounds.extents.y + decalageY);
-        step = speed * Time.deltaTime;
-        Movement();
+        step = speed * Time.deltaTime;     
+        if (!hugging)
+        { Movement(); }              
         PlayerDetector();
         StickThePlayer();
     }
@@ -60,11 +64,12 @@ public class MovingPlatformScript_FC : MonoBehaviour
         {
             StartCoroutine(MovementStop(stopDuration));
             goingStartPosition = false;
-            goingWayPoint = true;
+            goingWayPoint = true;            
         }
         else if (transform.position == startPosition && !stop && goingWayPoint) //Go WayPoint
         {
             StartCoroutine(MoveTowardPlace(wayPoint, step));
+            sp.flipX = false;
         }
         else if (transform.position == wayPoint && !stop && goingWayPoint) //Reach WayPoint
         {
@@ -75,12 +80,17 @@ public class MovingPlatformScript_FC : MonoBehaviour
         else if (transform.position == wayPoint && !stop && goingStartPosition) //Go StartPosition
         {
             StartCoroutine(MoveTowardPlace(startPosition, step));
+            sp.flipX = true;
         }
     }
     IEnumerator MoveTowardPlace(Vector2 direction, float speed)
     {
         yield return new WaitForSeconds(0.01f);
-        if (!stop)
+        if (hugging)
+        {
+            StartCoroutine(MoveTowardPlace(direction, speed));
+        }
+        else if (!stop)
         {
             transform.position = Vector2.MoveTowards(transform.position, direction, speed);
             StartCoroutine(MoveTowardPlace(direction, speed));
