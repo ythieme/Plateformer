@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: ae2126f5953044142a159a19b062729f
+guid: 8dea063565cdada41824805503a554a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8733865021500178008
-    second: "sprites_d\xE9gat_0"
+      213: -2715555014347228405
+    second: plateforme_exterieur_0
   - first:
-      213: 5260115873374043840
-    second: "sprites_d\xE9gat_1"
+      213: -7866363157296907641
+    second: plateforme_exterieur_1
   - first:
-      213: 2895968680700476944
-    second: "sprites_d\xE9gat_2"
-  - first:
-      213: -588496038196395359
-    second: "sprites_d\xE9gat_3"
+      213: 4418881861866241475
+    second: plateforme_exterieur_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,85 +95,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "sprites_d\xE9gat_0"
+      name: plateforme_exterieur_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a1c54579041bc680800000000000000
-      internalID: -8733865021500178008
+      spriteID: b0b7dc12a19605ad0800000000000000
+      internalID: -2715555014347228405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sprites_d\xE9gat_1"
+      name: plateforme_exterieur_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 32
         y: 0
-        width: 27
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ce7add748faff840800000000000000
-      internalID: 5260115873374043840
+      spriteID: 78af81fd26015d290800000000000000
+      internalID: -7866363157296907641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "sprites_d\xE9gat_2"
+      name: plateforme_exterieur_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 64
         y: 0
-        width: 27
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01efecdeb2c803820800000000000000
-      internalID: 2895968680700476944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "sprites_d\xE9gat_3"
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 0
-        width: 27
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a24493a8fd35d7f0800000000000000
-      internalID: -588496038196395359
+      spriteID: 3cd34f024a5035d30800000000000000
+      internalID: 4418881861866241475
       vertices: []
       indices: 
       edges: []

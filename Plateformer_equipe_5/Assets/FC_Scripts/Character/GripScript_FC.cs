@@ -22,8 +22,11 @@ public class GripScript_FC : MonoBehaviour
     public float gripJump;
     public float gripForward;
 
+    public Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         isClimbing = false;
         decalageY = 0.04f;
         decalageX = 0.01f;
@@ -76,7 +79,8 @@ public class GripScript_FC : MonoBehaviour
         if (LateralDetector() && isClimbing == false)
         {
             isClimbing = true;
-
+            anim.SetBool("is Climbing", true);
+            StartCoroutine(Anim());
             StartCoroutine("GetOnThePlatform");
         }
         else if (!LateralDetector() && isClimbing == true)
@@ -95,6 +99,12 @@ public class GripScript_FC : MonoBehaviour
         }
     }
 
+    IEnumerator Anim()
+    {
+        yield return new WaitForSeconds(0.02f);
+        anim.SetBool("is Climbing", false);
+    }
+
     IEnumerator GetOnThePlatform()
     {
         yield return new WaitForSeconds(0.01f);
@@ -111,6 +121,7 @@ public class GripScript_FC : MonoBehaviour
         else 
         {
             movement.isJumping = false;
+            anim.SetBool("is jumping", false);
         }
     }        
 }
