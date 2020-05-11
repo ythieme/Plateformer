@@ -8,9 +8,6 @@ TextureImporter:
   - first:
       213: -7294952416405981078
     second: "sprites_pench\xE9e_1"
-  - first:
-      213: -2686170382729810783
-    second: "sprites_pench\xE9e_0"
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -103,7 +100,7 @@ TextureImporter:
         width: 25
         height: 22
       alignment: 9
-      pivot: {x: 0, y: 0.78}
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -124,7 +121,7 @@ TextureImporter:
         width: 25
         height: 22
       alignment: 9
-      pivot: {x: 0, y: 0.78}
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

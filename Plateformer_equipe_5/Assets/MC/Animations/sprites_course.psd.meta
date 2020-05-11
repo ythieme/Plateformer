@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: ecd57fc2f0aa5a64c867f96a2b3d6153
+guid: b5a50331d0a2ae9439b1ecb6f4caf2c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 725197577016603689
-    second: sprites_course_gauche_0
+      213: -1608897170304467029
+    second: sprites_course_0
   - first:
-      213: 1321632038797253522
-    second: sprites_course_gauche_1
+      213: 4288206407582165592
+    second: sprites_course_1
   - first:
-      213: -9161079017543798134
-    second: sprites_course_gauche_2
+      213: -4716482052504392206
+    second: sprites_course_2
   - first:
-      213: 2452732999406539104
-    second: sprites_course_gauche_3
+      213: -6839916050875750441
+    second: sprites_course_3
   - first:
-      213: 7146962832110739653
-    second: sprites_course_gauche_4
+      213: -7734823385390123640
+    second: sprites_course_4
   - first:
-      213: -1430993362590664444
-    second: sprites_course_gauche_5
+      213: 7455323468361669880
+    second: sprites_course_5
   - first:
-      213: 1241092490814657147
-    second: sprites_course_gauche_6
+      213: -8812966199529936387
+    second: sprites_course_6
   - first:
-      213: 4685994391333889550
-    second: sprites_course_gauche_7
+      213: -7982623963946744450
+    second: sprites_course_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,169 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprites_course_gauche_0
+      name: sprites_course_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9247c02aa5b601a00800000000000000
-      internalID: 725197577016603689
+      spriteID: baffed34c8c0ca9e0800000000000000
+      internalID: -1608897170304467029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_1
+      name: sprites_course_1
       rect:
         serializedVersion: 2
         x: 25
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29b19444651675210800000000000000
-      internalID: 1321632038797253522
+      spriteID: 85a2d7ff105c28b30800000000000000
+      internalID: 4288206407582165592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_2
+      name: sprites_course_2
       rect:
         serializedVersion: 2
         x: 50
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a827408cb2f4dd080800000000000000
-      internalID: -9161079017543798134
+      spriteID: 2fd68feef80bb8eb0800000000000000
+      internalID: -4716482052504392206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_3
+      name: sprites_course_3
       rect:
         serializedVersion: 2
         x: 75
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0615186faabd90220800000000000000
-      internalID: 2452732999406539104
+      spriteID: 7d7ee06579cb311a0800000000000000
+      internalID: -6839916050875750441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_4
+      name: sprites_course_4
       rect:
         serializedVersion: 2
         x: 100
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c061ee54dc1f2360800000000000000
-      internalID: 7146962832110739653
+      spriteID: 885ff61ac1368a490800000000000000
+      internalID: -7734823385390123640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_5
+      name: sprites_course_5
       rect:
         serializedVersion: 2
         x: 125
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40977d25e17142ce0800000000000000
-      internalID: -1430993362590664444
+      spriteID: 8fc9459c131a67760800000000000000
+      internalID: 7455323468361669880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_6
+      name: sprites_course_6
       rect:
         serializedVersion: 2
         x: 150
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7299687b0f393110800000000000000
-      internalID: 1241092490814657147
+      spriteID: df96e734fed02b580800000000000000
+      internalID: -8812966199529936387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprites_course_gauche_7
+      name: sprites_course_7
       rect:
         serializedVersion: 2
         x: 175
         y: 0
         width: 25
         height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e06edea421ff70140800000000000000
-      internalID: 4685994391333889550
+      spriteID: e750f6d6cc5083190800000000000000
+      internalID: -7982623963946744450
       vertices: []
       indices: 
       edges: []
