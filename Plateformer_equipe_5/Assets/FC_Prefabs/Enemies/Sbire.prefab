@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6627430096462673144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1554294, y: 2.5038111, z: -1.5977397}
+  m_LocalPosition: {x: -2.1554294, y: 2.5038111, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1101411491}
@@ -170,7 +170,7 @@ MonoBehaviour:
   sp: {fileID: 0}
   wayPoint: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
-  speed: 0.0035
+  speed: 0.5
   stopDuration: 1.5
 --- !u!114 &1095945687
 MonoBehaviour:

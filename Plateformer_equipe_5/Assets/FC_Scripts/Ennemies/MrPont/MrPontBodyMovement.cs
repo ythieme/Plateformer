@@ -14,6 +14,7 @@ public class MrPontBodyMovement : MonoBehaviour
     public float maxGap;
     public float minGap;
     public float speed;
+    float step;
     float playerHeight;
 
     void Start()
@@ -24,6 +25,7 @@ public class MrPontBodyMovement : MonoBehaviour
     }
     void Update()
     {
+        step = speed * Time.deltaTime;
         playerHeight = playerPosition.position.y;
         heightDifference = new Vector2(0, playerHeight - transform.position.y);
         direction = new Vector2(0, transform.localPosition.y + heightDifference.y);
@@ -34,7 +36,7 @@ public class MrPontBodyMovement : MonoBehaviour
         if (!((transform.position.y < minHeight || transform.position.y == minHeight) && heightDifference.y < 0) &&
             !((transform.position.y > maxHeight || transform.position.y == maxHeight) && heightDifference.y > 0))
         {
-            transform.localPosition = Vector2.MoveTowards(transform.localPosition, direction, speed);
+            transform.localPosition = Vector2.MoveTowards(transform.localPosition, direction, step);
         }        
     }    
 }

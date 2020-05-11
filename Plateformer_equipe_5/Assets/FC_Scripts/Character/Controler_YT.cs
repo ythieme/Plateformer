@@ -76,6 +76,7 @@ public class Controler_YT : MonoBehaviour
     [SerializeField] float slideCooldownDuration;
     [System.NonSerialized] public bool isSliding;
 
+    [Header("Animation")]
     public Animator anim;
 
     bool jumpInputMaintain;
@@ -162,13 +163,12 @@ public class Controler_YT : MonoBehaviour
         //Horizontal Speed Calculation
         if (!isPushing)
         {
-            horizontalSpeed = (walkingVelocity + runningVelocity + slidingVelocity + movingPlatformXVelocity) * velocityMultiplicator * wallCollision.wallContact;
+            horizontalSpeed = (walkingVelocity + runningVelocity + slidingVelocity + movingPlatformXVelocity * 63f) * velocityMultiplicator * wallCollision.wallContact;
         }
         else
         {
             horizontalSpeed = push.pushVelocity;
-        }      
-
+        }
         playerMove = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
         transform.Translate(playerMove, Space.World);
     }
@@ -181,12 +181,14 @@ public class Controler_YT : MonoBehaviour
             MoveFreeze(0.2f);
             waitBeforeStand = true;
             isCrouching = true;
+            anim.SetBool("is crouching",true);
             StartCoroutine("Crouch2StandCooldown");
         }
         else if (crouchKeyDown && IsGrounded() && isRunning) //Lancement du Slide
         {
             waitBeforeStand = true;
             isSliding = true;
+            anim.SetBool("is sliding", true);
         }
         else if ((!crouchKey || crouchKeyUp) && IsGrounded() && !isRunning && isCrouching) //Relâchement bouton pendant accroupissement
         {
@@ -194,6 +196,7 @@ public class Controler_YT : MonoBehaviour
             {
                 MoveFreeze(0.1f);
                 isCrouching = false;
+                anim.SetBool("is crouching", false);
                 transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + 0.08f);
                 SlideEndCooldown();
             }
@@ -245,8 +248,10 @@ public class Controler_YT : MonoBehaviour
             {
                 StopCoroutine("SlideDeceleration");
                 isSliding = false;
+                anim.SetBool("is sliding", false);
                 isRunning = false;
                 isCrouching = true;
+                anim.SetBool("is crouching", true);
                 slidingVelocity = 0f;
                 velocityMultiplicator = 1f;
 
@@ -259,6 +264,7 @@ public class Controler_YT : MonoBehaviour
                 slidingVelocity = 0f;
                 velocityMultiplicator = 1f;
                 isSliding = false;
+                anim.SetBool("is sliding", false);
 
                 SlideEndCooldown();
             }
@@ -307,6 +313,7 @@ public class Controler_YT : MonoBehaviour
             spriteRenderer.sprite = idleSprite;
             transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + 0.08f);
             isCrouching = false;
+            anim.SetBool("is crouching", false);
         }
         else if (isSliding || isCrouching)
         {
@@ -417,7 +424,7 @@ public class Controler_YT : MonoBehaviour
     {
         if (IsGrounded())
         {
-            verticalSpeed = movingPlatformYVelocity;
+            verticalSpeed = movingPlatformYVelocity * 63f;
         }
         else if (!IsGrounded())
         {
@@ -453,6 +460,7 @@ public class Controler_YT : MonoBehaviour
     void EnterJump()
     {
         isJumping = true;
+        anim.SetBool("is jumping", true);
         jumpInputMaintain = true;
 
         StartCoroutine("JumpInputCheck");
@@ -505,6 +513,7 @@ public class Controler_YT : MonoBehaviour
         else if (IsGrounded() && isJumping == true)
         {
             isJumping = false;
+            anim.SetBool("is jumping", false);
             jumpGravityAllowed = false;
         }
     }
