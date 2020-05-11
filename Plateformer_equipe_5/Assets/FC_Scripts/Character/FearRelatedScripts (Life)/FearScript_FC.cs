@@ -71,7 +71,7 @@ public class FearScript_FC : MonoBehaviour
 
     public void Knockback(float power, int goingLeft)
     {
-        controler.velocityMultiplicator = 0;
+        controler.velocityMultiplicator = 0.2f;
         knockbacked = true;
         StartCoroutine(KnockBackCooldown(power, goingLeft));
     }
@@ -82,7 +82,7 @@ public class FearScript_FC : MonoBehaviour
         coroutineCount += 10 * Time.deltaTime;
         if (knockbacked && coroutineCount<= 1)
         {            
-            position.Translate(new Vector2(((knockCurve.Evaluate(coroutineCount) * power )* goingLeft),
+            position.Translate(new Vector2(((knockCurve.Evaluate(coroutineCount) * power ) * goingLeft),
                  knockCurve.Evaluate(coroutineCount)* power) * Time.deltaTime);
             StartCoroutine(KnockBackCooldown(power, goingLeft));
         }
@@ -92,5 +92,5 @@ public class FearScript_FC : MonoBehaviour
             controler.velocityMultiplicator = 1;
             coroutineCount = 0;
         }
-    }    
+    }
 }

@@ -12,6 +12,7 @@ public class BoxPush_FC : MonoBehaviour
     public float pushVelocity;
     public float pushSpeed;
     public Controler_YT controler;
+    public PushableBox pushableBox;
 
     public GameObject box;
     RaycastHit2D hit;
@@ -33,7 +34,7 @@ public class BoxPush_FC : MonoBehaviour
     {
         RayFlip();
 
-        if (pushKey) //Debug
+        if (pushKey)
         {
             hit = Physics2D.Raycast(transform.position, Vector2.right * direction, distance, boxLayerMask);
 
@@ -43,8 +44,12 @@ public class BoxPush_FC : MonoBehaviour
         if (hit.collider != null && pushKey && controler.IsGrounded())
         {
             box = hit.collider.gameObject;
-            box.GetComponent<Transform>().Translate(new Vector2(pushVelocity * 1.001f, 0), Space.World);
-            controler.isPushing = true;
+            pushableBox = box.GetComponent<PushableBox>();
+            if (!pushableBox.isBesideWall)
+            {
+                box.GetComponent<Transform>().Translate(new Vector2(pushVelocity * 1.001f, 0), Space.World);
+                controler.isPushing = true;
+            }            
         }
         else controler.isPushing = false;
     }
@@ -61,6 +66,4 @@ public class BoxPush_FC : MonoBehaviour
         }
         else { }
     }
-
-
 }

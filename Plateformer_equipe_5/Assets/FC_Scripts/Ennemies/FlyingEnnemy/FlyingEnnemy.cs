@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FlyingEnnemy : MonoBehaviour
 {
+    public FearScript_FC fear;
+
     public Transform player;
+    Vector2 startPosition;
     public EnemyDamageProcess damage;
     public bool detecting;
 
@@ -14,11 +17,17 @@ public class FlyingEnnemy : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        startPosition = transform.position;
         damage = GetComponent<EnemyDamageProcess>();
+        fear = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<FearScript_FC>();
     }
     void Update()
     {
         step = speed * Time.deltaTime;
+        if (fear.fear < 0 || fear.fear == 0)
+        {
+            transform.Translate(new Vector3(startPosition.x - transform.position.x, startPosition.y - transform.position.y));
+        }
     }
 
     public void EnemyMoveStart()
