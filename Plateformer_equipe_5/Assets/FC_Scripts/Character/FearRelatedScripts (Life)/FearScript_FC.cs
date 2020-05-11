@@ -8,6 +8,9 @@ public class FearScript_FC : MonoBehaviour
     public GameObject character;
     public Transform position;
 
+    [Header("Animation")]
+    public Animator anim;
+
     public int maxfear;
     public int fear;
     public float noDamageTime;
@@ -23,6 +26,7 @@ public class FearScript_FC : MonoBehaviour
     {
         character = GameObject.FindGameObjectWithTag("Player");
         controler = character.GetComponent<Controler_YT>();
+        anim = character.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -58,10 +62,17 @@ public class FearScript_FC : MonoBehaviour
         if (!noDamage)
         {
             fear -= damageValue;
+            anim.SetBool("is Hurted", true);
+            StartCoroutine(AnimSetOff());
             StartCoroutine(InvincibilityFrames(noDamageTime));
         }        
     }
 
+    IEnumerator AnimSetOff()
+    {
+        yield return new WaitForSeconds(0.2f);
+        anim.SetBool("is Hurted", false);
+    }
     IEnumerator InvincibilityFrames(float noDamageTime)
     {
         noDamage = true;
