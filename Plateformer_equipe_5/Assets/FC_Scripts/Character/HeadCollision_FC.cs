@@ -17,28 +17,28 @@ public class HeadCollision_FC : MonoBehaviour
 
     void Start()
     {
-        decalage = 0.02f;
-        decalageX = 0.07f;
+        decalage = 0.01f;
+        decalageX = 0.035f;
         lateralDetectorLength = 0;
         headHasTouched = false;
     }
         
     void Update()
     {          
-        lateralDetectorLength = character.size.x - decalageX;
+        lateralDetectorLength = character.size.x - decalageX *2;
         
         lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x) - decalageX,
             character.bounds.center.y + character.bounds.extents.y + decalage);
 
         CeilingContact();
-        Debug.DrawRay(lateralDetectorOrigin,
-            Vector2.left * (lateralDetectorLength * 2), Color.blue);
+        Debug.DrawLine(new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y),
+             new Vector2(lateralDetectorOrigin.x - lateralDetectorLength, lateralDetectorOrigin.y), Color.blue);
     }
 
     public RaycastHit2D TopDetector()
     {
-        RaycastHit2D raycastHit = Physics2D.Raycast(lateralDetectorOrigin,
-            Vector2.left, lateralDetectorLength, platformLayerMask);        
+        RaycastHit2D raycastHit = Physics2D.Linecast(new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y),
+             new Vector2(lateralDetectorOrigin.x - lateralDetectorLength, lateralDetectorOrigin.y), platformLayerMask);
 
         return raycastHit;
     }

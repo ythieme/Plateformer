@@ -20,7 +20,7 @@ public class LateralCollision_FC : MonoBehaviour
     {
         character = GetComponent<BoxCollider2D>();
         movement = GetComponent<Controler_YT>();
-        decalage = 0.08f;
+        decalage = 0.025f;
         goingLeft = -1;
         lateralDetectorLength = 0;
     }
@@ -28,7 +28,7 @@ public class LateralCollision_FC : MonoBehaviour
     void Update()
     {          
         GoingLeft();
-        lateralDetectorLength = character.size.y - decalage/2;
+        lateralDetectorLength = character.size.y - decalage * 2;
         
         lateralDetectorOrigin = new Vector2(character.bounds.center.x + (character.bounds.extents.x)* goingLeft,
             character.bounds.center.y - character.bounds.extents.y + decalage);

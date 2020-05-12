@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 3044463699600974603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.172, y: 1.168, z: -2.5}
-  m_LocalScale: {x: 2, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 3044463699579698039}
   - {fileID: 3044463699620425164}
@@ -184,6 +184,7 @@ MonoBehaviour:
   crouch: 120
   jump: 32
   run: 304
+  run2: 303
   doPush: 101
   controller: {fileID: 3044463699600974605}
   push: {fileID: 3044463699600974581}
@@ -200,8 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 3044463699600974604}
-  underRayLenght: 0.17
-  underRayPositionY: 0.26
+  underRayLenght: 0.09
+  underRayPositionY: 0.12
   underRayPositionX: 0.05
   collisionMask:
     serializedVersion: 2
@@ -312,6 +313,7 @@ MonoBehaviour:
   isClimbing: 0
   gripJump: 0
   gripForward: 0
+  anim: {fileID: 0}
 --- !u!114 &3044463699600974581
 MonoBehaviour:
   m_ObjectHideFlags: 0
