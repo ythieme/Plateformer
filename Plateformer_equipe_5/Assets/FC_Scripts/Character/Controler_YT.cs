@@ -19,7 +19,7 @@ public class Controler_YT : MonoBehaviour
     public GripScript_FC grip;
     public DontFallAnymore_TheScript dontFall;
 
-    [System.NonSerialized] public bool jumpKey, jumpKeyDown, jumpKeyUp, runKey, runKeyDown, runKeyUp,
+    [System.NonSerialized] public bool jumpKey, jumpKeyDown, jumpKeyUp, runKey, runKeyDown, runKeyUp, run2Key, run2KeyDown, run2KeyUp,
         crouchKey, crouchKeyDown, crouchKeyUp;
 
     //Cooldown (WaitForATime) Composents
@@ -121,7 +121,7 @@ public class Controler_YT : MonoBehaviour
         anim.SetFloat("Speed",Mathf.Abs(walkingVelocity));
 
         //Run Test
-        if (Input.GetAxis("Horizontal") != 0 && runKey && !isCrouching) isRunning = true;
+        if (Input.GetAxis("Horizontal") != 0 && (runKey || run2Key) && !isCrouching) isRunning = true;
         else
         {
             isRunning = false;
