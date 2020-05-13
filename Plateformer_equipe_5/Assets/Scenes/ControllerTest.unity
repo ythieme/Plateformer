@@ -13841,11 +13841,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hugger
       objectReference: {fileID: 0}
-    - target: {fileID: 7814173202046197249, guid: adfe407079f35cd4baa95d0f9e0e6367,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7814173202046197254, guid: adfe407079f35cd4baa95d0f9e0e6367,
         type: 3}
       propertyPath: m_LocalPosition.x
