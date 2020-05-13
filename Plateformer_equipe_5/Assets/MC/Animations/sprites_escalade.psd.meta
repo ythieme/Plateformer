@@ -9,8 +9,11 @@ TextureImporter:
       213: 1727745166519806609
     second: sprites_escalade_1
   - first:
-      213: -8952332739467853283
-    second: sprites_escalade_2
+      213: -175310863251101042
+    second: sprites_escalade_0
+  - first:
+      213: 7077169441717893703
+    second: sprites_escalade_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -72,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,17 +103,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
+        width: 27
         height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 1.275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e714276a1993a7910800000000000000
-      internalID: 1835843095832445310
+      spriteID: e8aa6aed2bb219df0800000000000000
+      internalID: -175310863251101042
       vertices: []
       indices: 
       edges: []
@@ -119,40 +122,19 @@ TextureImporter:
       name: sprites_escalade_1
       rect:
         serializedVersion: 2
-        x: 26
+        x: 27
         y: 0
-        width: 26
+        width: 27
         height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0, y: 1.275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19aafc0331f2af710800000000000000
-      internalID: 1727745166519806609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprites_escalade_2
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d124be01ecce2c380800000000000000
-      internalID: -8952332739467853283
+      spriteID: 74a38dc5c18273260800000000000000
+      internalID: 7077169441717893703
       vertices: []
       indices: 
       edges: []
