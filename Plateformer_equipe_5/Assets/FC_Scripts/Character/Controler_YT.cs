@@ -93,8 +93,8 @@ public class Controler_YT : MonoBehaviour
         gravity = 20f;
         acceleration = 0.5f;
         deceleration = -0.01f;
-        glideTime = 0.1f;
-        jumpStrength = 10;
+        glideTime = 0.14f;
+        jumpStrength = 5;
         slidingDecelaration = -0.002f;
         crouchSpeed = 1.5f;
         jumpFixMaxHeight = 0.8f;
@@ -483,15 +483,12 @@ public class Controler_YT : MonoBehaviour
     //Jump movement until highest point
     IEnumerator JumpMovement()
     {
-        Vector2 playerInput;
-        playerInput.y = Input.GetAxis("Jump");
-
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.001f);
         if (isJumping == true && jumpInputMaintain == true && 
             headCollision.headHasTouched == false)
         {
-            Vector3 arise = new Vector3(0, playerInput.y * jumpStrength, 0);
-            transform.Translate(arise * Time.deltaTime);
+            Vector3 arise = new Vector3(0,jumpStrength * Time.deltaTime, 0);
+            transform.Translate(arise);
 
             StartCoroutine("JumpMovement");
         }

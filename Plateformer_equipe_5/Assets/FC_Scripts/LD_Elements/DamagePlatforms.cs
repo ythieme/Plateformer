@@ -13,7 +13,7 @@ public class DamagePlatforms : MonoBehaviour
     {
         inInterval = false;
     }
-
+    
     private void Update()
     {
         if (!inInterval && giveDamage)
@@ -43,6 +43,6 @@ public class DamagePlatforms : MonoBehaviour
     {
         yield return new WaitForSeconds(damageInterval);
         inInterval = false;
-        fearScript.fear --;
+        fearScript.DealDamage(1);
     }
 }

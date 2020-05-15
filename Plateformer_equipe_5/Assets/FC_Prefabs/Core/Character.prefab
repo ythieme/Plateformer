@@ -243,7 +243,7 @@ MonoBehaviour:
   accelerationTimeEnd: 0.2
   walkSpeed: 2
   jumpFixMaxHeight: 0.8
-  jumpStrength: 10
+  jumpStrength: 5
   glideTime: 0.1
   slidingDecelaration: -0.001
   slidingVelocity: 0
@@ -351,7 +351,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.015000001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 1.275}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.23584905, y: 0.3207547}
     newSize: {x: 0.23584905, y: 0.3207547}
     adaptiveTilingThreshold: 0.5
