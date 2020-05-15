@@ -38,14 +38,14 @@ public class GripScript_FC : MonoBehaviour
 
     public void WallGripProcess()
     {
-        lateralDetectorLength = character.size.y - decalageY;
+        lateralDetectorLength = character.size.y - decalageY * 2;
 
         GoingLeft();
         lateralDetectorOrigin = new Vector2(character.bounds.center.x + (decalageX * goingLeft) + (character.bounds.extents.x) * goingLeft,
             character.bounds.center.y - character.bounds.extents.y + decalageY);
 
-        Debug.DrawRay(lateralDetectorOrigin,
-            Vector2.up * (lateralDetectorLength * 2), Color.red);
+        Debug.DrawLine(new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y),
+            new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y + lateralDetectorLength), Color.red);
 
         WallGrip();
     }
@@ -68,8 +68,8 @@ public class GripScript_FC : MonoBehaviour
 
     public RaycastHit2D LateralDetector()
     {
-        RaycastHit2D raycastHit = Physics2D.Raycast(lateralDetectorOrigin,
-            Vector2.up, lateralDetectorLength, grabablePlatforms);
+        RaycastHit2D raycastHit = Physics2D.Linecast(new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y),
+            new Vector2(lateralDetectorOrigin.x, lateralDetectorOrigin.y + lateralDetectorLength), grabablePlatforms);
 
         return raycastHit;
     }

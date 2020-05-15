@@ -10,8 +10,8 @@ public class DontFallAnymore_TheScript : MonoBehaviour
 
     bool playerIsInGround;
 
-    [SerializeField] float underRayLenght = 0.18f;
-    [SerializeField] float underRayPositionY = 0.155f;
+    [SerializeField] float underRayLenght = 0.09f;
+    [SerializeField] float underRayPositionY = 0.13f;
     [SerializeField] float underRayPositionX = 0.09f;
 
     float crouchDecalageY = 0f;
