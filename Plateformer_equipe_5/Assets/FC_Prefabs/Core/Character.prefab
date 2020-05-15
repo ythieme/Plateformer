@@ -239,12 +239,12 @@ MonoBehaviour:
   decalage: 0
   acceleration: 0.5
   deceleration: -0.01
-  maxSpeed: 1.5
+  maxSpeed: 1
   accelerationTimeEnd: 0.2
   walkSpeed: 2
   jumpFixMaxHeight: 0.8
-  jumpStrength: 5
-  glideTime: 0.1
+  jumpStrength: 3.5
+  glideTime: 0.17
   slidingDecelaration: -0.001
   slidingVelocity: 0
   slideCooldown: 0

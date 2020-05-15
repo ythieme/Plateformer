@@ -90,16 +90,16 @@ public class Controler_YT : MonoBehaviour
         anim = GetComponent<Animator>();
 
         movingPlatformXVelocity = 0f;
-        gravity = 20f;
+        gravity = 15f;
         acceleration = 0.5f;
         deceleration = -0.01f;
-        glideTime = 0.14f;
-        jumpStrength = 5;
-        slidingDecelaration = -0.002f;
+        glideTime = 0.17f;
+        jumpStrength = 3.5f;
+        slidingDecelaration = -0.0018f;
         crouchSpeed = 1.5f;
         jumpFixMaxHeight = 0.8f;
         curSpeed = 0;
-        maxSpeed = 1.5f;
+        maxSpeed = 1f;
         walkSpeed = 2f;
         decalage = 0.07f;
     }
@@ -469,7 +469,7 @@ public class Controler_YT : MonoBehaviour
     //Check if the Jump Input is maintained by the player
     IEnumerator JumpInputCheck()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.03f);
         if (jumpInputMaintain == true && jumpKey)
         {
             StartCoroutine("JumpInputCheck");

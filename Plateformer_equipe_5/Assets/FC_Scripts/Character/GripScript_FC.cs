@@ -32,7 +32,7 @@ public class GripScript_FC : MonoBehaviour
         decalageX = 0.01f;
         goingLeft = -1;
         lateralDetectorLength = 0;
-        gripJump = 3f;
+        gripJump = 4f;
         gripForward = 1f;
     }
 
