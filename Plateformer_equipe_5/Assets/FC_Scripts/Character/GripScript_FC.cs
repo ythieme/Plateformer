@@ -28,7 +28,7 @@ public class GripScript_FC : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         isClimbing = false;
-        decalageY = 0.04f;
+        decalageY = 0.06f;
         decalageX = 0.01f;
         goingLeft = -1;
         lateralDetectorLength = 0;
@@ -101,7 +101,7 @@ public class GripScript_FC : MonoBehaviour
 
     IEnumerator Anim()
     {
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.5f);
         anim.SetBool("is Climbing", false);
     }
 

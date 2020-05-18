@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: 7077169441717893703
     second: sprites_escalade_1
+  - first:
+      213: -8952332739467853283
+    second: sprites_escalade_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -94,6 +97,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -103,10 +118,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
-        height: 30
-      alignment: 9
-      pivot: {x: 0, y: 1.275}
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -122,12 +137,12 @@ TextureImporter:
       name: sprites_escalade_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 32
         y: 0
-        width: 27
-        height: 30
+        width: 21
+        height: 28
       alignment: 9
-      pivot: {x: 0, y: 1.275}
+      pivot: {x: 0.70802236, y: 0.6288834}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,6 +150,27 @@ TextureImporter:
       bones: []
       spriteID: 74a38dc5c18273260800000000000000
       internalID: 7077169441717893703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_escalade_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 19
+        height: 30
+      alignment: 9
+      pivot: {x: 0.8298846, y: 0.7564103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d124be01ecce2c380800000000000000
+      internalID: -8952332739467853283
       vertices: []
       indices: 
       edges: []

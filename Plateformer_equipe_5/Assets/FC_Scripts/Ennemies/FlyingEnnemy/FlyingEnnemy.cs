@@ -32,16 +32,22 @@ public class FlyingEnnemy : MonoBehaviour
 
     public void EnemyMoveStart()
     {
-        StartCoroutine(MoveTowardPlayer());
+        if (!(fear.fear < 0 || fear.fear == 0))
+        {
+            StartCoroutine(MoveTowardPlayer());
+        }            
     }
 
     IEnumerator MoveTowardPlayer()
     {
         yield return new WaitForSeconds(0.01f);
-        if (detecting)
+        if (!(fear.fear < 0 || fear.fear == 0))
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, step);
-            StartCoroutine(MoveTowardPlayer());
-        }        
+            if (detecting)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, step);
+                StartCoroutine(MoveTowardPlayer());
+            }        
+        } 
     }    
 }
