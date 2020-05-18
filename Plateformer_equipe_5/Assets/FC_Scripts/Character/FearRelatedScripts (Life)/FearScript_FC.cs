@@ -54,13 +54,11 @@ public class FearScript_FC : MonoBehaviour
     }
 
     IEnumerator DeadState()
-    {
-        isDead = true;
+    {        
         anim.SetBool("is jumping", false);
         controler.enabled = false;
         yield return new WaitForSeconds(1.5f);
-        fear = maxfear;
-        checkpoint.Death();
+        isDead = true;
     }
     
     public void DealDamage(int damageValue)

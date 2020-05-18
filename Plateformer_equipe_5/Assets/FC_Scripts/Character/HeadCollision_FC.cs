@@ -18,7 +18,7 @@ public class HeadCollision_FC : MonoBehaviour
     void Start()
     {
         decalage = 0.01f;
-        decalageX = 0.035f;
+        decalageX = 0.045f;
         lateralDetectorLength = 0;
         headHasTouched = false;
     }

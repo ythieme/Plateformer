@@ -5,35 +5,35 @@ using UnityEngine;
 public class GripScript_FC : MonoBehaviour
 {
     public BoxCollider2D character;
+    public Animator anim;
+    public AnimationCurve riseCurve;
 
     public LayerMask grabablePlatforms;
     Vector2 lateralDetectorOrigin;
     public float lateralDetectorLength;
-    public float decalageX;
+    public float decalageX = 0.02f;
     public float decalageY;
 
     public Controler_YT movement;
 
     int goingLeft;
     public bool isClimbing;
+    bool animating;
 
     //Grip Parameters
     [SerializeField]
-    public float gripJump;
-    public float gripForward;
+    public float gripJump = 5f;
+    public float gripForward = 2f;
 
-    public Animator anim;
+    float coroutineCount;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         isClimbing = false;
         decalageY = 0.06f;
-        decalageX = 0.01f;
         goingLeft = -1;
         lateralDetectorLength = 0;
-        gripJump = 4f;
-        gripForward = 1f;
     }
 
     public void WallGripProcess()
@@ -76,12 +76,13 @@ public class GripScript_FC : MonoBehaviour
 
     public void WallGrip()
     {
-        if (LateralDetector() && isClimbing == false)
+        if (LateralDetector() && isClimbing == false && movement.isJumping && !movement.IsGrounded())
         {
             isClimbing = true;
-            anim.SetBool("is Climbing", true);
-            StartCoroutine(Anim());
-            StartCoroutine("GetOnThePlatform");
+            movement.enabled = false;
+            movement.enabled = true;
+            if (!animating) StartCoroutine(Anim());
+            StartCoroutine("GetOnThePlatform2");
         }
         else if (!LateralDetector() && isClimbing == true)
         {
@@ -101,8 +102,12 @@ public class GripScript_FC : MonoBehaviour
 
     IEnumerator Anim()
     {
-        yield return new WaitForSeconds(0.5f);
+        animating = true;
+        anim.SetBool("is Climbing", true);
+        anim.SetBool("is jumping", false);
+        yield return new WaitForSeconds(0.3f);
         anim.SetBool("is Climbing", false);
+        animating = false;
     }
 
     IEnumerator GetOnThePlatform()
@@ -123,5 +128,22 @@ public class GripScript_FC : MonoBehaviour
             movement.isJumping = false;
             anim.SetBool("is jumping", false);
         }
-    }        
+    }
+
+    IEnumerator GetOnThePlatform2()
+    {
+        yield return new WaitForSeconds(0.01f);
+        coroutineCount += 10 * Time.deltaTime;
+        if (coroutineCount <= 1)
+        {
+            transform.Translate(new Vector2(riseCurve.Evaluate(coroutineCount) * gripForward * goingLeft, riseCurve.Evaluate(coroutineCount) * gripJump) * Time.deltaTime);
+            StartCoroutine("GetOnThePlatform2");
+        }        
+        else
+        {
+            movement.isJumping = false;
+            anim.SetBool("is jumping", false);
+            coroutineCount = 0;
+        }
+    }
 }

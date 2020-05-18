@@ -16,11 +16,20 @@ public class PlayerCheckpointManager : MonoBehaviour
         lastCheckpoint = transform.position;
         fear = GameObject.Find("FearObject").GetComponent<FearScript_FC>();
     }
+    
+    void Update()
+    {
+        if (fear.fear <= 0 && fear.isDead)
+        {
+            Death();
+        }
+    }            
 
     public void Death()
     {
         controler.enabled = false;
         character.transform.Translate(new Vector3(lastCheckpoint.x - character.transform.position.x, lastCheckpoint.y - character.transform.position.y));
         controler.enabled = true;
+        fear.fear = fear.maxfear;
     }
 }
