@@ -6,12 +6,15 @@ public class FearScript_FC : MonoBehaviour
 {
     public Controler_YT controler;
     public PlayerCheckpointManager checkpoint;
+    public HealthBarScript_FC healthBar;
+    
+
     public GameObject character;
     public Transform position;
 
     [Header("Animation")]
     public Animator anim;
-
+    public Animator deathtransition;
     public int maxfear;
     public int fear;
     public float noDamageTime;
@@ -25,6 +28,7 @@ public class FearScript_FC : MonoBehaviour
 
     private void Start()
     {
+        healthBar.SetMaxHealth(maxfear);
         character = GameObject.FindGameObjectWithTag("Player");
         controler = character.GetComponent<Controler_YT>();
         anim = character.GetComponent<Animator>();
@@ -34,6 +38,7 @@ public class FearScript_FC : MonoBehaviour
     {
         position = character.transform;
         anim.SetInteger("Fear", fear);
+        healthBar.SetHealth(fear);
     }
     void FixedUpdate()
     {
@@ -57,8 +62,13 @@ public class FearScript_FC : MonoBehaviour
     {        
         anim.SetBool("is jumping", false);
         controler.enabled = false;
-        yield return new WaitForSeconds(1.5f);
+        deathtransition.SetTrigger("StartFade");
+        yield return new WaitForSeconds(2);
+        deathtransition.SetTrigger("EndFade");
         isDead = true;
+        yield return new WaitForSeconds(1);
+        deathtransition.ResetTrigger("EndFade");
+        deathtransition.ResetTrigger("StartFade");
     }
     
     public void DealDamage(int damageValue)
