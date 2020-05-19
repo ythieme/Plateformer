@@ -41,6 +41,5 @@ public class FallingPlatforms : MonoBehaviour
         spriteRenderer.enabled = true;
         parentBoxCollider.enabled = true;
         thisBoxCollider.enabled = true;
-        Debug.Log("Ajouter animation réapparition");
     }
 }

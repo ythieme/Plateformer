@@ -10,9 +10,11 @@ public class FlyingEnnemy : MonoBehaviour
     Vector2 startPosition;
     public EnemyDamageProcess damage;
     public bool detecting;
+    bool stop;
 
     public float speed;    
-    float step;   
+    public float timeToStop;
+    float step;
 
     private void Start()
     {
@@ -32,16 +34,38 @@ public class FlyingEnnemy : MonoBehaviour
 
     public void EnemyMoveStart()
     {
-        StartCoroutine(MoveTowardPlayer());
+        if (!(fear.fear < 0 || fear.fear == 0))
+        {
+            StartCoroutine(MoveTowardPlayer());
+        }            
     }
 
     IEnumerator MoveTowardPlayer()
     {
         yield return new WaitForSeconds(0.01f);
-        if (detecting)
+        if (!(fear.fear < 0 || fear.fear == 0))
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, step);
-            StartCoroutine(MoveTowardPlayer());
+            if (detecting && !stop)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, step);
+                StartCoroutine(MoveTowardPlayer());
+            }        
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(StopFollowing());
         }        
-    }    
+    }
+
+    IEnumerator StopFollowing()
+    {
+        stop = true;
+        yield return new WaitForSeconds(timeToStop);
+        stop = false;
+        EnemyMoveStart();
+    }
 }

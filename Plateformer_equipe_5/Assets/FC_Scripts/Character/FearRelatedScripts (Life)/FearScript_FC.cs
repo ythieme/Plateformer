@@ -5,6 +5,7 @@ using UnityEngine;
 public class FearScript_FC : MonoBehaviour
 {
     public Controler_YT controler;
+    public PlayerCheckpointManager checkpoint;
     public GameObject character;
     public Transform position;
 
@@ -27,10 +28,12 @@ public class FearScript_FC : MonoBehaviour
         character = GameObject.FindGameObjectWithTag("Player");
         controler = character.GetComponent<Controler_YT>();
         anim = character.GetComponent<Animator>();
+        checkpoint = character.GetComponentInChildren<PlayerCheckpointManager>();
     }
     private void Update()
     {
         position = character.transform;
+        anim.SetInteger("Fear", fear);
     }
     void FixedUpdate()
     {
@@ -51,10 +54,11 @@ public class FearScript_FC : MonoBehaviour
     }
 
     IEnumerator DeadState()
-    {
+    {        
+        anim.SetBool("is jumping", false);
+        controler.enabled = false;
+        yield return new WaitForSeconds(1.5f);
         isDead = true;
-        yield return new WaitForSeconds(0.1f);
-        fear = maxfear;
     }
     
     public void DealDamage(int damageValue)

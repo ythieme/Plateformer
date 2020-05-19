@@ -64,11 +64,14 @@ public class Controler_YT : MonoBehaviour
     [SerializeField] float walkSpeed;
                 
     [Header("Jump")] //Variables Jump
-    [SerializeField] float jumpFixMaxHeight;
+    [SerializeField] public float jumpFixMaxHeight;
     [SerializeField] float jumpStrength;
-    [SerializeField] float glideTime;
+    [SerializeField] float glideTime;    
     [System.NonSerialized] public bool highestPointReached, isJumping, jumpGravityAllowed;
-        
+    
+    float jumpHeight;
+    public float jumpMaxHeight;
+
     [Header("Slide Parameters")] //Slide parameters    
     [SerializeField] float slidingDecelaration;
     [SerializeField] float slidingVelocity;
@@ -80,9 +83,6 @@ public class Controler_YT : MonoBehaviour
     public Animator anim;
 
     bool jumpInputMaintain;
-
-    float jumpHeight;
-    float jumpMaxHeight;
 
     void Start()
     {

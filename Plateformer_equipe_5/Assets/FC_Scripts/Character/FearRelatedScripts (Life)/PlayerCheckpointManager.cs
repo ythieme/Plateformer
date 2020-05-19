@@ -19,16 +19,17 @@ public class PlayerCheckpointManager : MonoBehaviour
     
     void Update()
     {
-        if (fear.fear <= 0)
+        if (fear.fear <= 0 && fear.isDead)
         {
             Death();
         }
-    }
+    }            
 
-    void Death()
+    public void Death()
     {
         controler.enabled = false;
         character.transform.Translate(new Vector3(lastCheckpoint.x - character.transform.position.x, lastCheckpoint.y - character.transform.position.y));
         controler.enabled = true;
+        fear.fear = fear.maxfear;
     }
 }
