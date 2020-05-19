@@ -6,6 +6,8 @@ public class FearScript_FC : MonoBehaviour
 {
     public Controler_YT controler;
     public PlayerCheckpointManager checkpoint;
+    public HealthBarScript_FC healthBar;
+
     public GameObject character;
     public Transform position;
 
@@ -25,6 +27,7 @@ public class FearScript_FC : MonoBehaviour
 
     private void Start()
     {
+        healthBar.SetMaxHealth(maxfear);
         character = GameObject.FindGameObjectWithTag("Player");
         controler = character.GetComponent<Controler_YT>();
         anim = character.GetComponent<Animator>();
@@ -34,6 +37,7 @@ public class FearScript_FC : MonoBehaviour
     {
         position = character.transform;
         anim.SetInteger("Fear", fear);
+        healthBar.SetHealth(fear);
     }
     void FixedUpdate()
     {
