@@ -13,6 +13,12 @@ public class FearScript_FC : MonoBehaviour
     public GameObject character;
     public Transform position;
 
+    [Header("Screen Shake")]
+    public float magnitude;
+    public float roughness;
+    public float fadeInTime;
+    public float fadeOutTime;
+
     [Header("Animation")]
     public Animator anim;
     public Animator deathtransition;
@@ -77,7 +83,7 @@ public class FearScript_FC : MonoBehaviour
         if (!noDamage)
         {
             fear -= damageValue;
-            CameraShaker.Instance.ShakeOnce(8f, 6f, 0.5f, 0.5f);
+            CameraShaker.Instance.ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime);
             anim.SetBool("is Hurted", true);
             StartCoroutine(AnimSetOff());
             StartCoroutine(InvincibilityFrames(noDamageTime));
