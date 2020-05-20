@@ -13,7 +13,7 @@ public class FearScript_FC : MonoBehaviour
     public GameObject character;
     public Transform position;
 
-    [Header("Screen Shake")]
+    [Header("Screen Shake when taking damages")]
     public float magnitude;
     public float roughness;
     public float fadeInTime;
