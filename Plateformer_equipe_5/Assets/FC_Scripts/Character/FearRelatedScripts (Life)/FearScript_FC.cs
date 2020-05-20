@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class FearScript_FC : MonoBehaviour
 {
@@ -76,6 +77,7 @@ public class FearScript_FC : MonoBehaviour
         if (!noDamage)
         {
             fear -= damageValue;
+            CameraShaker.Instance.ShakeOnce(8f, 6f, 0.5f, 0.5f);
             anim.SetBool("is Hurted", true);
             StartCoroutine(AnimSetOff());
             StartCoroutine(InvincibilityFrames(noDamageTime));
