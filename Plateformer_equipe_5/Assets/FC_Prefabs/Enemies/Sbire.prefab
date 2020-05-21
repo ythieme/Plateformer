@@ -45,13 +45,13 @@ GameObject:
   - component: {fileID: 1095945687}
   - component: {fileID: -3820131637759579818}
   - component: {fileID: 482481116147421346}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sbire
-  m_TagString: Untagged
+  m_TagString: Sbire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2506393292519138741
 Transform:
   m_ObjectHideFlags: 0

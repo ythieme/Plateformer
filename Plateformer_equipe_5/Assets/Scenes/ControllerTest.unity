@@ -9030,6 +9030,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6415072575825845544}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1112333904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112333905}
+  - component: {fileID: 1112333906}
+  m_Layer: 10
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1112333905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112333904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444027647}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112333906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112333904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fbdbe25f9d1c34ba87efa48cc4a042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchedNbr: 0
+  touchedMalus: 0
+  enemieScore: 0
+  sbireScore: 0
+  flyingScore: 0
+  mrPontScore: 0
+  huggerScore: 0
+  moyCompTime: 0
+  playerCompTime: 0
+  scoreMultiplier: 0
+  playerDeathNbr: 0
+  boxCollider: {fileID: 3044463699969372657}
+  detectorExtent: 0.18
+  enemy:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1001 &1130766300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10254,6 +10313,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3025684713137345779, guid: e54a63bed616e17498e3a3442e844f28,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e54a63bed616e17498e3a3442e844f28, type: 3}
 --- !u!1 &1720285623
@@ -10960,11 +11024,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnnemyProto
       objectReference: {fileID: 0}
-    - target: {fileID: 3025684713137345779, guid: e54a63bed616e17498e3a3442e844f28,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e54a63bed616e17498e3a3442e844f28, type: 3}
 --- !u!1001 &3044463699969372656
@@ -11041,6 +11100,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7be01ea9923b6b4fafada0c7f93184c, type: 3}
+--- !u!61 &3044463699969372657 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3044463699600974604, guid: b7be01ea9923b6b4fafada0c7f93184c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3044463699969372656}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3836644552562724126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11521,11 +11586,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sbire
       objectReference: {fileID: 0}
-    - target: {fileID: 6627430096462673144, guid: 817e6614560682a46be6db1f3f2de9f5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 817e6614560682a46be6db1f3f2de9f5, type: 3}
 --- !u!1001 &7814173201067447650
@@ -11539,11 +11599,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hugger
-      objectReference: {fileID: 0}
-    - target: {fileID: 7814173202046197249, guid: adfe407079f35cd4baa95d0f9e0e6367,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7814173202046197254, guid: adfe407079f35cd4baa95d0f9e0e6367,
         type: 3}
@@ -11668,11 +11723,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MrPont
-      objectReference: {fileID: 0}
-    - target: {fileID: 8490164182088757301, guid: 02d63f520e6bae547bd7c48875000fab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d63f520e6bae547bd7c48875000fab, type: 3}

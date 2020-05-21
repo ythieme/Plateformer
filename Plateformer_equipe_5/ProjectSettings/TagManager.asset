@@ -8,6 +8,10 @@ TagManager:
   - Ground
   - Key
   - Door
+  - Flying
+  - MrPont
+  - Sbire
+  - Hugger
   layers:
   - Default
   - TransparentFX

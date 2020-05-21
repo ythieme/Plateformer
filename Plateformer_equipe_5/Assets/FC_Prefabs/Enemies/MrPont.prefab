@@ -96,7 +96,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8490164182088757300
 Transform:
   m_ObjectHideFlags: 0
@@ -127,9 +127,9 @@ GameObject:
   - component: {fileID: 8490164182147456482}
   - component: {fileID: 8490164182147456483}
   - component: {fileID: 8490164182147456484}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Corps
-  m_TagString: Untagged
+  m_TagString: MrPont
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
