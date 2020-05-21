@@ -6,6 +6,8 @@ public class Checkpoint : MonoBehaviour
 {
     public GameObject checkpointRespawnObject;
     public BoxCollider2D boxCollider;
+    public ScoreManager score;
+    public CheckpointNumber checkpointNumber;
     public Vector3 checkpointPosition;
 
     public PlayerCheckpointManager cpManager;
@@ -14,6 +16,8 @@ public class Checkpoint : MonoBehaviour
     {
         checkpointPosition = checkpointRespawnObject.transform.position;
         boxCollider = GetComponent<BoxCollider2D>();
+        score = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<ScoreManager>();
+        checkpointNumber = GetComponent<CheckpointNumber>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +25,14 @@ public class Checkpoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             cpManager.lastCheckpoint = checkpointPosition;
+        }
+
+        if (other.gameObject.CompareTag("Player") && score.actualSection == checkpointNumber.checkpointNumber - 1)
+        {
+            score.totalTimeScore += score.SectionTimeScore(score.moyCompTime,score.playerCompTime);
+            score.moyCompTime = checkpointNumber.compTime;
+            score.playerCompTime = 0;
+            score.actualSection ++;
         }
     }        
 

@@ -7,6 +7,7 @@ public class PlayerCheckpointManager : MonoBehaviour
     GameObject character;
     public FearScript_FC fear;
     public Controler_YT controler;
+    public ScoreManager score;
     public Vector3 lastCheckpoint;
     
     void Start()
@@ -15,6 +16,7 @@ public class PlayerCheckpointManager : MonoBehaviour
         controler = character.GetComponent<Controler_YT>();
         lastCheckpoint = transform.position;
         fear = GameObject.Find("FearObject").GetComponent<FearScript_FC>();
+        score = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<ScoreManager>();
     }
     
     void Update()
@@ -31,5 +33,6 @@ public class PlayerCheckpointManager : MonoBehaviour
         character.transform.Translate(new Vector3(lastCheckpoint.x - character.transform.position.x, lastCheckpoint.y - character.transform.position.y));
         controler.enabled = true;
         fear.fear = fear.maxfear;
+        score.playerDeathNbr++;
     }
 }

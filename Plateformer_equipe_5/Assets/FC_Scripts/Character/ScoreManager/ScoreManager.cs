@@ -26,15 +26,20 @@ public class ScoreManager : MonoBehaviour
     public float playerCompTime;
     public int scoreMultiplier;
     public int playerDeathNbr;
+    public float sectionTimeScore;
+    public int totalTimeScore;
 
     [Header("Others")]
     public BoxCollider2D boxCollider;
     public float detectorExtent;
+    public int actualSection;
     public LayerMask enemy;
+    public int totalScore;
 
     void Start()
     {
-        
+        actualSection = 0;
+        playerDeathNbr = 0;
     }
     
     public RaycastHit2D ScoreDetector()
@@ -48,6 +53,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         EnemyDetectionNbrDistribution();
+        playerCompTime += Time.deltaTime;        
     }
 
     public void EnemyDetectionNbrDistribution()
@@ -72,7 +78,6 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
-
     IEnumerator EnemyDetected(int detectedNbr)
     {        
         stop = true;
@@ -80,7 +85,6 @@ public class ScoreManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         stop = false;
     }
-
     public int EnemyScoreCalculation()
     {
         enemieScore = ((sbireDetectedNbr * sbireScore) + (mrPontDetectedNbr * mrPontScore) + (flyingDetectedNbr * flyingScore) + (huggerDetectedNbr * huggerScore))
@@ -89,6 +93,25 @@ public class ScoreManager : MonoBehaviour
         return enemieScore;
     }
 
+    public int SectionTimeScore(float moyCompTime, float playerCompTime)
+    {
+        sectionTimeScore = (moyCompTime / playerCompTime);
+
+        return Mathf.RoundToInt(sectionTimeScore);
+    }
+
+    public int FinalTimeScore()
+    {
+        totalTimeScore = totalTimeScore / (1 + playerDeathNbr) * scoreMultiplier;
+        return totalTimeScore;
+    }
+
+    public int TotalScore()
+    {
+        totalScore = enemieScore + totalTimeScore;
+
+        return totalScore;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;

@@ -43,10 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245f3d5239983ef4897c0ab85ff4c185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controler: {fileID: 0}
-  character: {fileID: 0}
-  position: {fileID: 0}
+  controler: {fileID: 3044463699600974605}
+  checkpoint: {fileID: 3044463699620425165}
+  healthBar: {fileID: 0}
+  character: {fileID: 3044463699600974603}
+  position: {fileID: 3044463699600974607}
+  magnitude: 8
+  roughness: 5
+  fadeInTime: 0.5
+  fadeOutTime: 0.5
   anim: {fileID: 0}
+  deathtransition: {fileID: 0}
   maxfear: 20
   fear: 20
   noDamageTime: 1.5
@@ -95,6 +102,7 @@ GameObject:
   - component: {fileID: 3044463699600974581}
   - component: {fileID: 3044463699600974604}
   - component: {fileID: 3044463699600974582}
+  - component: {fileID: 1291116848}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -231,13 +239,21 @@ MonoBehaviour:
   crouchSize: {x: 0, y: 0}
   crouchSprite: {fileID: 21300000, guid: 41f815e30589776478c2d534836029f2, type: 3}
   crouchSpeed: 1.5
+  magnitudeJ: 2.5
+  roughnessJ: 2
+  fadeInTimeJ: 0.15
+  fadeOutTimeJ: 0.15
+  magnitudeS: 2
+  roughnessS: 1
+  fadeInTimeS: 0.15
+  fadeOutTimeS: 0.15
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 256
   boxCollider2d: {fileID: 3044463699600974604}
-  gravity: 5
+  gravity: 4.5
   decalage: 0
-  acceleration: 0.5
+  acceleration: 0.2
   deceleration: -0.01
   maxSpeed: 1
   accelerationTimeEnd: 0.2
@@ -245,6 +261,7 @@ MonoBehaviour:
   jumpFixMaxHeight: 0.8
   jumpStrength: 3.5
   glideTime: 0.17
+  jumpMaxHeight: 0
   slidingDecelaration: -0.001
   slidingVelocity: 0
   slideCooldown: 0
@@ -303,17 +320,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 3044463699600974604}
+  anim: {fileID: 0}
+  riseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   grabablePlatforms:
     serializedVersion: 2
     m_Bits: 512
   lateralDetectorLength: 0
-  decalageX: 0
+  decalageX: 0.013
   decalageY: 0
   movement: {fileID: 3044463699600974605}
   isClimbing: 0
-  gripJump: 0
-  gripForward: 0
-  anim: {fileID: 0}
+  gripJump: 5
+  gripForward: 2
 --- !u!114 &3044463699600974581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +421,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1291116848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044463699600974603}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab8353b5ebd32545867da143199a814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0.15}
+  DefaultRotInfluence: {x: 1, y: 1, z: 1}
+  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3044463699620425163
 GameObject:
   m_ObjectHideFlags: 0

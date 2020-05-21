@@ -8,7 +8,6 @@ public class FearScript_FC : MonoBehaviour
     public Controler_YT controler;
     public PlayerCheckpointManager checkpoint;
     public HealthBarScript_FC healthBar;
-    
 
     public GameObject character;
     public Transform position;
@@ -34,7 +33,7 @@ public class FearScript_FC : MonoBehaviour
     public bool noDamage;
 
     private void Start()
-    {
+    {        
         healthBar.SetMaxHealth(maxfear);
         character = GameObject.FindGameObjectWithTag("Player");
         controler = character.GetComponent<Controler_YT>();
@@ -54,9 +53,9 @@ public class FearScript_FC : MonoBehaviour
 
     public bool DeathCheck()
     {
-        if (fear <= 0 || fear == 0)
+        if ((fear <= 0 || fear == 0) && !isDead)
         {
-            StartCoroutine(DeadState());            
+            StartCoroutine(DeadState());          
         }
         else if (fear > 0)
         {
