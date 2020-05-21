@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class FearScript_FC : MonoBehaviour
 {
     public Controler_YT controler;
     public PlayerCheckpointManager checkpoint;
     public HealthBarScript_FC healthBar;
+    
 
     public GameObject character;
     public Transform position;
 
+    [Header("Screen Shake when taking damages")]
+    public float magnitude;
+    public float roughness;
+    public float fadeInTime;
+    public float fadeOutTime;
+
     [Header("Animation")]
     public Animator anim;
-
+    public Animator deathtransition;
     public int maxfear;
     public int fear;
     public float noDamageTime;
@@ -61,8 +69,13 @@ public class FearScript_FC : MonoBehaviour
     {        
         anim.SetBool("is jumping", false);
         controler.enabled = false;
-        yield return new WaitForSeconds(1.5f);
+        deathtransition.SetTrigger("StartFade");
+        yield return new WaitForSeconds(2);
+        deathtransition.SetTrigger("EndFade");
         isDead = true;
+        yield return new WaitForSeconds(1);
+        deathtransition.ResetTrigger("EndFade");
+        deathtransition.ResetTrigger("StartFade");
     }
     
     public void DealDamage(int damageValue)
@@ -70,6 +83,7 @@ public class FearScript_FC : MonoBehaviour
         if (!noDamage)
         {
             fear -= damageValue;
+            CameraShaker.Instance.ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime);
             anim.SetBool("is Hurted", true);
             StartCoroutine(AnimSetOff());
             StartCoroutine(InvincibilityFrames(noDamageTime));

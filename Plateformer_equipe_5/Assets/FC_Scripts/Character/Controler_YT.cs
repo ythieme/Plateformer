@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class Controler_YT : MonoBehaviour
 {    
@@ -34,7 +35,19 @@ public class Controler_YT : MonoBehaviour
     public Sprite crouchSprite;    
     bool waitBeforeStand;
     [SerializeField] float crouchSpeed;
-    [System.NonSerialized] public bool isCrouching;    
+    [System.NonSerialized] public bool isCrouching;
+
+    [Header("Screen Shake when jumping")]
+    public float magnitudeJ;
+    public float roughnessJ;
+    public float fadeInTimeJ;
+    public float fadeOutTimeJ;
+
+    [Header("Screen Shake when sliding")]
+    public float magnitudeS;
+    public float roughnessS;
+    public float fadeInTimeS;
+    public float fadeOutTimeS;
 
     //GoundCheck Composents
     [Header ("GroundCheck Composents")]
@@ -240,6 +253,7 @@ public class Controler_YT : MonoBehaviour
         if (isSliding && velocityMultiplicator != 0 && crouchKey) //Sliding with Run Speed and start decelerating
         {
             slidingVelocity = (maxSpeed + walkSpeed) * xAxis;
+            CameraShaker.Instance.ShakeOnce(magnitudeS, roughnessS, fadeInTimeS, fadeOutTimeS);
             StartCoroutine("SlideDeceleration");
         }
         else if (isSliding && (velocityMultiplicator == 0 || crouchKeyUp)) //Slide has totally decelerated
@@ -460,6 +474,7 @@ public class Controler_YT : MonoBehaviour
     void EnterJump()
     {
         isJumping = true;
+        CameraShaker.Instance.ShakeOnce(magnitudeJ, roughnessJ, fadeInTimeJ, fadeOutTimeJ);
         anim.SetBool("is jumping", true);
         jumpInputMaintain = true;
 
