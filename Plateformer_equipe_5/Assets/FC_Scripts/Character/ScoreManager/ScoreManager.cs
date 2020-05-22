@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [Header("EnemieScore composents")]    
+    [Header("EnemieScore composents")]
+    public int touchedNbr;
     public int touchedMalus;
-
-    int enemieScore;
-    [System.NonSerialized] public int touchedNbr;
+    public int enemieScore;
 
     [Header("Enemies Score")]
     public int sbireScore;
@@ -23,37 +22,30 @@ public class ScoreManager : MonoBehaviour
     bool stop;
 
     [Header("Time Score Composents")]
-    public float moyCompTime;    
+    public float moyCompTime;
+    public float playerCompTime;
     public int scoreMultiplier;
-
-    [System.NonSerialized] public int actualSection;
-    [System.NonSerialized] public int totalTimeScore;
-    [System.NonSerialized] public float playerCompTime;
-    [System.NonSerialized] public float sectionTimeScore;
-    [System.NonSerialized] public int playerDeathNbr;
+    public int playerDeathNbr;
+    public float sectionTimeScore;
+    public int totalTimeScore;
 
     [Header("Others")]
     public BoxCollider2D boxCollider;
-    public float detectorExtent;    
+    public float detectorExtent;
+    public int actualSection;
     public LayerMask enemy;
-
-    [System.NonSerialized] public int totalScore;
+    public int totalScore;
 
     void Start()
     {
         actualSection = 0;
         playerDeathNbr = 0;
-
-        sbireDetectedNbr = 0;
-        flyingDetectedNbr = 0;
-        mrPontDetectedNbr = 0;
-        huggerDetectedNbr = 0;
     }
     
     public RaycastHit2D ScoreDetector()
     {
-        RaycastHit2D raycast = Physics2D.Linecast(new Vector2(transform.position.x, transform.position.y + boxCollider.bounds.extents.y + detectorExtent),
-            new Vector2(transform.position.x, transform.position.y - boxCollider.bounds.extents.y - detectorExtent), enemy);
+        RaycastHit2D raycast = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + boxCollider.bounds.extents.y + detectorExtent),
+            Vector2.down, - (boxCollider.bounds.size.y + 2* detectorExtent), enemy);
 
         return raycast;
     }
@@ -61,7 +53,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         EnemyDetectionNbrDistribution();
-        playerCompTime += Time.deltaTime;
+        playerCompTime += Time.deltaTime;        
     }
 
     public void EnemyDetectionNbrDistribution()
@@ -103,7 +95,7 @@ public class ScoreManager : MonoBehaviour
 
     public int SectionTimeScore(float moyCompTime, float playerCompTime)
     {
-        sectionTimeScore += (moyCompTime / playerCompTime);
+        sectionTimeScore = (moyCompTime / playerCompTime);
 
         return Mathf.RoundToInt(sectionTimeScore);
     }
