@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909685872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.39, z: 0}
+  m_LocalPosition: {x: 0.149, y: -0.158, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3044463699600974607}
@@ -46,7 +46,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -4797,26 +4797,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fbdbe25f9d1c34ba87efa48cc4a042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedNbr: 0
-  touchedMalus: 0
-  enemieScore: 0
-  sbireScore: 0
-  flyingScore: 0
-  mrPontScore: 0
-  huggerScore: 0
+  touchedMalus: 100
+  sbireScore: 125
+  flyingScore: 150
+  mrPontScore: 175
+  huggerScore: 200
   moyCompTime: 15
-  playerCompTime: 0
-  scoreMultiplier: 0
-  playerDeathNbr: 0
-  sectionTimeScore: 0
-  totalTimeScore: 0
+  scoreMultiplier: 10000
   boxCollider: {fileID: 3044463699600974604}
   detectorExtent: 0.18
-  actualSection: 0
   enemy:
     serializedVersion: 2
     m_Bits: 2048
-  totalScore: 0
 --- !u!1 &2058671345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5159,6 +5151,7 @@ MonoBehaviour:
   slideCooldown: 0
   slideCooldownDuration: 0.15
   anim: {fileID: 0}
+  dust: {fileID: 0}
 --- !u!114 &3044463699600974577
 MonoBehaviour:
   m_ObjectHideFlags: 0
