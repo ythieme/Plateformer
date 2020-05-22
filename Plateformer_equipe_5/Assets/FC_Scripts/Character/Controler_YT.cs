@@ -7,7 +7,8 @@ public class Controler_YT : MonoBehaviour
 {    
     [SerializeField] SpriteRenderer spriteRenderer;
 
-    private float xAxis;  
+    private float xAxis;
+    private float yAxis;
     [System.NonSerialized] public float verticalSpeed;
     [System.NonSerialized] public float horizontalSpeed;
     private Vector3 playerMove;
@@ -22,7 +23,7 @@ public class Controler_YT : MonoBehaviour
 
     [System.NonSerialized] public bool jumpKey, jumpKeyDown, jumpKeyUp, runKey, runKeyDown, runKeyUp, run2Key, run2KeyDown, run2KeyUp,
         crouchKey, crouchKeyDown, crouchKeyUp;
-
+        
     //Cooldown (WaitForATime) Composents
     float timeToWait;
 
@@ -95,12 +96,18 @@ public class Controler_YT : MonoBehaviour
     [Header("Animation")]
     public Animator anim;
 
+    [Header("VFX")]
+    public ParticleSystem dust;
+
+    bool isEmittingParticles;
+
     bool jumpInputMaintain;
 
     void Start()
     {
         dontFall = GetComponent<DontFallAnymore_TheScript>();
         anim = GetComponent<Animator>();
+        dust = GetComponentInChildren<ParticleSystem>();
 
         movingPlatformXVelocity = 0f;
         gravity = 15f;
@@ -127,8 +134,9 @@ public class Controler_YT : MonoBehaviour
     void Update()
     {
         xAxis = Input.GetAxis("Horizontal");
+        yAxis = Input.GetAxis("Vertical");
         groundChecker = GroundDetector();
-
+        
         IsGrounded();        
         Walk();
         anim.SetFloat("Speed",Mathf.Abs(walkingVelocity));
@@ -184,12 +192,23 @@ public class Controler_YT : MonoBehaviour
         }
         playerMove = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
         transform.Translate(playerMove, Space.World);
+
+        if (!isJumping && !isCrouching && horizontalSpeed != 0 && !isEmittingParticles)
+        {
+            dust.Play();
+            isEmittingParticles = true;
+        }
+        else if ((isJumping || isCrouching || horizontalSpeed == 0) && isEmittingParticles)
+        {
+            dust.Stop();
+            isEmittingParticles = false;
+        }
     }
 
     //Crouch
     private void Crouch()
     {
-        if (crouchKeyDown && IsGrounded() && !isRunning) //Freeze de début d'accroupissement 
+        if (yAxis < 0 && IsGrounded() && !isRunning) //Freeze de début d'accroupissement 
         {
             MoveFreeze(0.2f);
             waitBeforeStand = true;
@@ -197,13 +216,13 @@ public class Controler_YT : MonoBehaviour
             anim.SetBool("is crouching",true);
             StartCoroutine("Crouch2StandCooldown");
         }
-        else if (crouchKeyDown && IsGrounded() && isRunning) //Lancement du Slide
+        else if (yAxis < 0 && IsGrounded() && isRunning) //Lancement du Slide
         {
             waitBeforeStand = true;
             isSliding = true;
             anim.SetBool("is sliding", true);
         }
-        else if ((!crouchKey || crouchKeyUp) && IsGrounded() && !isRunning && isCrouching) //Relâchement bouton pendant accroupissement
+        else if ((yAxis == 0) && IsGrounded() && !isRunning && isCrouching) //Relâchement bouton pendant accroupissement
         {
             if (!waitBeforeStand && !CanStandOrNot()) //Si lâcher bouton après fin waitBeforeStand
             {
@@ -250,13 +269,13 @@ public class Controler_YT : MonoBehaviour
 
     private void Slide()
     {
-        if (isSliding && velocityMultiplicator != 0 && crouchKey) //Sliding with Run Speed and start decelerating
+        if (isSliding && velocityMultiplicator != 0 && yAxis < 0) //Sliding with Run Speed and start decelerating
         {
             slidingVelocity = (maxSpeed + walkSpeed) * xAxis;
             CameraShaker.Instance.ShakeOnce(magnitudeS, roughnessS, fadeInTimeS, fadeOutTimeS);
             StartCoroutine("SlideDeceleration");
         }
-        else if (isSliding && (velocityMultiplicator == 0 || crouchKeyUp)) //Slide has totally decelerated
+        else if (isSliding && (velocityMultiplicator == 0 || yAxis == 0)) //Slide has totally decelerated
         {
             if (CanStandOrNot())
             {
@@ -321,7 +340,7 @@ public class Controler_YT : MonoBehaviour
             boxCollider2d.size = idleSize;
             spriteRenderer.sprite = idleSprite;
         }
-        else if (isCrouching && !crouchKey && !CanStandOrNot())
+        else if (isCrouching && yAxis == 0 && !CanStandOrNot())
         {            
             boxCollider2d.size = idleSize;
             spriteRenderer.sprite = idleSprite;
@@ -462,10 +481,12 @@ public class Controler_YT : MonoBehaviour
         if (Input.GetAxis("Horizontal") > 0 && spriteRenderer.flipX == false)
         {
             spriteRenderer.flipX = true;
+            dust.gameObject.transform.Translate(new Vector2(- dust.gameObject.transform.localPosition.x * 2, 0));
         }
         else if (Input.GetAxis("Horizontal") < 0 && spriteRenderer.flipX == true)
         {
-             spriteRenderer.flipX = false;
+            spriteRenderer.flipX = false;
+            dust.gameObject.transform.Translate(new Vector2(-dust.gameObject.transform.localPosition.x * 2, 0));
         }
         else { }
     }
