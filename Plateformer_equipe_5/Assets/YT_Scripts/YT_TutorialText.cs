@@ -6,7 +6,6 @@ public class YT_TutorialText : MonoBehaviour
 {
     [SerializeField] Animator animator1;
     [SerializeField] Animator animator2;
-   // [SerializeField] Rigidbody2D rigidbody2D;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

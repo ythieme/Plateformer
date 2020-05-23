@@ -49,6 +49,12 @@ public class Controler_YT : MonoBehaviour
     public float fadeInTimeS;
     public float fadeOutTimeS;
 
+    [Header("Screen Shake when touching ground after fall")]
+    public float magnitudeG;
+    public float roughnessG;
+    public float FadeInTimeG;
+    public float fadeOutTimeG;
+
     //GoundCheck Composents
     [Header ("GroundCheck Composents")]
     [SerializeField] public LayerMask platformLayerMask;
@@ -525,6 +531,7 @@ public class Controler_YT : MonoBehaviour
         else if (IsGrounded() && isJumping == true)
         {
             isJumping = false;
+            CameraShaker.Instance.ShakeOnce(magnitudeG, roughnessG, FadeInTimeG, fadeOutTimeG);
             anim.SetBool("is jumping", false);
             jumpGravityAllowed = false;
         }

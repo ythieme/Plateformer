@@ -83,8 +83,8 @@ public class FearScript_FC : MonoBehaviour
     {
         if (!noDamage)
         {
-            fear -= damageValue;
             CameraShaker.Instance.ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime);
+            fear -= damageValue;
             anim.SetBool("is Hurted", true);
             StartCoroutine(AnimSetOff());
             StartCoroutine(InvincibilityFrames(noDamageTime));
