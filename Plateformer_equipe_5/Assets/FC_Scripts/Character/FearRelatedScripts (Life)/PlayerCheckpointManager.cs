@@ -21,9 +21,10 @@ public class PlayerCheckpointManager : MonoBehaviour
     
     void Update()
     {
-        if (fear.fear <= 0 && fear.isDead)
+        if (fear.fear <= 0 && fear.deadTP)
         {
             Death();
+            fear.deadTP = false;
         }
     }            
 

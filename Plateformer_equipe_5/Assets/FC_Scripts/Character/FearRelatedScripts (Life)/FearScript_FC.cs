@@ -29,6 +29,7 @@ public class FearScript_FC : MonoBehaviour
     public AnimationCurve knockCurve;
 
     [System.NonSerialized] public bool isDead;
+    [System.NonSerialized] public bool deadTP;
     public bool knockbacked;
     public bool noDamage;
 
@@ -55,7 +56,7 @@ public class FearScript_FC : MonoBehaviour
     {
         if ((fear <= 0 || fear == 0) && !isDead)
         {
-            StartCoroutine(DeadState());          
+            StartCoroutine(DeadState());
         }
         else if (fear > 0)
         {
@@ -68,10 +69,11 @@ public class FearScript_FC : MonoBehaviour
     {        
         anim.SetBool("is jumping", false);
         controler.enabled = false;
+        isDead = true;
         deathtransition.SetTrigger("StartFade");
         yield return new WaitForSeconds(2);
         deathtransition.SetTrigger("EndFade");
-        isDead = true;
+        deadTP = true;
         yield return new WaitForSeconds(1);
         deathtransition.ResetTrigger("EndFade");
         deathtransition.ResetTrigger("StartFade");
