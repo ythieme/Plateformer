@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/YT_Scenes/Menu.unity
-    guid: 0838d083a72b5d746b46a9cafcf3a28f
+    path: Assets/YT_Scenes/MainMenu.unity
+    guid: c043e58f93c59b64398aed4221bfe5e9
   - enabled: 1
     path: Assets/YT_Scenes/_YT_LD.unity
     guid: 89e4fef7e85a1734f807ebd8ac11f2d2

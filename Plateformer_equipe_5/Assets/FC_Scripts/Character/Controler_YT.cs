@@ -37,24 +37,6 @@ public class Controler_YT : MonoBehaviour
     [SerializeField] float crouchSpeed;
     [System.NonSerialized] public bool isCrouching;
 
-    [Header("Screen Shake when jumping")]
-    public float magnitudeJ;
-    public float roughnessJ;
-    public float fadeInTimeJ;
-    public float fadeOutTimeJ;
-
-    [Header("Screen Shake when sliding")]
-    public float magnitudeS;
-    public float roughnessS;
-    public float fadeInTimeS;
-    public float fadeOutTimeS;
-
-    [Header("Screen Shake when touching ground after fall")]
-    public float magnitudeG;
-    public float roughnessG;
-    public float FadeInTimeG;
-    public float fadeOutTimeG;
-
     //GoundCheck Composents
     [Header ("GroundCheck Composents")]
     [SerializeField] public LayerMask platformLayerMask;
@@ -103,10 +85,34 @@ public class Controler_YT : MonoBehaviour
 
     bool jumpInputMaintain;
 
+    [Header("Screen Shake when jumping")]
+    public float magnitudeJ;
+    public float roughnessJ;
+    public float fadeInTimeJ;
+    public float fadeOutTimeJ;
+
+    [Header("Screen Shake when sliding")]
+    public float magnitudeS;
+    public float roughnessS;
+    public float fadeInTimeS;
+    public float fadeOutTimeS;
+
+    [Header("Screen Shake when touching ground after fall")]
+    public float magnitudeG;
+    public float roughnessG;
+    public float FadeInTimeG;
+    public float fadeOutTimeG;
+
+    [Header("VFX")]
+    public ParticleSystem dust;
+
+    bool isEmittingParticles;
+
     void Start()
     {
         dontFall = GetComponent<DontFallAnymore_TheScript>();
         anim = GetComponent<Animator>();
+        dust = GetComponentInChildren<ParticleSystem>();
 
         movingPlatformXVelocity = 0f;
         gravity = 15f;
@@ -190,6 +196,17 @@ public class Controler_YT : MonoBehaviour
         }
         playerMove = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
         transform.Translate(playerMove, Space.World);
+
+        if (!isJumping && !isCrouching && horizontalSpeed != 0 && !isEmittingParticles)
+        {
+            dust.Play();
+            isEmittingParticles = true;
+        }
+        else if ((isJumping || isCrouching || horizontalSpeed == 0) && isEmittingParticles)
+        {
+            dust.Stop();
+            isEmittingParticles = false;
+        }
     }
 
     //Crouch
@@ -468,12 +485,16 @@ public class Controler_YT : MonoBehaviour
         if (Input.GetAxis("Horizontal") > 0 && spriteRenderer.flipX == false)
         {
             spriteRenderer.flipX = true;
+            dust.gameObject.transform.Translate(new Vector2(-dust.gameObject.transform.localPosition.x * 2, 0));
         }
         else if (Input.GetAxis("Horizontal") < 0 && spriteRenderer.flipX == true)
         {
              spriteRenderer.flipX = false;
+            dust.gameObject.transform.Translate(new Vector2(-dust.gameObject.transform.localPosition.x * 2, 0));
         }
         else { }
+
+
     }
 
     //Jump
