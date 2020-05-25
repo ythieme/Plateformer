@@ -4797,26 +4797,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fbdbe25f9d1c34ba87efa48cc4a042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchedNbr: 0
   touchedMalus: 100
-  enemieScore: 0
   sbireScore: 125
   flyingScore: 150
   mrPontScore: 175
   huggerScore: 200
   moyCompTime: 15
-  playerCompTime: 0
   scoreMultiplier: 10000
-  playerDeathNbr: 0
-  sectionTimeScore: 0
-  totalTimeScore: 0
   boxCollider: {fileID: 3044463699600974604}
   detectorExtent: 0.18
-  actualSection: 0
   enemy:
     serializedVersion: 2
     m_Bits: 2048
-  totalScore: 0
 --- !u!1 &1670413734
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,6 +5147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crouch: 274
+  crouch2: 115
   jump: 32
   run: 304
   run2: 303
@@ -5204,14 +5197,6 @@ MonoBehaviour:
   crouchSize: {x: 0, y: 0}
   crouchSprite: {fileID: 21300000, guid: 41f815e30589776478c2d534836029f2, type: 3}
   crouchSpeed: 1.5
-  magnitudeJ: 2.5
-  roughnessJ: 2
-  fadeInTimeJ: 0.15
-  fadeOutTimeJ: 0.15
-  magnitudeS: 2
-  roughnessS: 1
-  fadeInTimeS: 0.15
-  fadeOutTimeS: 0.15
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -5230,8 +5215,21 @@ MonoBehaviour:
   slidingDecelaration: -0.001
   slidingVelocity: 0
   slideCooldown: 0
-  slideCooldownDuration: 0.15
+  slideCooldownDuration: 0.4
   anim: {fileID: 0}
+  magnitudeJ: 2.5
+  roughnessJ: 2
+  fadeInTimeJ: 0.15
+  fadeOutTimeJ: 0.15
+  magnitudeS: 2
+  roughnessS: 1
+  fadeInTimeS: 0.15
+  fadeOutTimeS: 0.15
+  magnitudeG: 0
+  roughnessG: 0
+  FadeInTimeG: 0
+  fadeOutTimeG: 0
+  dust: {fileID: 0}
 --- !u!114 &3044463699600974577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5335,7 +5333,7 @@ MonoBehaviour:
   boxLayerMask:
     serializedVersion: 2
     m_Bits: 4096
-  distance: 0.3
+  distance: 0.13
   pushVelocity: 0
   pushSpeed: 0.7
   controler: {fileID: 0}

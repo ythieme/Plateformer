@@ -8,7 +8,7 @@ public class FlyingEnnemyPlayerDetector : MonoBehaviour
 
     private void Start()
     {
-        behaviour = GetComponentInParent<FlyingEnnemy>();
+
     }    
 
     private void OnTriggerEnter2D(Collider2D collision)
