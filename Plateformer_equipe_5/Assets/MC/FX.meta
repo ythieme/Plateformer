@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Plateformer_equipe_5/Assets/MC/FX.meta
 guid: 8609b00d92dd2834ca7d06ba9ee978ec
+=======
+guid: e72f862e1ea019a4baf4d78f3aa0f57b
+>>>>>>> e26659edef9f1d290aa3459d0bc895ff8c9e132e:Plateformer_equipe_5/Assets/FC_ScriptableObjects.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
