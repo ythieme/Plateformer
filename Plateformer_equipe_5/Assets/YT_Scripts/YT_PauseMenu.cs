@@ -22,8 +22,6 @@ public class YT_PauseMenu : MonoBehaviour
             {
                 Pause();
             }
-
-
         }
     }
     public void Resume()
@@ -32,7 +30,6 @@ public class YT_PauseMenu : MonoBehaviour
         optionMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-
     }
 
     void Pause()
@@ -40,20 +37,17 @@ public class YT_PauseMenu : MonoBehaviour
         pauseMenuiUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-        
     }
 
     public void QuitGame()
     {
         Debug.Log("quitting");
         Application.Quit();
-
     }
 }

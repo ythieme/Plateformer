@@ -46,6 +46,4 @@ public class YT_SettingMenu : MonoBehaviour
         resolutionDropDown.value = currentRosolutionIndex;
         resolutionDropDown.RefreshShownValue();
     }
-
-
 }
