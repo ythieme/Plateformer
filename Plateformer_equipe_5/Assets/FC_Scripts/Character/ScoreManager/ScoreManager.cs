@@ -30,6 +30,7 @@ public class ScoreManager : MonoBehaviour
     [System.NonSerialized] public float sectionTimeScore;
     [System.NonSerialized] public int totalTimeScore;
     [System.NonSerialized] public float playerCompTime;
+    [System.NonSerialized] public float totalTime;
 
     [Header("Others")]
     public BoxCollider2D boxCollider;

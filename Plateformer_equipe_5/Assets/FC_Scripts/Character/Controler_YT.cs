@@ -110,6 +110,11 @@ public class Controler_YT : MonoBehaviour
 
     bool isEmittingParticles;
 
+    [Header("Sounds")]
+    public float walkSoundInterval;
+
+    bool stopWalkSound;
+
     void Start()
     {
         dontFall = GetComponent<DontFallAnymore_TheScript>();
@@ -202,7 +207,7 @@ public class Controler_YT : MonoBehaviour
 
         if (!isJumping && !isCrouching && horizontalSpeed != 0 && !isEmittingParticles)
         {
-            dust.Play();
+            dust.Play();            
             isEmittingParticles = true;
         }
         else if ((isJumping || isCrouching || horizontalSpeed == 0) && isEmittingParticles)
@@ -210,6 +215,8 @@ public class Controler_YT : MonoBehaviour
             dust.Stop();
             isEmittingParticles = false;
         }
+
+        Sounds();
     }
 
     //Crouch
@@ -343,6 +350,7 @@ public class Controler_YT : MonoBehaviour
         if(!slideGO && isSliding)
         {
             slideGO = true;
+            FindObjectOfType<AudioManager>().Play("Slide");
             anim.SetBool("is sliding", true);
         }
         else if (slideGO && !isSliding)
@@ -573,5 +581,22 @@ public class Controler_YT : MonoBehaviour
             anim.SetBool("is jumping", false);
             jumpGravityAllowed = false;
         }
+    }
+
+    public void Sounds()
+    {
+        /*if(Mathf.Abs(horizontalSpeed) == walkSpeed && IsGrounded() && !stopWalkSound)
+        {
+            FindObjectOfType<AudioManager>().Play("FootSteps");
+            StartCoroutine(SoundsCooldown(walkSoundInterval));
+        }
+        */
+    }
+
+    IEnumerator SoundsCooldown(float duration)
+    {
+        stopWalkSound = true;
+        yield return new WaitForSeconds(duration);
+        stopWalkSound = false;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FallingPlatforms : MonoBehaviour
 {
+    public FearScript_FC fear;
+
     SpriteRenderer spriteRenderer;
     BoxCollider2D thisBoxCollider;
     public BoxCollider2D parentBoxCollider;
@@ -13,8 +15,20 @@ public class FallingPlatforms : MonoBehaviour
 
     private void Awake()
     {
+        fear = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<FearScript_FC>();
         spriteRenderer = GetComponentInParent<SpriteRenderer>();
         thisBoxCollider = GetComponent<BoxCollider2D>();
+    }
+
+    private void Update()
+    {
+        if (fear.fear < 0 || fear.fear == 0)
+        {
+            spriteRenderer.enabled = true;
+            parentBoxCollider.enabled = true;
+            thisBoxCollider.enabled = true;
+            StopAllCoroutines();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +45,7 @@ public class FallingPlatforms : MonoBehaviour
         spriteRenderer.enabled = false;
         parentBoxCollider.enabled = false;
         thisBoxCollider.enabled = false;
-        Debug.Log("Ajouter animation disparition");
+        //Ajouter Anim
         StartCoroutine(PlatformRespawn());
     }
 

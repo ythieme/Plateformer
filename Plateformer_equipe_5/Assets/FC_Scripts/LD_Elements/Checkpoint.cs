@@ -31,6 +31,7 @@ public class Checkpoint : MonoBehaviour
         {
             score.totalTimeScore += score.SectionTimeScore(score.moyCompTime,score.playerCompTime);
             score.moyCompTime = checkpointNumber.compTime;
+            score.totalTime += score.playerCompTime;
             score.playerCompTime = 0;
             score.actualSection ++;
         }
