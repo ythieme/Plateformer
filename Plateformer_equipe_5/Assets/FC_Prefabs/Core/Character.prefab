@@ -5131,18 +5131,6 @@ MonoBehaviour:
   crouchSize: {x: 0, y: 0}
   crouchSprite: {fileID: 21300000, guid: 41f815e30589776478c2d534836029f2, type: 3}
   crouchSpeed: 1.5
-  magnitudeJ: 2.5
-  roughnessJ: 2
-  fadeInTimeJ: 0.15
-  fadeOutTimeJ: 0.15
-  magnitudeS: 2
-  roughnessS: 1
-  fadeInTimeS: 0.15
-  fadeOutTimeS: 0.15
-  magnitudeG: 0
-  roughnessG: 0
-  FadeInTimeG: 0
-  fadeOutTimeG: 0
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -5163,6 +5151,19 @@ MonoBehaviour:
   slideCooldown: 0
   slideCooldownDuration: 0.15
   anim: {fileID: 0}
+  magnitudeJ: 2.5
+  roughnessJ: 2
+  fadeInTimeJ: 0.15
+  fadeOutTimeJ: 0.15
+  magnitudeS: 2
+  roughnessS: 1
+  fadeInTimeS: 0.15
+  fadeOutTimeS: 0.15
+  magnitudeG: 0
+  roughnessG: 0
+  FadeInTimeG: 0
+  fadeOutTimeG: 0
+  dust: {fileID: 0}
 --- !u!114 &3044463699600974577
 MonoBehaviour:
   m_ObjectHideFlags: 0
