@@ -8,7 +8,7 @@ public class YT_PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuiUi;
-
+    public GameObject optionMenuUI;
 
     void Update()
     {
@@ -26,10 +26,10 @@ public class YT_PauseMenu : MonoBehaviour
 
         }
     }
-
     public void Resume()
     {
         pauseMenuiUi.SetActive(false);
+        optionMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
 

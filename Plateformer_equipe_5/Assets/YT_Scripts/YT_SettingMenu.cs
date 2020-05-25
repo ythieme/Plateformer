@@ -14,7 +14,6 @@ public class YT_SettingMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        Debug.Log(volume);
         audiomixer.SetFloat("YT_Volume", volume);
 
     }
