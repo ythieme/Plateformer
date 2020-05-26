@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -335,13 +335,13 @@ PrefabInstance:
     - target: {fileID: 6606524366941554252, guid: f088d86f9e45a304c9ff06a0d8e17771,
         type: 3}
       propertyPath: sounds.Array.data[2].name
-      value: Slide
+      value: Click Interface
       objectReference: {fileID: 0}
     - target: {fileID: 6606524366941554252, guid: f088d86f9e45a304c9ff06a0d8e17771,
         type: 3}
       propertyPath: sounds.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 0a9c72f4d2d036741941f3c0897556e1, type: 3}
+      objectReference: {fileID: 8300000, guid: 576440401f1aef94a86d68c6a13ab47a, type: 3}
     - target: {fileID: 6606524366941554252, guid: f088d86f9e45a304c9ff06a0d8e17771,
         type: 3}
       propertyPath: sounds.Array.data[2].volume
