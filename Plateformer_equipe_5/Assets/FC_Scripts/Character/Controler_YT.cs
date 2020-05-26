@@ -122,17 +122,17 @@ public class Controler_YT : MonoBehaviour
         dust = GetComponentInChildren<ParticleSystem>();
 
         movingPlatformXVelocity = 0f;
-        gravity = 15f;
+        gravity = 10f;
         acceleration = 0.5f;
         deceleration = -0.01f;
         glideTime = 0.17f;
         jumpStrength = 3.5f;
         slidingDecelaration = -0.0018f;
-        crouchSpeed = 1.5f;
-        jumpFixMaxHeight = 0.8f;
+        crouchSpeed = 1.2f;
+        jumpFixMaxHeight = 0.92f;
         curSpeed = 0;
-        maxSpeed = 1f;
-        walkSpeed = 1.5f;
+        maxSpeed = 0.8f;
+        walkSpeed = 1.3f;
         decalage = 0.07f;
     }
 
