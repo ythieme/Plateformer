@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class YT_PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public GameObject controler;
 
     public GameObject pauseMenuiUi;
     public GameObject optionMenuUI;
@@ -29,12 +30,14 @@ public class YT_PauseMenu : MonoBehaviour
         pauseMenuiUi.SetActive(false);
         optionMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        controler.GetComponent<Controler_YT>().enabled = true;
         GameIsPaused = false;
     }
 
     void Pause()
     {
         pauseMenuiUi.SetActive(true);
+        controler.GetComponent<Controler_YT>().enabled = false;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
