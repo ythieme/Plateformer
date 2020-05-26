@@ -14,8 +14,6 @@ public class YT_TutorialText : MonoBehaviour
             animator1.SetBool("Visible", true);
             animator2.SetBool("Visible", true);
         }
-
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)

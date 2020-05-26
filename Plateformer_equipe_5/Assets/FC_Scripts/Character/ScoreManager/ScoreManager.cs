@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    [Header("EnemieScore composents")]
-    public int touchedNbr;
+    [Header("EnemieScore composents")]    
     public int touchedMalus;
-    public int enemieScore;
+
+    [System.NonSerialized] public int enemieScore;
+    [System.NonSerialized] public int touchedNbr;
 
     [Header("Enemies Score")]
     public int sbireScore;
@@ -22,22 +23,29 @@ public class ScoreManager : MonoBehaviour
     bool stop;
 
     [Header("Time Score Composents")]
-    public float moyCompTime;
-    public float playerCompTime;
+    public float moyCompTime;    
     public int scoreMultiplier;
-    public int playerDeathNbr;
-    public float sectionTimeScore;
-    public int totalTimeScore;
+
+    [System.NonSerialized] public int playerDeathNbr;
+    [System.NonSerialized] public float sectionTimeScore;
+    [System.NonSerialized] public int totalTimeScore;
+    [System.NonSerialized] public float playerCompTime;
+    [System.NonSerialized] public float totalTime;
 
     [Header("Others")]
     public BoxCollider2D boxCollider;
-    public float detectorExtent;
-    public int actualSection;
+    public float detectorExtent;    
     public LayerMask enemy;
-    public int totalScore;
+    
+    [System.NonSerialized] public int totalScore;
+    [System.NonSerialized] public int actualSection;
 
     void Start()
     {
+        sbireDetectedNbr = 0;
+        flyingDetectedNbr = 0;
+        mrPontDetectedNbr = 0;
+        huggerDetectedNbr = 0;
         actualSection = 0;
         playerDeathNbr = 0;
     }

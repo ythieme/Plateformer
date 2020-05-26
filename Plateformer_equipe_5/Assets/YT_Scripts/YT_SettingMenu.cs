@@ -14,7 +14,6 @@ public class YT_SettingMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        Debug.Log(volume);
         audiomixer.SetFloat("YT_Volume", volume);
 
     }
@@ -47,6 +46,4 @@ public class YT_SettingMenu : MonoBehaviour
         resolutionDropDown.value = currentRosolutionIndex;
         resolutionDropDown.RefreshShownValue();
     }
-
-
 }

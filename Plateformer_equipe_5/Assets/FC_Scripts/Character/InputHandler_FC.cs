@@ -5,7 +5,8 @@ using UnityEngine;
 public class InputHandler_FC : MonoBehaviour
 {
     [Header("Key Binding")]
-    public KeyCode crouch = KeyCode.X;
+    public KeyCode crouch = KeyCode.DownArrow;
+    public KeyCode crouch2 = KeyCode.S;
     public KeyCode jump = KeyCode.Space;   
     public KeyCode run = KeyCode.LeftShift;
     public KeyCode run2 = KeyCode.RightShift;
@@ -35,5 +36,9 @@ public class InputHandler_FC : MonoBehaviour
         controller.crouchKey = Input.GetKey(crouch);
         controller.crouchKeyDown = Input.GetKeyDown(crouch);
         controller.crouchKeyUp = Input.GetKeyUp(crouch);
+
+        controller.crouch2Key = Input.GetKey(crouch2);
+        controller.crouch2KeyDown = Input.GetKeyDown(crouch2);
+        controller.crouch2KeyUp = Input.GetKeyUp(crouch2);
     }
 }
