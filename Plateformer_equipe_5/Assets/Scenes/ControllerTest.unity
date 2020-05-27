@@ -6191,6 +6191,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 293af41beba5e6144aba347c0e836358, type: 3}
+--- !u!1001 &877383255331706797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2568589852460634944, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f8a5e3fed753e046b866af382551b29, type: 3}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2241611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1929226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.7543945
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118420870795019918, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655559527777361671, guid: d4236aa0ba9e2c248b57c5682833fef0,
+        type: 3}
+      propertyPath: m_Name
+      value: Crickets
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d4236aa0ba9e2c248b57c5682833fef0, type: 3}
 --- !u!50 &1803374583651230152
 Rigidbody2D:
   serializedVersion: 4

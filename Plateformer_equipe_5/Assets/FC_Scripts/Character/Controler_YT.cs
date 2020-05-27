@@ -147,7 +147,7 @@ public class Controler_YT : MonoBehaviour
     void Update()
     {
         xAxis = Input.GetAxis("Horizontal");
-        yAxis = Input.GetAxis("Vertical");
+        yAxis = Input.GetAxis("Crouch");
         crouchAxis = Input.GetAxis("Fire1");
 
         groundChecker = GroundDetector();
