@@ -530,6 +530,7 @@ public class Controler_YT : MonoBehaviour
     {
         isJumping = true;
         CameraShaker.Instance.ShakeOnce(magnitudeJ, roughnessJ, fadeInTimeJ, fadeOutTimeJ);
+        FindObjectOfType<AudioManager>().Play("JumpSound");
         anim.SetBool("is jumping", true);
         jumpInputMaintain = true;
 
