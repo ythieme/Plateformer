@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &203883825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2447147333656983201, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2447147334059339255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &504581767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2447147332373111707, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2447147334059339255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &892109277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3818859210077775190, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+    type: 3}
+  m_PrefabInstance: {fileID: 2447147334059339255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1953782154
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +327,96 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2447147332373111707, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333435428525, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333435428525, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333435428525, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333435428525, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333435428525, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333490685501, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333490685501, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333490685501, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333490685501, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333629120556, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333629120556, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333629120556, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333629120556, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147333629120556, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147334191197510, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: pauseFirstButton
+      value: 
+      objectReference: {fileID: 504581767}
+    - target: {fileID: 2447147334191197510, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: optionsFirstButton
+      value: 
+      objectReference: {fileID: 203883825}
+    - target: {fileID: 2447147334191197510, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: optionsClosedButton
+      value: 
+      objectReference: {fileID: 892109277}
     - target: {fileID: 2447147334191197511, guid: e05da36ed0db9bf44bcd6995f1e36cca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,6 +526,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447147334191197531, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818859209426261912, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818859209426261912, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818859209426261912, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818859209426261912, guid: e05da36ed0db9bf44bcd6995f1e36cca,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e05da36ed0db9bf44bcd6995f1e36cca, type: 3}
