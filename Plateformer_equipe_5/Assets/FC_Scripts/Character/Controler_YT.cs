@@ -128,7 +128,7 @@ public class Controler_YT : MonoBehaviour
         deceleration = -0.01f;
         glideTime = 0.17f;
         jumpStrength = 3.5f;
-        slidingDecelaration = -0.0018f;
+        slidingDecelaration = -0.0012f;
         crouchSpeed = 1.2f;
         jumpFixMaxHeight = 0.92f;
         curSpeed = 0;

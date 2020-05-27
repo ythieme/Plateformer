@@ -12,7 +12,7 @@ public class EnemyDamageProcess : MonoBehaviour
     public float power;
     [System.NonSerialized] public int goingLeft;
     [System.NonSerialized] public bool detecting;
-    bool inCooldown;
+    [System.NonSerialized] public bool inCooldown;
 
     void Start()
     {
