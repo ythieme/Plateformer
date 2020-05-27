@@ -33,6 +33,7 @@ public class YT_SettingMenu : MonoBehaviour
     public void SetFullScreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
     }
 
     private void Start()

@@ -13,6 +13,10 @@ public class NightmareGlobal : MonoBehaviour
     public float speed;
     float distanceTravelled;
 
+    private void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("SpawnNighmare");
+    }
     private void Start()
     {
         fear = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<FearScript_FC>();
