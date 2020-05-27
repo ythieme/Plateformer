@@ -4984,6 +4984,7 @@ GameObject:
   - component: {fileID: 3044463699600974604}
   - component: {fileID: 3044463699600974582}
   - component: {fileID: 1291116848}
+  - component: {fileID: 8764106845257560611}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -5322,6 +5323,14 @@ MonoBehaviour:
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
   RestPositionOffset: {x: 0, y: 0, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
+--- !u!81 &8764106845257560611
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044463699600974603}
+  m_Enabled: 1
 --- !u!1 &3044463699620425163
 GameObject:
   m_ObjectHideFlags: 0
