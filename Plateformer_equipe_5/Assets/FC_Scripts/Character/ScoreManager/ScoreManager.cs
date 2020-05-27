@@ -52,8 +52,8 @@ public class ScoreManager : MonoBehaviour
     
     public RaycastHit2D ScoreDetector()
     {
-        RaycastHit2D raycast = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + boxCollider.bounds.extents.y + detectorExtent),
-            Vector2.down, - (boxCollider.bounds.size.y + 2* detectorExtent), enemy);
+        RaycastHit2D raycast = Physics2D.Linecast(new Vector2(transform.position.x, transform.position.y + boxCollider.bounds.extents.y + detectorExtent),
+            new Vector2(transform.position.x, transform.position.y - boxCollider.bounds.extents.y - detectorExtent), enemy);
 
         return raycast;
     }
@@ -61,8 +61,17 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         EnemyDetectionNbrDistribution();
-        playerCompTime += Time.deltaTime;        
+        playerCompTime += Time.deltaTime;
     }
+
+    /* Pour le Débug
+    private void FixedUpdate()
+    {
+        Debug.Log("Temps de section : " + playerCompTime);
+        Debug.Log("Section N°" + actualSection);
+        Debug.Log("Temps total : " + totalTime);
+    }
+    */
 
     public void EnemyDetectionNbrDistribution()
     {
@@ -70,26 +79,32 @@ public class ScoreManager : MonoBehaviour
         {
             if (ScoreDetector().collider.CompareTag("Sbire"))
             {
-                StartCoroutine(EnemyDetected(sbireDetectedNbr));
+                sbireDetectedNbr = OneEnemyScore(sbireDetectedNbr);
             }
             else if (ScoreDetector().collider.CompareTag("Flying"))
             {
-                StartCoroutine(EnemyDetected(flyingDetectedNbr));
+                flyingDetectedNbr = OneEnemyScore(flyingDetectedNbr);
             }
             else if (ScoreDetector().collider.CompareTag("Hugger"))
             {
-                StartCoroutine(EnemyDetected(huggerDetectedNbr));
+                huggerDetectedNbr = OneEnemyScore(huggerDetectedNbr);
             }
             else if (ScoreDetector().collider.CompareTag("MrPont"))
             {
-                StartCoroutine(EnemyDetected(mrPontDetectedNbr));
+                mrPontDetectedNbr = OneEnemyScore(mrPontDetectedNbr);
             }
         }
     }
-    IEnumerator EnemyDetected(int detectedNbr)
+
+    int OneEnemyScore(int detectedNbr)
+    {
+        detectedNbr++;
+        StartCoroutine(EnemyDetected());
+        return detectedNbr;
+    }
+    IEnumerator EnemyDetected()
     {        
         stop = true;
-        detectedNbr++;
         yield return new WaitForSeconds(1f);
         stop = false;
     }
