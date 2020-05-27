@@ -3,15 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class YT_SettingMenu : MonoBehaviour
 {
+    public GameObject optionsFirstButton;
+    public GameObject optionMenu;
+    public GameObject pauseFirstButton;
+    public GameObject pauseMenu;
     public AudioMixer audiomixer;
     public Dropdown resolutionDropDown;
 
     Resolution[] resolution;
 
-
+    public void PauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        optionMenu.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
+    }
     public void SetVolume (float volume)
     {
         audiomixer.SetFloat("YT_Volume", volume);
@@ -25,6 +36,8 @@ public class YT_SettingMenu : MonoBehaviour
 
     private void Start()
     {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
         resolution = Screen.resolutions;
         resolutionDropDown.ClearOptions();
 

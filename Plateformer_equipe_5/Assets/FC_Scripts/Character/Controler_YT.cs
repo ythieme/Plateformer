@@ -9,6 +9,7 @@ public class Controler_YT : MonoBehaviour
 
     private float xAxis;
     private float yAxis;
+    private float crouchAxis;
     [System.NonSerialized] public float verticalSpeed;
     [System.NonSerialized] public float horizontalSpeed;
     private Vector3 playerMove;
@@ -21,7 +22,7 @@ public class Controler_YT : MonoBehaviour
     public GripScript_FC grip;
     public DontFallAnymore_TheScript dontFall;
 
-    [System.NonSerialized] public bool jumpKey, jumpKeyDown, jumpKeyUp, runKey, runKeyDown, runKeyUp, run2Key, run2KeyDown, run2KeyUp,
+    [System.NonSerialized] public bool jumpKey, jumpKeyDown, jumpKeyUp, runKey, runKeyDown, runKeyUp,
         crouchKey, crouchKeyDown, crouchKeyUp, crouch2Key, crouch2KeyDown, crouch2KeyUp;
 
     //Cooldown (WaitForATime) Composents
@@ -122,17 +123,17 @@ public class Controler_YT : MonoBehaviour
         dust = GetComponentInChildren<ParticleSystem>();
 
         movingPlatformXVelocity = 0f;
-        gravity = 15f;
+        gravity = 10f;
         acceleration = 0.5f;
         deceleration = -0.01f;
         glideTime = 0.17f;
         jumpStrength = 3.5f;
         slidingDecelaration = -0.0018f;
-        crouchSpeed = 1.5f;
-        jumpFixMaxHeight = 0.8f;
+        crouchSpeed = 1.2f;
+        jumpFixMaxHeight = 0.92f;
         curSpeed = 0;
-        maxSpeed = 1f;
-        walkSpeed = 1.5f;
+        maxSpeed = 0.8f;
+        walkSpeed = 1.3f;
         decalage = 0.07f;
     }
 
@@ -147,6 +148,8 @@ public class Controler_YT : MonoBehaviour
     {
         xAxis = Input.GetAxis("Horizontal");
         yAxis = Input.GetAxis("Vertical");
+        crouchAxis = Input.GetAxis("Fire1");
+
         groundChecker = GroundDetector();
 
         IsGrounded();        
@@ -154,7 +157,7 @@ public class Controler_YT : MonoBehaviour
         anim.SetFloat("Speed",Mathf.Abs(walkingVelocity));
 
         //Run Test
-        if (Input.GetAxis("Horizontal") != 0 && (runKey || run2Key) && !isCrouching) isRunning = true;
+        if (Input.GetAxis("Horizontal") != 0 && (runKey || (crouchAxis < 0)) && !isCrouching) isRunning = true;
         else
         {
             isRunning = false;

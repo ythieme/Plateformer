@@ -9,6 +9,7 @@ public class NightmareGlobal : MonoBehaviour
     public FearScript_FC fear;
     Vector2 startPosition;
 
+    [Header("Speed")]
     public float speed;
     float distanceTravelled;
 

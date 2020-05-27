@@ -4,41 +4,21 @@ using UnityEngine;
 
 public class InputHandler_FC : MonoBehaviour
 {
-    [Header("Key Binding")]
-    public KeyCode crouch = KeyCode.DownArrow;
-    public KeyCode crouch2 = KeyCode.S;
-    public KeyCode jump = KeyCode.Space;   
-    public KeyCode run = KeyCode.LeftShift;
-    public KeyCode run2 = KeyCode.RightShift;
-    public KeyCode doPush = KeyCode.E;
-
     public Controler_YT controller;
     public BoxPush_FC push;
 
     void Update()
     {
-        push.pushKey = Input.GetKey(doPush);
-        push.pushKeyDown = Input.GetKeyDown(doPush);
-        push.pushKeyUp = Input.GetKeyUp(doPush);
+        push.pushKey = Input.GetButton("Fire2");
+        push.pushKeyDown = Input.GetButtonDown("Fire2");
+        push.pushKeyUp = Input.GetButtonUp("Fire2");
 
-        controller.runKey = Input.GetKey(run);
-        controller.runKeyDown = Input.GetKeyDown(run);
-        controller.runKeyUp = Input.GetKeyUp(run);
+        controller.runKey = Input.GetButton("Fire1");
+        controller.runKeyDown = Input.GetButtonDown("Fire1");
+        controller.runKeyUp = Input.GetButtonUp("Fire1");
 
-        controller.run2Key = Input.GetKey(run2);
-        controller.run2KeyDown = Input.GetKeyDown(run2);
-        controller.run2KeyUp = Input.GetKeyUp(run2);
-
-        controller.jumpKey = Input.GetKey(jump);
-        controller.jumpKeyDown = Input.GetKeyDown(jump);
-        controller.jumpKeyUp = Input.GetKeyUp(jump);
-
-        controller.crouchKey = Input.GetKey(crouch);
-        controller.crouchKeyDown = Input.GetKeyDown(crouch);
-        controller.crouchKeyUp = Input.GetKeyUp(crouch);
-
-        controller.crouch2Key = Input.GetKey(crouch2);
-        controller.crouch2KeyDown = Input.GetKeyDown(crouch2);
-        controller.crouch2KeyUp = Input.GetKeyUp(crouch2);
+        controller.jumpKey = Input.GetButton("Jump");
+        controller.jumpKeyDown = Input.GetButtonDown("Jump");
+        controller.jumpKeyUp = Input.GetButtonUp("Jump");
     }
 }

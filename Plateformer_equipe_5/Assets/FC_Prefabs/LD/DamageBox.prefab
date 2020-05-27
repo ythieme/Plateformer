@@ -203,4 +203,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fearScript: {fileID: 0}
-  damageInterval: 1
+  damageInterval: 0.1
