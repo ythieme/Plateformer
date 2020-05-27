@@ -4729,7 +4729,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1912041367
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: -5
   m_RenderMode: 0
   m_SortMode: 0
@@ -5047,7 +5047,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1912041367
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2588723732307802811, guid: fa613596f91098f448cfed553f2a4c67,
     type: 3}
@@ -5073,12 +5073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f91bbaf68c514429c1dd3069f2377b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crouch: 274
-  crouch2: 115
-  jump: 32
-  run: 304
-  run2: 303
-  doPush: 101
   controller: {fileID: 3044463699600974605}
   push: {fileID: 3044463699600974581}
 --- !u!114 &3044463699600974580
