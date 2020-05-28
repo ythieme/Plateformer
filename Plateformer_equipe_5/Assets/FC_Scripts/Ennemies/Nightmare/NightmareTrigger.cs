@@ -15,14 +15,11 @@ public class NightmareTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player")) 
-        
+        if (other.gameObject.CompareTag("Player"))        
         {
             CameraShaker.Instance.ShakeOnce(magnitudeN, roughnessN, fadeInTimeN, fadeOutTimeN);
             nightmare.SetActive(true);
-        }
-            
-            
+            nightmare.GetComponent<EnemyDamageProcess>().inCooldown = false;
+        }            
     }
-
 }

@@ -23,6 +23,7 @@ public class YT_MainMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         optionMenu.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsFirstButton);
 
@@ -30,11 +31,13 @@ public class YT_MainMenu : MonoBehaviour
     public void PlayGame() 
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
     }
 
     public void QuitGame ()
     {
         Debug.Log("Quit");
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
         Application.Quit();
     }
 }

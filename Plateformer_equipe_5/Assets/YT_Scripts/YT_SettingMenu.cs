@@ -20,6 +20,7 @@ public class YT_SettingMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         optionMenu.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
@@ -32,6 +33,7 @@ public class YT_SettingMenu : MonoBehaviour
     public void SetFullScreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
     }
 
     private void Start()

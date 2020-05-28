@@ -4984,6 +4984,7 @@ GameObject:
   - component: {fileID: 3044463699600974604}
   - component: {fileID: 3044463699600974582}
   - component: {fileID: 1291116848}
+  - component: {fileID: 8764106845257560611}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -4999,7 +5000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3044463699600974603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.172, y: 1.168, z: -2.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 3044463699579698039}
@@ -5133,10 +5134,10 @@ MonoBehaviour:
   jumpStrength: 3.5
   glideTime: 0.17
   jumpMaxHeight: 0
-  slidingDecelaration: -0.001
+  slidingDecelaration: 0
   slidingVelocity: 0
   slideCooldown: 0
-  slideCooldownDuration: 0.4
+  slideCooldownDuration: 0.5
   anim: {fileID: 0}
   magnitudeJ: 2.5
   roughnessJ: 2
@@ -5151,7 +5152,7 @@ MonoBehaviour:
   FadeInTimeG: 0
   fadeOutTimeG: 0
   dust: {fileID: 0}
-  walkSoundInterval: 0
+  walkSoundInterval: 0.3
 --- !u!114 &3044463699600974577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5199,7 +5200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3044463699600974603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19767cb5a35da3946a8c63301a53f5b8, type: 3}
   m_Name: 
@@ -5322,6 +5323,14 @@ MonoBehaviour:
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
   RestPositionOffset: {x: 0, y: 0, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
+--- !u!81 &8764106845257560611
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044463699600974603}
+  m_Enabled: 1
 --- !u!1 &3044463699620425163
 GameObject:
   m_ObjectHideFlags: 0

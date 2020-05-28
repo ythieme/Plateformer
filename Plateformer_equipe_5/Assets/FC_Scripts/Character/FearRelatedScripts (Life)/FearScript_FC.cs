@@ -46,6 +46,11 @@ public class FearScript_FC : MonoBehaviour
         position = character.transform;
         anim.SetInteger("Fear", fear);
         healthBar.SetHealth(fear);
+
+        if (Input.GetButtonDown("Restart"))
+        {
+            fear = 0;
+        }
     }
     void FixedUpdate()
     {
