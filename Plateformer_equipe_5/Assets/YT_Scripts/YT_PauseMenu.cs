@@ -21,6 +21,7 @@ public class YT_PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         optionsMenu.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsFirstButton);
 
@@ -47,6 +48,10 @@ public class YT_PauseMenu : MonoBehaviour
         controler.GetComponent<Controler_YT>().enabled = true;
         GameIsPaused = false;
     }
+    public void SounndResume()
+    {
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
+    }
 
     void Pause()
     {
@@ -62,12 +67,14 @@ public class YT_PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
         SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
         Debug.Log("quitting");
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
         Application.Quit();
     }
 }

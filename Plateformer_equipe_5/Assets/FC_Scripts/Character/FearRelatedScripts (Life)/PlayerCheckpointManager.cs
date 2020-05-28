@@ -32,8 +32,14 @@ public class PlayerCheckpointManager : MonoBehaviour
     {
         controler.enabled = false;
         character.transform.Translate(new Vector3(lastCheckpoint.x - character.transform.position.x, lastCheckpoint.y - character.transform.position.y));
-        controler.enabled = true;
+        StartCoroutine(DeathParalyse());
         fear.fear = fear.maxfear;
         score.playerDeathNbr++;
+    }
+
+    IEnumerator DeathParalyse()
+    {
+        yield return new WaitForSeconds(0.7f);
+        controler.enabled = true;
     }
 }
