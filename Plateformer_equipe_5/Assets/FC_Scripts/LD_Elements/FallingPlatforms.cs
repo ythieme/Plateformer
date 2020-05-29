@@ -8,13 +8,17 @@ public class FallingPlatforms : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
     BoxCollider2D thisBoxCollider;
+    Animator anim;
     public BoxCollider2D parentBoxCollider;
     
     public float onPlatformTime;
     public float cooldown;
 
+    bool isFalling;
+
     private void Awake()
     {
+        anim = GetComponentInParent<Animator>();
         fear = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<FearScript_FC>();
         spriteRenderer = GetComponentInParent<SpriteRenderer>();
         thisBoxCollider = GetComponent<BoxCollider2D>();
@@ -33,21 +37,24 @@ public class FallingPlatforms : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isFalling)
         {
+            isFalling = true;
             StartCoroutine(PlatformFall());
         }
     }
 
     IEnumerator PlatformFall()
     {        
-        yield return new WaitForSeconds(onPlatformTime);
+        yield return new WaitForSeconds(onPlatformTime - 0.25f);
+        anim.SetTrigger("Tombe");
+        yield return new WaitForSeconds(0.25f);
         spriteRenderer.enabled = false;
         parentBoxCollider.enabled = false;
         thisBoxCollider.enabled = false;
-        //Ajouter Anim
         StartCoroutine(PlatformRespawn());
     }
+    
 
     IEnumerator PlatformRespawn()
     {
@@ -55,5 +62,6 @@ public class FallingPlatforms : MonoBehaviour
         spriteRenderer.enabled = true;
         parentBoxCollider.enabled = true;
         thisBoxCollider.enabled = true;
+        isFalling = false;
     }
 }
