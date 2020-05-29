@@ -75,6 +75,7 @@ public class FearScript_FC : MonoBehaviour
         anim.SetBool("is jumping", false);
         controler.enabled = false;
         isDead = true;
+        FindObjectOfType<AudioManager>().Play("DeathSound");
         deathtransition.SetTrigger("StartFade");
         yield return new WaitForSeconds(2);
         deathtransition.SetTrigger("EndFade");
