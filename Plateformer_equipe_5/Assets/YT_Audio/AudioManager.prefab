@@ -52,7 +52,7 @@ MonoBehaviour:
     pitch: 1.1
     pitchVariance: 0.1
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
   - name: Slide
     clip: {fileID: 8300000, guid: 0a9c72f4d2d036741941f3c0897556e1, type: 3}
@@ -61,14 +61,32 @@ MonoBehaviour:
     pitch: 1.6
     pitchVariance: 0.1
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
-  - name: Click Interface
+  - name: ClickInterface
     clip: {fileID: 8300000, guid: 576440401f1aef94a86d68c6a13ab47a, type: 3}
     volume: 0.22
     volumeVariance: 0
     pitch: 1.6
     pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
+  - name: JumpSound
+    clip: {fileID: 8300000, guid: 380f278ece6f0174d9153efee6ba845d, type: 3}
+    volume: 0.5
+    volumeVariance: 0.5
+    pitch: 1.3
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
+  - name: SpawnNighmare
+    clip: {fileID: 8300000, guid: 8d1b1777a46c71d41932dc62024371be, type: 3}
+    volume: 0.605
+    volumeVariance: 0.554
+    pitch: 0.905
+    pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
