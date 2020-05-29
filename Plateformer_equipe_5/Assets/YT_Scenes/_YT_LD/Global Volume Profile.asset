@@ -54,7 +54,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.09273571}
   gamma:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.92965263, z: 0.86852086, w: -0.011804462}
