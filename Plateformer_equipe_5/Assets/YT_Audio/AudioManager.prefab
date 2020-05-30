@@ -88,5 +88,32 @@ MonoBehaviour:
     pitch: 0.905
     pitchVariance: 0
     loop: 0
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: 2dcbb2fd3d5cdcf4ba80367e40050180, type: 3}
+    volume: 1
+    volumeVariance: 0.5
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
+  - name: OpenDoor
+    clip: {fileID: 8300000, guid: 1bad83bf8d3ead448b335d6b7a6fe8a3, type: 3}
+    volume: 0.7
+    volumeVariance: 0.3
+    pitch: 0.8
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
+  - name: PickUpKey
+    clip: {fileID: 8300000, guid: 88c1ce380e84a274eb55e25cacf3f15a, type: 3}
+    volume: 0.7
+    volumeVariance: 0.3
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
