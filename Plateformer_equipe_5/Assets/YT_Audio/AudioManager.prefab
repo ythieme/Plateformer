@@ -117,3 +117,12 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
+  - name: Thunder
+    clip: {fileID: 8300000, guid: d3741bc7074a174479c4e0ec751dd370, type: 3}
+    volume: 0.2
+    volumeVariance: 0.493
+    pitch: 1
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
