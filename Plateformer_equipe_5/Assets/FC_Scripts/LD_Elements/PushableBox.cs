@@ -66,6 +66,7 @@ public class PushableBox : MonoBehaviour
                 transform.eulerAngles = new Vector3(0,0,0);
                 rb.isKinematic = true;
                 isFalling = false;
+                GetComponent<AudioSource>().Play();
             }
             else { }
         }
