@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Plateformer_equipe_5/Assets/MC/Tiles/clouds/transparent_dark_clouds_0.asset.meta
 guid: 71254652ef4a33943b65ddadb77711b0
 NativeFormatImporter:
@@ -9,6 +10,12 @@ DefaultImporter:
 >>>>>>> 2617ee92bac22107b2e08cf29a4e4ed7ce8d015d:Plateformer_equipe_5/Assets/FC_Prefabs/Crickets.meta
   externalObjects: {}
   mainObjectFileID: 0
+=======
+guid: 8e40be3f4aff4424e9170deff2f75970
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> 351d0c5b4fbc5020ff76fbb1c4f1f1bf6aab6cfd
   userData: 
   assetBundleName: 
   assetBundleVariant: 
