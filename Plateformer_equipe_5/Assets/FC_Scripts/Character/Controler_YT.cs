@@ -597,7 +597,7 @@ public class Controler_YT : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("FootSteps");
             StartCoroutine(SoundsCooldown(walkSoundInterval));
         }
-        else if (isRunning && !stopWalkSound && !isCrouching)
+        else if (isRunning && !stopWalkSound && !isCrouching && !isJumping)
         {
             FindObjectOfType<AudioManager>().Play("Run");
             StartCoroutine(SoundsCooldown(runSoundInterval));
