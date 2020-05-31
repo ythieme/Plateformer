@@ -1,7 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b4da6ef15d0c25e4da3a7f20f2d6a8d3
 folderAsset: yes
 DefaultImporter:
+=======
+<<<<<<< HEAD:Plateformer_equipe_5/Assets/YT_Palettes.meta
+guid: b4da6ef15d0c25e4da3a7f20f2d6a8d3
+folderAsset: yes
+DefaultImporter:
+=======
+guid: bbc3b406f86bac94e8af5abfa50dbb13
+PrefabImporter:
+>>>>>>> fcd3a139f46c0f653b919dd3ab85385b5e16de0d:Plateformer_equipe_5/Assets/MC/FX/Splashes.prefab.meta
+>>>>>>> YT_Working_LeRetour
   externalObjects: {}
   userData: 
   assetBundleName: 
