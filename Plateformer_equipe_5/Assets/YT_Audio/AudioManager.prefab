@@ -135,3 +135,12 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
+  - name: Run
+    clip: {fileID: 8300000, guid: 8f1fcbad9cfee154c979fc9447ed993a, type: 3}
+    volume: 0.35
+    volumeVariance: 0.2
+    pitch: 1.25
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
