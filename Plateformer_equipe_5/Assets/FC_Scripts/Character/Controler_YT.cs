@@ -592,12 +592,12 @@ public class Controler_YT : MonoBehaviour
 
     public void Sounds()
     {
-        if(Mathf.Abs(horizontalSpeed) == walkSpeed && IsGrounded() && !stopWalkSound && !isCrouching)
+        if(Mathf.Abs(horizontalSpeed) == walkSpeed && IsGrounded() && !stopWalkSound && !isCrouching && isSliding)
         {
             FindObjectOfType<AudioManager>().Play("FootSteps");
             StartCoroutine(SoundsCooldown(walkSoundInterval));
         }
-        else if (isRunning && !stopWalkSound && !isCrouching && !isJumping)
+        else if (isRunning && !stopWalkSound && !isCrouching && !isJumping && !isSliding)
         {
             FindObjectOfType<AudioManager>().Play("Run");
             StartCoroutine(SoundsCooldown(runSoundInterval));
