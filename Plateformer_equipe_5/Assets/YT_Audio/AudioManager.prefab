@@ -46,11 +46,11 @@ MonoBehaviour:
   mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
   sounds:
   - name: FootSteps
-    clip: {fileID: 8300000, guid: 5425a85a8f18a554486038c25790d6ad, type: 3}
-    volume: 0.506
-    volumeVariance: 0.11
-    pitch: 1.1
-    pitchVariance: 0.1
+    clip: {fileID: 8300000, guid: 8f1fcbad9cfee154c979fc9447ed993a, type: 3}
+    volume: 0.3
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.3
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
@@ -122,6 +122,15 @@ MonoBehaviour:
     volume: 0.2
     volumeVariance: 0.493
     pitch: 1
+    pitchVariance: 0.3
+    loop: 0
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
+  - name: Run
+    clip: {fileID: 8300000, guid: 8f1fcbad9cfee154c979fc9447ed993a, type: 3}
+    volume: 0.45
+    volumeVariance: 0.4
+    pitch: 1.15
     pitchVariance: 0.3
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
