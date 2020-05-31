@@ -9,6 +9,7 @@ public class YT_ScoreMenu : MonoBehaviour
     public ScoreManager scoreManager;
     public AnimationCurve Ralentissement;
     private float temps;
+    private float timer;
     private bool doSlowDown;
     public TMP_Text time;
     public TMP_Text timeScore;
@@ -41,6 +42,7 @@ public class YT_ScoreMenu : MonoBehaviour
             EnnemyScore();
             NumberofDeath();
             GlobalScore();
+            TimerTotal();
         }
     }
 
@@ -49,6 +51,10 @@ public class YT_ScoreMenu : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             temps = 0f;
+            timer = scoreManager.timer;
+            scoreManager.EnemyScoreCalculation();
+            scoreManager.FinalTimeScore();
+            scoreManager.TotalScore();
             scorePanelAnimation.SetBool("Visible", true);
             doSlowDown = true;
         }
@@ -71,6 +77,11 @@ public class YT_ScoreMenu : MonoBehaviour
     {
         Debug.Log("quitting");
         Application.Quit();
+    }
+
+    private void TimerTotal()
+    {
+        time.text = timer.ToString();
     }
 
     private void TotalTimeScore()

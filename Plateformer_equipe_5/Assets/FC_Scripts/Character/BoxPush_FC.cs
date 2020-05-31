@@ -49,10 +49,13 @@ public class BoxPush_FC : MonoBehaviour
             {
                 box.GetComponent<Transform>().Translate(new Vector2(pushVelocity * 1.001f, 0), Space.World);
                 controler.isPushing = true;
-            }            
+            }
         }
-        else controler.isPushing = false;
-    }
+        else
+        {
+            controler.isPushing = false;
+        }
+    }    
 
     void RayFlip()
     {

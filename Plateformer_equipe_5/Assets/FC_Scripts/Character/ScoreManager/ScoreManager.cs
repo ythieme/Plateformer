@@ -31,6 +31,7 @@ public class ScoreManager : MonoBehaviour
     [System.NonSerialized] public int totalTimeScore;
     [System.NonSerialized] public float playerCompTime;
     [System.NonSerialized] public float totalTime;
+    [System.NonSerialized] public float timer;
 
     [Header("Others")]
     public BoxCollider2D boxCollider;
@@ -48,6 +49,7 @@ public class ScoreManager : MonoBehaviour
         huggerDetectedNbr = 0;
         actualSection = 0;
         playerDeathNbr = 0;
+        timer = 0;
     }
     
     public RaycastHit2D ScoreDetector()
@@ -62,6 +64,7 @@ public class ScoreManager : MonoBehaviour
     {
         EnemyDetectionNbrDistribution();
         playerCompTime += Time.deltaTime;
+        timer += Time.deltaTime;
     }
 
     /* Pour le Débug

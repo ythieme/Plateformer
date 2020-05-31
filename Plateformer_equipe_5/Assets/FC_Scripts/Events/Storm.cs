@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Storm : MonoBehaviour
 {
+    public Animator anim;
+
     public float minTime;
     public float maxTime;
     public float cooldownTime;
@@ -11,6 +13,11 @@ public class Storm : MonoBehaviour
 
     public bool inStorm;
     public bool inCooldown;
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,8 +55,9 @@ public class Storm : MonoBehaviour
             //processus de "Flash" à intégrer ici
             timeLastLightning = 0;
             inCooldown = false;
-            Debug.Log("Pouf");
+            anim.SetTrigger("Thunder");
             yield return new WaitForSeconds(0.1f);
+            FindObjectOfType<AudioManager>().Play("Thunder");
         }
     }
 
