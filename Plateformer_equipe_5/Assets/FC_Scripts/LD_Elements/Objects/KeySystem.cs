@@ -5,9 +5,10 @@ using UnityEngine;
 public class KeySystem : MonoBehaviour
 {
     public FearScript_FC fear;
-
     public SpriteRenderer sp;
+    public GameObject key;
 
+    private bool soundPlay = true;
     public bool keyCatched;
     public bool restartNeeded;
 
@@ -25,12 +26,24 @@ public class KeySystem : MonoBehaviour
         }
         Restart();
     }
+
+    private bool playSound()
+    {
+        if (keyCatched == true && soundPlay == true)
+        {
+            FindObjectOfType<AudioManager>().Play("PickUpKey");
+        }
+        return true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             keyCatched = true;
             sp.enabled = false;
+            playSound();
+            soundPlay = false;
         }
     }
     void Restart()
