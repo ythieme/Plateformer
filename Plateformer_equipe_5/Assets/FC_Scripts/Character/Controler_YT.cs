@@ -113,7 +113,7 @@ public class Controler_YT : MonoBehaviour
 
     [Header("Sounds")]
     public float walkSoundInterval;
-
+    public float runSoundInterval;
     bool stopWalkSound;
 
     void Start()
@@ -157,7 +157,10 @@ public class Controler_YT : MonoBehaviour
         anim.SetFloat("Speed",Mathf.Abs(walkingVelocity));
 
         //Run Test
-        if (Input.GetAxis("Horizontal") != 0 && (runKey || (crouchAxis < 0)) && !isCrouching) isRunning = true;
+        if (Input.GetAxis("Horizontal") != 0 && (runKey || (crouchAxis < 0)) && !isCrouching) 
+        {
+            isRunning = true;
+        }
         else
         {
             isRunning = false;
@@ -589,12 +592,16 @@ public class Controler_YT : MonoBehaviour
 
     public void Sounds()
     {
-        /*if(Mathf.Abs(horizontalSpeed) == walkSpeed && IsGrounded() && !stopWalkSound)
+        if(Mathf.Abs(horizontalSpeed) == walkSpeed && IsGrounded() && !stopWalkSound && !isCrouching)
         {
             FindObjectOfType<AudioManager>().Play("FootSteps");
             StartCoroutine(SoundsCooldown(walkSoundInterval));
         }
-        */
+        else if (isRunning && !stopWalkSound && !isCrouching)
+        {
+            FindObjectOfType<AudioManager>().Play("Run");
+            StartCoroutine(SoundsCooldown(runSoundInterval));
+        }
     }
 
     IEnumerator SoundsCooldown(float duration)
