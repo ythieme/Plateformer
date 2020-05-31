@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Plateformer_equipe_5/Assets/MC/FX/Splashes.preset.meta
 guid: d26540577e0be404aaab95d41b22c6b1
 NativeFormatImporter:
+=======
+guid: 0635d84460eae1743899b5f086ae6731
+folderAsset: yes
+DefaultImporter:
+>>>>>>> 54274a2e9602fe44782d8072f5feb509a8cd14ee:Plateformer_equipe_5/Assets/lb_destrucs/lb_asset/sprites/ennemies/ennemies animation/cauchemard.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 
