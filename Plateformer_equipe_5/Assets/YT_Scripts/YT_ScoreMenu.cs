@@ -12,6 +12,7 @@ public class YT_ScoreMenu : MonoBehaviour
     public GameObject firstScoreButton;
     private float temps;
     private float timer;
+    string finalTime;
     private bool doSlowDown;
     public TMP_Text time;
     public TMP_Text timeScore;
@@ -90,7 +91,8 @@ public class YT_ScoreMenu : MonoBehaviour
 
     private void TimerTotal()
     {
-        time.text = timer.ToString();
+        finalTime = Mathf.Round(timer / 60).ToString() + " min " + Mathf.Round(timer % 60).ToString() + " sec";
+        time.text = finalTime;
     }
 
     private void TotalTimeScore()
