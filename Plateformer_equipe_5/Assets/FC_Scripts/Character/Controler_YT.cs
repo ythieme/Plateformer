@@ -153,8 +153,7 @@ public class Controler_YT : MonoBehaviour
         groundChecker = GroundDetector();
 
         IsGrounded();        
-        Walk();
-        anim.SetFloat("Speed",Mathf.Abs(walkingVelocity));
+        Walk();        
 
         //Run Test
         if (Input.GetAxis("Horizontal") != 0 && (runKey || (crouchAxis < 0)) && !isCrouching) 
@@ -168,6 +167,7 @@ public class Controler_YT : MonoBehaviour
         }
 
         Run();
+        anim.SetFloat("Speed", Mathf.Abs(walkingVelocity + runningVelocity));
         SpriteFlip();
 
         //Enter Jump state
@@ -597,7 +597,7 @@ public class Controler_YT : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("FootSteps");
             StartCoroutine(SoundsCooldown(walkSoundInterval));
         }
-        else if (isRunning && !stopWalkSound && !isCrouching && !isJumping)
+        else if (isRunning && !stopWalkSound && !isCrouching && !isJumping && !isSliding)
         {
             FindObjectOfType<AudioManager>().Play("Run");
             StartCoroutine(SoundsCooldown(runSoundInterval));
