@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f6b5294bfbfbbc41bc1658308d02d1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f3a8359ff6a35c4495d802ed7dc0d2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 8490164182147456482}
   - component: {fileID: 8490164182147456483}
   - component: {fileID: 8490164182147456484}
+  - component: {fileID: 7567559309329073002}
   m_Layer: 11
   m_Name: Corps
   m_TagString: MrPont
@@ -187,7 +188,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64c9d0e86c321db41a2b1fb2b3cd7ba1, type: 3}
+  m_Sprite: {fileID: -1894240844702248379, guid: b47b8a5df113345418621d75f75310fe,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -215,7 +217,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3018868, y: 0.3018868}
+    oldSize: {x: 0.26415095, y: 0.31132075}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -275,6 +277,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
-  maxGap: 0.055
-  minGap: 0.075
+  maxGap: 0.05
+  minGap: 0.125
   speed: 0.5
+--- !u!95 &7567559309329073002
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8490164182147456486}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e6a16594c55b39439dc3d2fae3ace08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
