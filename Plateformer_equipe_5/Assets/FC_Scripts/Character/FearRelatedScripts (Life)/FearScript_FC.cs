@@ -112,9 +112,12 @@ public class FearScript_FC : MonoBehaviour
 
     public void Knockback(float power, int goingLeft)
     {
-        controler.velocityMultiplicator = 0.2f;
-        knockbacked = true;
-        StartCoroutine(KnockBackCooldown(power, goingLeft));
+        if(!noDamage)
+        {
+            controler.velocityMultiplicator = 0.2f;
+            knockbacked = true;
+            StartCoroutine(KnockBackCooldown(power, goingLeft));
+        }        
     }
 
     IEnumerator KnockBackCooldown(float power, int goingLeft)
