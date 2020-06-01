@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class YT_ScoreMenu : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public AnimationCurve Ralentissement;
+    public GameObject firstScoreButton;
     private float temps;
     private float timer;
     private bool doSlowDown;
@@ -27,6 +29,13 @@ public class YT_ScoreMenu : MonoBehaviour
 
     [SerializeField] Animator scorePanelAnimation;
     [SerializeField] GameObject panel;
+
+    
+    private void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstScoreButton);
+    }
 
     private void Update()
     {
