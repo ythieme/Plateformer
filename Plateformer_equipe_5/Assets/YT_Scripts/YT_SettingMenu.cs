@@ -28,7 +28,6 @@ public class YT_SettingMenu : MonoBehaviour
     public void SetVolume (float volume)
     {
         audiomixer.SetFloat("YT_Volume", volume);
-
     }
 
     public void SetNotDamages(bool noDamages)
@@ -67,5 +66,10 @@ public class YT_SettingMenu : MonoBehaviour
         resolutionDropDown.AddOptions(options);
         resolutionDropDown.value = currentRosolutionIndex;
         resolutionDropDown.RefreshShownValue();
+    }
+    public void SetResolution (int resolutionIndex)
+    {
+        Resolution resolutions = resolution[resolutionIndex];
+        Screen.SetResolution(resolutions.width, resolutions.height, Screen.fullScreen);
     }
 }
