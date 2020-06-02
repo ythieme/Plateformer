@@ -7,8 +7,8 @@ public class PushableBox : MonoBehaviour
     FearScript_FC fear;
 
     RaycastHit2D hit;
-    RaycastHit2D wallLeft;
-    RaycastHit2D wallRight;
+    public RaycastHit2D wallLeft;
+    public RaycastHit2D wallRight;
     public LayerMask floor;
     Rigidbody2D rb;
     BoxCollider2D boxCollider;

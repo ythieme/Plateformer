@@ -80,7 +80,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058671345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10000014, y: -0.29000002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 3044463699600974607}
@@ -177,12 +177,12 @@ MonoBehaviour:
   position: {fileID: 3044463699600974607}
   magnitude: 8
   roughness: 5
-  fadeInTime: 0.5
-  fadeOutTime: 0.5
+  fadeInTime: 0.1
+  fadeOutTime: 0.8
   anim: {fileID: 0}
   deathtransition: {fileID: 0}
-  maxfear: 20
-  fear: 20
+  maxfear: 10
+  fear: 10
   noDamageTime: 1.5
   knockCurve:
     serializedVersion: 2
@@ -385,20 +385,21 @@ MonoBehaviour:
   slideCooldown: 0
   slideCooldownDuration: 0.5
   anim: {fileID: 0}
-  magnitudeJ: 2.5
-  roughnessJ: 2
-  fadeInTimeJ: 0.15
+  magnitudeJ: 2
+  roughnessJ: 1.5
+  fadeInTimeJ: 0
   fadeOutTimeJ: 0.15
   magnitudeS: 2
   roughnessS: 1
-  fadeInTimeS: 0.15
-  fadeOutTimeS: 0.15
-  magnitudeG: 0
-  roughnessG: 0
+  fadeInTimeS: 0
+  fadeOutTimeS: 0.2
+  magnitudeG: 3
+  roughnessG: 2
   FadeInTimeG: 0
-  fadeOutTimeG: 0
+  fadeOutTimeG: 0.4
   dust: {fileID: 0}
-  walkSoundInterval: 0.3
+  walkSoundInterval: 0.4
+  runSoundInterval: 0.3
 --- !u!114 &3044463699600974577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,11 +504,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   distance: 0.13
+  distance2: 0
   pushVelocity: 0
   pushSpeed: 0.7
   controler: {fileID: 0}
   pushableBox: {fileID: 0}
   box: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!61 &3044463699600974604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -631,6 +634,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3044463699600974607}
     m_Modifications:
+    - target: {fileID: 6415365470693042689, guid: a6b52db514017794c8ec3283bc5ae8fb,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415365470693042689, guid: a6b52db514017794c8ec3283bc5ae8fb,
+        type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415365470693042689, guid: a6b52db514017794c8ec3283bc5ae8fb,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415365470693042689, guid: a6b52db514017794c8ec3283bc5ae8fb,
+        type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415365470693042689, guid: a6b52db514017794c8ec3283bc5ae8fb,
+        type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415365470693042689, guid: a6b52db514017794c8ec3283bc5ae8fb,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6415365470693042690, guid: a6b52db514017794c8ec3283bc5ae8fb,
         type: 3}
       propertyPath: m_Name

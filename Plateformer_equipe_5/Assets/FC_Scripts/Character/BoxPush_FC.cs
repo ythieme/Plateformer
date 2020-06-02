@@ -51,7 +51,7 @@ public class BoxPush_FC : MonoBehaviour
         {
             box = hit.collider.gameObject;
             pushableBox = box.GetComponent<PushableBox>();
-            if (!pushableBox.isBesideWall)
+            if (!pushableBox.isBesideWall || (pushableBox.wallLeft && transform.position.x - pushableBox.transform.position.x < 0) || (pushableBox.wallRight && transform.position.x - pushableBox.transform.position.x > 0))
             {
                 box.GetComponent<Transform>().Translate(new Vector2(pushVelocity, 0), Space.World);
                 controler.isPushing = true;
