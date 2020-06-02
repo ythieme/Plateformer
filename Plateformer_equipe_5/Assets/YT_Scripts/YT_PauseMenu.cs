@@ -15,6 +15,7 @@ public class YT_PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject optionsFirstButton;
+    public GameObject tpMenu;
 
 
     public void PauseMenu()
@@ -44,6 +45,7 @@ public class YT_PauseMenu : MonoBehaviour
     {
         pauseMenuiUi.SetActive(false);
         optionMenuUI.SetActive(false);
+        tpMenu.SetActive(false);
         Time.timeScale = 1f;
         controler.GetComponent<Controler_YT>().enabled = true;
         GameIsPaused = false;

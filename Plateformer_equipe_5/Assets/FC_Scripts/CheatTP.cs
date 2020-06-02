@@ -15,6 +15,6 @@ public class CheatTP : MonoBehaviour
 
     public void TP(Transform position)
     {
-        player.transform.Translate(position.position);
+        player.transform.position = Vector2.MoveTowards(player.transform.position,position.position,999);
     }
 }
