@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
   maxGap: 0.05
-  minGap: 0.125
+  minGap: 0.09
   speed: 0.5
 --- !u!95 &7567559309329073002
 Animator:
