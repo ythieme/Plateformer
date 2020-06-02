@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class YT_SettingMenu : MonoBehaviour
 {
+    public FearScript_FC fear;
     public GameObject optionsFirstButton;
     public GameObject optionMenu;
     public GameObject pauseFirstButton;
@@ -28,6 +29,12 @@ public class YT_SettingMenu : MonoBehaviour
     {
         audiomixer.SetFloat("YT_Volume", volume);
 
+    }
+
+    public void SetNotDamages(bool noDamages)
+    {
+        fear.noDamage = noDamages == false;
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
     }
 
     public void SetFullScreen(bool isFullscreen)
