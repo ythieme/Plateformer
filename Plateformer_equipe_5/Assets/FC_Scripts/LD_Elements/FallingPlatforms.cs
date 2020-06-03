@@ -31,6 +31,7 @@ public class FallingPlatforms : MonoBehaviour
             spriteRenderer.enabled = true;
             parentBoxCollider.enabled = true;
             thisBoxCollider.enabled = true;
+            isFalling = false;
             StopAllCoroutines();
         }
     }

@@ -36,13 +36,17 @@ public class DamagePlatforms : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             giveDamage = false;
+            inInterval = false;
         }
     }
 
     IEnumerator PlatformDamage()
     {
         yield return new WaitForSeconds(damageInterval);
-        inInterval = false;
-        fearScript.DealDamage(1);
+        if(giveDamage)
+        {
+            inInterval = false;
+            fearScript.DealDamage(1);
+        }
     }
 }
