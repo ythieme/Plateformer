@@ -23,7 +23,7 @@ public class BoxPush_FC : MonoBehaviour
     private void Start()
     {
         distance = 0.13f;
-        distance2 = 0.18f;
+        distance2 = 0.14f;
         controler = GetComponent<Controler_YT>();
         pushVelocity = Input.GetAxis("Horizontal") * pushSpeed * Time.deltaTime;
         anim = GetComponent<Animator>();

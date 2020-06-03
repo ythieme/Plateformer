@@ -7,14 +7,14 @@ public class FlyingEnnemy : MonoBehaviour
     public FearScript_FC fear;
 
     public Transform player;
-    Vector2 startPosition;
+    public Vector2 startPosition;
     public EnemyDamageProcess damage;
     public bool detecting;
     bool stop;
 
     public float speed;    
     public float timeToStop;
-    float step;
+    public float step;
 
     private void Start()
     {

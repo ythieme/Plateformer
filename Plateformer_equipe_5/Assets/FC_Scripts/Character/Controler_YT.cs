@@ -524,8 +524,6 @@ public class Controler_YT : MonoBehaviour
             dust.gameObject.transform.Translate(new Vector2(-dust.gameObject.transform.localPosition.x * 2, 0));
         }
         else { }
-
-
     }
 
     //Jump

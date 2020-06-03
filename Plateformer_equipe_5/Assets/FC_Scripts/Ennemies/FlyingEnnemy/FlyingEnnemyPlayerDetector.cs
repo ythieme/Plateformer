@@ -25,7 +25,17 @@ public class FlyingEnnemyPlayerDetector : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             behaviour.detecting = false;
+            StartCoroutine(MoveTowardSpawn());
         }
     }
 
+    IEnumerator MoveTowardSpawn()
+    {
+        yield return new WaitForSeconds(0.01f);
+        if (!behaviour.detecting)
+        {
+            behaviour.transform.position = Vector2.MoveTowards(behaviour.transform.position, behaviour.startPosition, behaviour.step / 2);
+            StartCoroutine(MoveTowardSpawn());
+        }
+    }
 }

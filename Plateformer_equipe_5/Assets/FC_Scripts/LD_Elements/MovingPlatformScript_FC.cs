@@ -24,6 +24,7 @@ public class MovingPlatformScript_FC : MonoBehaviour
     bool goingStartPosition;
     bool playerDetected;
     public bool hugging;
+    bool moving;
 
     float decalageY = 0.05f;
 
@@ -46,39 +47,43 @@ public class MovingPlatformScript_FC : MonoBehaviour
         wayPoint = wayPointTransform.position;
         startPosition = startPositionTransform.position;
         StartCoroutine(ActualSpeed());
+        moving = true;
     }
 
     void FixedUpdate()
     {
         originX = (boxcollider.bounds.center.x - boxcollider.bounds.extents.x);
         originY = (boxcollider.bounds.center.y + boxcollider.bounds.extents.y + decalageY);
-        step = speed * Time.deltaTime;     
-        if (!hugging)
-        { Movement(); }              
+        step = speed * Time.deltaTime;
+        Movement();
         PlayerDetector();
         StickThePlayer();
     }
     void Movement()
     {
-        if (transform.position == startPosition && !stop && goingStartPosition) //Reach StartPosition
+        if (transform.position == startPosition && !stop && goingStartPosition && moving) //Reach StartPosition
         {
+            moving = false;
             StartCoroutine(MovementStop(stopDuration));
             goingStartPosition = false;
-            goingWayPoint = true;            
+            goingWayPoint = true;
         }
-        else if (transform.position == startPosition && !stop && goingWayPoint) //Go WayPoint
+        else if (transform.position == startPosition && !stop && goingWayPoint && !moving) //Go WayPoint
         {
+            moving = true;
             StartCoroutine(MoveTowardPlace(wayPoint, step));
             sp.flipX = false;
         }
-        else if (transform.position == wayPoint && !stop && goingWayPoint) //Reach WayPoint
+        else if (transform.position == wayPoint && !stop && goingWayPoint && moving) //Reach WayPoint
         {
+            moving = false;
             StartCoroutine(MovementStop(stopDuration));
             goingWayPoint = false;
             goingStartPosition = true;
         }
-        else if (transform.position == wayPoint && !stop && goingStartPosition) //Go StartPosition
+        else if (transform.position == wayPoint && !stop && goingStartPosition && !moving) //Go StartPosition
         {
+            moving = true;
             StartCoroutine(MoveTowardPlace(startPosition, step));
             sp.flipX = true;
         }
@@ -129,7 +134,7 @@ public class MovingPlatformScript_FC : MonoBehaviour
         firstXPosition = transform.position.x;
         firstYPosition = transform.position.y;
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.015f);
 
         secondXPosition = transform.position.x;
         secondYPosition = transform.position.y;
