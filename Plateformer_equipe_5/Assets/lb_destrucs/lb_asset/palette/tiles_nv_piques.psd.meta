@@ -1,0 +1,790 @@
+fileFormatVersion: 2
+guid: daf2b8c926827ef41a1501b95317f29e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 69232299213778833
+    second: tiles_nv_piques_0
+  - first:
+      213: -2578793664977528877
+    second: tiles_nv_piques_1
+  - first:
+      213: 3073314622878421082
+    second: tiles_nv_piques_2
+  - first:
+      213: 3969666883676139870
+    second: tiles_nv_piques_3
+  - first:
+      213: -6532289494727139013
+    second: tiles_nv_piques_4
+  - first:
+      213: -6861348393381586312
+    second: tiles_nv_piques_5
+  - first:
+      213: 4903554590067049532
+    second: tiles_nv_piques_6
+  - first:
+      213: 4568893082425241112
+    second: tiles_nv_piques_7
+  - first:
+      213: -5506248279747684888
+    second: tiles_nv_piques_8
+  - first:
+      213: -900467210591511219
+    second: tiles_nv_piques_9
+  - first:
+      213: 285898050973043305
+    second: tiles_nv_piques_10
+  - first:
+      213: -4480465038832857380
+    second: tiles_nv_piques_11
+  - first:
+      213: 3549209255494146114
+    second: tiles_nv_piques_12
+  - first:
+      213: -56606426612522548
+    second: tiles_nv_piques_13
+  - first:
+      213: 5283571574361176156
+    second: tiles_nv_piques_14
+  - first:
+      213: -1808685925076894679
+    second: tiles_nv_piques_15
+  - first:
+      213: 6915010020125917028
+    second: tiles_nv_piques_16
+  - first:
+      213: 1112666864535296848
+    second: tiles_nv_piques_17
+  - first:
+      213: -5384747321394940133
+    second: tiles_nv_piques_18
+  - first:
+      213: 659573907282715567
+    second: tiles_nv_piques_19
+  - first:
+      213: 2021646951623291
+    second: tiles_nv_piques_20
+  - first:
+      213: 4730730445558525545
+    second: tiles_nv_piques_21
+  - first:
+      213: -4180418015083979205
+    second: tiles_nv_piques_22
+  - first:
+      213: -5137221237341270711
+    second: tiles_nv_piques_23
+  - first:
+      213: -8225422503501344933
+    second: tiles_nv_piques_24
+  - first:
+      213: -9065070443526757699
+    second: tiles_nv_piques_25
+  - first:
+      213: 200495332714884525
+    second: tiles_nv_piques_26
+  - first:
+      213: -6089406360992573843
+    second: tiles_nv_piques_27
+  - first:
+      213: -3674186579563344493
+    second: tiles_nv_piques_28
+  - first:
+      213: 7121150100629297819
+    second: tiles_nv_piques_29
+  - first:
+      213: 565681053096349479
+    second: tiles_nv_piques_30
+  - first:
+      213: 2670614159434171787
+    second: tiles_nv_piques_31
+  - first:
+      213: 11263362817871933
+    second: tiles_nv_piques_32
+  - first:
+      213: -5224548447999433064
+    second: tiles_nv_piques_33
+  - first:
+      213: -1067730314080636192
+    second: tiles_nv_piques_34
+  - first:
+      213: 6505314259683987402
+    second: tiles_nv_piques_35
+  - first:
+      213: 2858299275409393309
+    second: tiles_nv_piques_36
+  - first:
+      213: -349086751667443267
+    second: tiles_nv_piques_37
+  - first:
+      213: -8797439046507868669
+    second: tiles_nv_piques_38
+  - first:
+      213: -9142769102284573861
+    second: tiles_nv_piques_39
+  - first:
+      213: -5842555215231319483
+    second: tiles_nv_piques_40
+  - first:
+      213: -6503150445669987444
+    second: tiles_nv_piques_41
+  - first:
+      213: 3383800407938702967
+    second: tiles_nv_piques_42
+  - first:
+      213: 926057842290028598
+    second: tiles_nv_piques_43
+  - first:
+      213: -3475051629610659487
+    second: tiles_nv_piques_44
+  - first:
+      213: -5451526406471757055
+    second: tiles_nv_piques_45
+  - first:
+      213: -4597701912532556770
+    second: tiles_nv_piques_46
+  - first:
+      213: -1157535354497388366
+    second: tiles_nv_piques_47
+  - first:
+      213: -1226744782330691247
+    second: tiles_nv_piques_48
+  - first:
+      213: 7860361752314481083
+    second: tiles_nv_piques_49
+  - first:
+      213: 7592729380789681911
+    second: tiles_nv_piques_50
+  - first:
+      213: -5670886956505920101
+    second: tiles_nv_piques_51
+  - first:
+      213: -6530784599531523734
+    second: tiles_nv_piques_52
+  - first:
+      213: 6296125798996625412
+    second: tiles_nv_piques_53
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 106
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tiles_nv_piques_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 111
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fee99c866f5f000800000000000000
+      internalID: 69232299213778833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d79cf123d8463cd0800000000000000
+      internalID: -2578793664977528877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 111
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31e5c86055a855a0800000000000000
+      internalID: -6532289494727139013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 111
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e22ba2d08f76f30800000000000000
+      internalID: 4568893082425241112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d5ec4c7d5e083f0800000000000000
+      internalID: -900467210591511219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 111
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a893a33c6b7f300800000000000000
+      internalID: 285898050973043305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_13
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1a1c141c4e63ff0800000000000000
+      internalID: -56606426612522548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_16
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 153
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f3fdbd9fc07ff50800000000000000
+      internalID: 6915010020125917028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_31
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 153
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85c331bd6def0520800000000000000
+      internalID: 2670614159434171787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_35
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 120
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf4fb04ad4874a50800000000000000
+      internalID: 6505314259683987402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_36
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 120
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96888c0c08baa720800000000000000
+      internalID: 2858299275409393309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_37
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 120
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9211be27bc72bf0800000000000000
+      internalID: -349086751667443267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_38
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 120
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e4fbb4cc739e580800000000000000
+      internalID: -8797439046507868669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_39
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 119
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5339e221fb5e1180800000000000000
+      internalID: -9142769102284573861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_40
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 47
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5420887acf21beea0800000000000000
+      internalID: -5842555215231319483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_42
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 79
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e120afa8ca5fe20800000000000000
+      internalID: 3383800407938702967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_43
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 47
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630792b73b40adc00800000000000000
+      internalID: 926057842290028598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_45
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103d692ed994854b0800000000000000
+      internalID: -5451526406471757055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_46
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 47
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14ec50687ea130c0800000000000000
+      internalID: -4597701912532556770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_47
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b03a3c5abb9fefe0800000000000000
+      internalID: -1157535354497388366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_49
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 47
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb985c42e5d951d60800000000000000
+      internalID: 7860361752314481083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_50
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 47
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fef3a1d42bce5960800000000000000
+      internalID: 7592729380789681911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_51
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 47
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d8114db56fc41b0800000000000000
+      internalID: -5670886956505920101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_52
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 14
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61f450220efd55a0800000000000000
+      internalID: -6530784599531523734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_nv_piques_53
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408cd5e4e05506750800000000000000
+      internalID: 6296125798996625412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
