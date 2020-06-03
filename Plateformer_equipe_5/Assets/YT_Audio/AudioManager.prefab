@@ -144,3 +144,12 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
     source: {fileID: 0}
+  - name: Epic Music
+    clip: {fileID: 8300000, guid: 1a4c8c31dde844442802091014508244, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 24300002, guid: 1899fa93bde7a4345bc10ff7417d6eea, type: 2}
+    source: {fileID: 0}
