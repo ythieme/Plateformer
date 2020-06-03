@@ -26,14 +26,14 @@ public class NightmareTrigger : MonoBehaviour
             CameraShaker.Instance.ShakeOnce(magnitudeN, roughnessN, fadeInTimeN, fadeOutTimeN);
             StartCoroutine(startVibration());
             nightmare.SetActive(true);
-            nightmare.GetComponent<EnemyDamageProcess>().inCooldown = false;
+            nightmare.GetComponentInChildren<EnemyDamageProcess>().inCooldown = false;
         }            
     }
 
     IEnumerator startVibration()
     {
         GamePad.SetVibration(playerIndex, vibrationLeft, vibrationRight);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         GamePad.SetVibration(playerIndex,0f,0f);
     }
 }

@@ -625,6 +625,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &963017809444446147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161412086577276828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc47c53058c16342b1f2d370ef77a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathCreator: {fileID: 0}
+  fear: {fileID: 0}
+  speed: 1
 --- !u!1 &7948679794895334821
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +649,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5613913001019523521}
-  - component: {fileID: 6974783308146579665}
   - component: {fileID: 6922323505910506108}
   - component: {fileID: 1296593907707159886}
   - component: {fileID: 3378973332541619231}
@@ -659,21 +673,6 @@ Transform:
   m_Father: {fileID: 9161412086577276803}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6974783308146579665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7948679794895334821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcc47c53058c16342b1f2d370ef77a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathCreator: {fileID: 0}
-  fear: {fileID: 0}
-  speed: 1
 --- !u!50 &6922323505910506108
 Rigidbody2D:
   serializedVersion: 4
@@ -735,7 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fear: {fileID: 0}
   player: {fileID: 0}
-  damage: 20
+  damage: 10
   cooldownDuration: 4
   power: 0
 --- !u!1001 &3060045848642188043
