@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class YT_TutorialText : MonoBehaviour
 {
-    [SerializeField] Animator animator1;
-    [SerializeField] Animator animator2;
+    [SerializeField] Animator image;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            animator1.SetBool("Visible", true);
-            animator2.SetBool("Visible", true);
+            image.SetBool("Visible", true);
         }
     }
 
@@ -20,8 +18,7 @@ public class YT_TutorialText : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            animator1.SetBool("Visible", false);
-            animator2.SetBool("Visible", false);
+            image.SetBool("Visible", false);
         }
     }
 }

@@ -73,12 +73,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dc17332fbd8ca074f92c34f528423ea6, type: 3}
+  m_Sprite: {fileID: 1528266028724907280, guid: dc17332fbd8ca074f92c34f528423ea6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.3018868, y: 0.3018868}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.001791954}
+  m_Offset: {x: -0.0012494251, y: 0.08566739}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.29245284, y: 0.12264151}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.3018868, y: 0.3018868}
+    newSize: {x: 0.3018868, y: 0.3018868}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29610443, y: 0.120492935}
+  m_Size: {x: 0.29360557, y: 0.11299643}
   m_EdgeRadius: 0
 --- !u!95 &6288124822107908767
 Animator:
@@ -120,7 +121,7 @@ Animator:
   m_GameObject: {fileID: 7406765184359261195}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a28d66d85e873db479e8de0a4f81c187, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15e13314f14690e449c84676e24adeef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -191,7 +192,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004347503, y: -1.6285003}
+  m_Offset: {x: -0.016176313, y: -0.8647353}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -202,7 +203,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.95396864, y: 0.76261497}
+  m_Size: {x: 0.8277946, y: 0.6696354}
   m_EdgeRadius: 0
 --- !u!50 &7406765185065209340
 Rigidbody2D:
