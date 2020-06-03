@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
+using XInputDotNetPure;
 
 public class FearScript_FC : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class FearScript_FC : MonoBehaviour
     public int maxfear;
     public int fear;
     public float noDamageTime;
-    float coroutineCount;    
+    float coroutineCount;
 
     public AnimationCurve knockCurve;
 
@@ -32,6 +33,11 @@ public class FearScript_FC : MonoBehaviour
     [System.NonSerialized] public bool deadTP;
     public bool knockbacked;
     public bool noDamage;
+
+    [Header("controler Vibration")]
+    public float vibrationLeft;
+    public float vibrationRight;
+    PlayerIndex playerIndex;
 
     private void Start()
     {        
@@ -90,6 +96,7 @@ public class FearScript_FC : MonoBehaviour
         if (!noDamage)
         {
             CameraShaker.Instance.ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime);
+            StartCoroutine(startVibration());
             fear -= damageValue;
             anim.SetBool("is Hurted", true);
             FindObjectOfType<AudioManager>().Play("Hurt");
@@ -136,5 +143,11 @@ public class FearScript_FC : MonoBehaviour
             controler.velocityMultiplicator = 1;
             coroutineCount = 0;
         }
+    }
+    IEnumerator startVibration()
+    {
+        GamePad.SetVibration(playerIndex, vibrationLeft, vibrationRight);
+        yield return new WaitForSeconds(0.5f);
+        GamePad.SetVibration(playerIndex, 0f, 0f);
     }
 }
