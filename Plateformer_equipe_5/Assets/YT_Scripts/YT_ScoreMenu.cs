@@ -19,6 +19,7 @@ public class YT_ScoreMenu : MonoBehaviour
     public TMP_Text ennemyScore;
     public TMP_Text numberDeath;
     public TMP_Text totalScore;
+    public TMP_Text highScoreTxt;
     int totalTimeScore;
     string stringTotalTimeScore;
     int totalEnnemyScore;
@@ -27,6 +28,7 @@ public class YT_ScoreMenu : MonoBehaviour
     string stringNumberOfDeath;
     int globalscore;
     string stringTotalScore;
+    string stringHighScore;
 
     [SerializeField] Animator scorePanelAnimation;
     [SerializeField] GameObject panel;
@@ -53,6 +55,7 @@ public class YT_ScoreMenu : MonoBehaviour
             NumberofDeath();
             GlobalScore();
             TimerTotal();
+            HighScore();
         }
     }
 
@@ -123,5 +126,19 @@ public class YT_ScoreMenu : MonoBehaviour
         totalScore.text = stringTotalScore;
     }
 
+    private void HighScore()
+    {
+        if(globalscore > PlayerPrefs.GetInt("highScore"))
+        {
+            PlayerPrefs.SetInt("highScore", globalscore);
+            stringHighScore = PlayerPrefs.GetInt("highScore").ToString();
+            highScoreTxt.text = stringHighScore;
+        }
+        else
+        {
+            stringHighScore = PlayerPrefs.GetInt("highScore").ToString();
+            highScoreTxt.text = stringHighScore;
+        }
+    }
 }
 
