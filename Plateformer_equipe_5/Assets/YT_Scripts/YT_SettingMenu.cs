@@ -18,6 +18,8 @@ public class YT_SettingMenu : MonoBehaviour
     public GameObject tpMenu;
     public GameObject tpMenuFirstButton;
     public GameObject tpbutton;
+    public GameObject creditsMenu;
+    public GameObject creditsFirstButton;
 
     Resolution[] resolution;
 
@@ -141,5 +143,21 @@ public class YT_SettingMenu : MonoBehaviour
     {
         Resolution resolutions = resolution[resolutionIndex];
         Screen.SetResolution(resolutions.width, resolutions.height, Screen.fullScreen);
+    }
+    public void CreditButton()
+    {
+        optionMenu.SetActive(false);
+        creditsMenu.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(creditsFirstButton);
+    }
+    public void backButtonCredits()
+    {
+        creditsMenu.SetActive(false);
+        optionMenu.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("ClickInterface");
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
     }
 }
